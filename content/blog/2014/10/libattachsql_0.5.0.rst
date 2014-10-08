@@ -2,7 +2,7 @@ libAttachSQL Second Beta, After the Sledgehammer
 ================================================
 
 :date: 2014-10-08 20:52
-:category: MySQL:
+:category: MySQL
 :tags: MySQL, libAttachSQL, HP, Advanced Technology Group
 
 Last week I `blogged about getting sysbench working with libAttachSQL <http://linuxjedi.co.uk/posts/2014/Oct/03/libattachsql-benchmarks-with-sysbench/>`_.  This was not only an exercise in performance but also the first real test for `libAttachSQL <http://libattachsql.org/>`_.
