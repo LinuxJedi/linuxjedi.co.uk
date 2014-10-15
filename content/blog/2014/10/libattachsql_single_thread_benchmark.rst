@@ -23,6 +23,6 @@ I've added the results to the previous select test to the graph for comparison. 
 
 .. image:: /images/select_single_thread.png
 
-This exceeded my expectations.  Having many connections in a single thread actually outperforms many threads with one connection.  It is early days and there is much more testing and improvement that can be done.  But I'm very encouraged by these results.
+This exceeded my expectations.  Having many connections in a single thread actually outperforms many threads with one connection each.  It is early days and there is much more testing and improvement that can be done.  But I'm very encouraged by these results.
 
 I'll be talking more about libAttachSQL and these results at `Percona Live London next month <http://www.percona.com/live/london-2014/sessions/libattachsql-next-generation-c-connector-mysql>`_ so please come along if you are in the area.
