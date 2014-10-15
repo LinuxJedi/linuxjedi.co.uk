@@ -49,7 +49,7 @@ And libAttachSQL:
 
 The results were as follows:
 
-.. image:: images/select_benchmark.png
+.. image:: /images/select_benchmark.png
 
 I am pretty impressed with these results so far, since I have done no optimisation work on the code.  I originally wanted the first GA to have performance on-par with libmysqlclient and it looks like that goal has been met.
 
@@ -72,7 +72,7 @@ And with libAttachSQL:
 
 The results were as follows:
 
-.. image:: images/select_random_points_benchmark.png
+.. image:: /images/select_random_points_benchmark.png
 
 Again there isn't a lot in it.  libmysqlclient is edging slightly over libAttachSQL in most of this chart.  I believe it is because in the libAttachSQL driver I told it to convert all results to string outputs.  This will add additional overhead.  Next week I will tweak the driver to make sure that the conversion isn't done.
 
