@@ -2,6 +2,7 @@ Why JSON is bad for applications
 ================================
 
 :date: 2014-10-31 15:22
+:modified: 2014-10-31 20:39
 :category: General
 :tags: HP, Advanced Technology Group
 
@@ -22,6 +23,9 @@ For many applications the data you are sending is directly from a database or at
 
 Protocol Buffers allow you to specify a schema for the data in a human readable format, it actually looks a little like a database schema.  They will automatically validate the data for you and have versioning built-in.  This means you can make your code easily backwards and forwards compatible.
 
-There is a positive and negative side to the data transfer of Protocol Buffers.  It is a binary protocol.  This means it takes up minimal bandwidth on the wire but also means that it is very hard to interpret the data without the schema.  The same could be said if you were given InnoDB table data without the schemas.  It also means it may be possible to compress the data further with something like LZO or DEFLATE.
+There is a positive and negative side to the data transfer of Protocol Buffers.  It is a binary protocol.  This means it takes up minimal bandwidth on the wire but also means that it is not human readable and difficult to figure out which data is for which field (although should not be used for security through obscurity).  The same could be said if you were given InnoDB table data without the schemas.  It also means it may be possible to compress the data further with something like LZO or DEFLATE.
 
 I recommend application developers consider Protocol Buffers instead of JSON when they are next developing a server/client application.
+
+.. note::
+   I updated this article to explain the binary protocol a little better.  Thanks to Antony Curtis for pointing it out.
