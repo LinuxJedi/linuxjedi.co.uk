@@ -31,7 +31,7 @@ Those who are Python API veterans will be able to see straight away where I went
 My Big Dumb Mistake
 -------------------
 
-.. image:: images/droids.jpg
+.. image:: /images/droids.jpg
 
 Whilst debugging this I found the problem was in ``cbargs``, for some reason the pointers to ``pycon`` and alike were slightly different to when they were set.  After some time going over it again and again in GDB and watching the pointers get incremented it suddenly hit me.  The incrementation was happening during reference increment functions inside ``Py_BuildValue``.  Which makes sense because the one first items in a ``PyObject`` structure is the reference count.  I was supposed to pass pointers, not pointers to pointers.  The ``Py_BuildValue`` function has no type checking so was taking whatever you passed to it as a pointer to a structure.
 
