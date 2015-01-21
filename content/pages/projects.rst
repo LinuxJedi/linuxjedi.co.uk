@@ -1,5 +1,5 @@
-Projects
-========
+Open Source Contributions
+=========================
 
 These are some of the Open Source projects I am the lead developer on or have worked on.
 
