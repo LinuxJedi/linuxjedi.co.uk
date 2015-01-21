@@ -3,7 +3,7 @@ Why JSON is bad for applications
 
 :date: 2014-10-31 15:22
 :modified: 2014-10-31 20:39
-:category: General
+:category: Coding
 :tags: HP, Advanced Technology Group
 
 Today I read an article about how company X has improved things by amongst other things ditching JSON after 2 years of using it.  Before I start on this subject I should say that JSON does have its place.  If you have a web application where a browser is talking to a web server and in particular uses JavaScript then JSON is a good fit.

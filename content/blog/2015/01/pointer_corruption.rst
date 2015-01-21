@@ -2,7 +2,7 @@ The Pointer Corruption Bug
 ==========================
 
 :date: 2015-01-20 09:16
-:category: General
+:category: Coding
 :tags: HP, Advanced Technology Group, C, Python, API, Documentation, libAttachSQL
 
 Or an alternative name for this post...

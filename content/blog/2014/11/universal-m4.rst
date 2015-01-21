@@ -2,7 +2,7 @@ Autotools and Mac Universal binaries
 ====================================
 
 :date: 2014-11-25 16:38
-:category: General
+:category: Coding
 :tags: HP, Advanced Technology Group, libAttachSQL, Autotools
 
 Recently I have been working on a Python based wrapper for `libAttachSQL <http://libattachsql.org/>`_ and found that when testing on a Mac I was having trouble compiling the wrapper.  It turns out that Python included in Mac operating systems uses a universal binary (also called fat binary) format and since libAttachSQL is not compiled that way it would not link correctly.

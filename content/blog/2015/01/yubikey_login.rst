@@ -2,7 +2,7 @@ YubiKey for OS Logins
 =====================
 
 :date: 2015-01-19 16:14
-:category: General
+:category: Security
 :tags: YubiKey, Security, HP, Advanced Technology Group
 
 I have mentioned a few times in this blog that HP takes security very seriously and HP's Advanced Technology Group is always looking into new ways of making things secure.  Recently the team all got a `YubiKey Neo <https://www.yubico.com/products/yubikey-hardware/yubikey-neo/>`_ to use.  The initial idea was we would be trying the FIDO U2F with Google accounts but several of us went much further.
