@@ -38,8 +38,13 @@ Smaller Contributions
 ---------------------
 
 * Pango Syntax Highlighter - An HTML syntax highlighter for use with `Pinpoint <https://wiki.gnome.org/Pinpoint>`_
+
   * `PSH on GitHub <https://github.com/LinuxJedi/pango-syntax-highlighter>`_
+
 * m4scripts - m4 scripts I use
+
   * `m4scripts on GitHub <https://github.com/LinuxJedi/m4scripts>`_
+
 * Gerber2Graphic - A tool to cut stencils of Gerber files using Graphtec plotter cutters
+
   * `G2G on GitHub <https://github.com/LinuxJedi/gerber2graphtec>`_
