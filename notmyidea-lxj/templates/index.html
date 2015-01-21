@@ -2,8 +2,14 @@
 {% block content_title %}{% endblock %}
 {% block content %}
 {% if articles %}
-{% for article in articles %}
-    {% if loop.index == 1 %}
+
+{% if articles_previous_page %}
+ <section id="content" class="body">
+ <ol id="posts-list" class="hfeed">
+
+{% endif %}
+{% for article in (articles_page.object_list if articles_page else articles) %}
+    {% if loop.index == 1 and not articles_previous_page %}
      <section id="content" class="body">
         <aside id="featured"><article>
                 <h1 class="entry-title"><a href="{{ SITEURL }}/{{ article.url
@@ -12,7 +18,7 @@
                 {{ article.content }}
         </article></aside><!-- /#featured -->
         {% if loop.length  > 1 %}
-                <h1>Other articles</h1>
+                <h1><i class="fa fa-bars"></i> Other articles</h1>
                 <hr />
                     <ol id="posts-list" class="hfeed">
         {% endif %}
@@ -31,6 +37,7 @@
     {% endif %}
 {% endfor %}
 </ol><!-- /#posts-list -->
+{% include 'pagination.html' %}
 </section><!-- /#content -->
 {% else %}
 <section id="content" class="body">
