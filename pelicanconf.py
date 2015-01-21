@@ -19,14 +19,15 @@ CATEGORY_FEED_ATOM = None
 TRANSLATION_FEED_ATOM = None
 
 # Blogroll
-#LINKS = (('Pelican', 'http://getpelican.com/'),
-#         ('Python.org', 'http://python.org/'),
-#         ('Jinja2', 'http://jinja.pocoo.org/'),
-#         ('You can modify those links in your config file', '#'),)
+LINKS = (('Brian Aker', 'http://krow.net/'),
+         ('Eric Gustafson', 'https://egustafson.github.io/oscon-2014-p1.html'),
+         ('Patrick Galbraith', 'http://patg.net/'),
+        )
 
 # Social widget
-#SOCIAL = (('GitHub', 'http://github.com/LinuxJedi'),
-#          ('Another social link', '#'),)
+SOCIAL = (('GitHub', 'http://github.com/LinuxJedi'),
+#          ('Another social link', '#'),
+         )
 
 DEFAULT_PAGINATION = 10
 
@@ -44,3 +45,5 @@ PAGE_LANG_SAVE_AS = '{slug}-{lang}.html'
 # Cleaner Articles
 ARTICLE_URL = 'posts/{date:%Y}/{date:%b}/{date:%d}/{slug}/'
 ARTICLE_SAVE_AS = 'posts/{date:%Y}/{date:%b}/{date:%d}/{slug}/index.html'
+
+DISPLAY_TAGS_INLINE = True

@@ -4,6 +4,7 @@
         <title>{% block title %}{{ SITENAME }}{%endblock%}</title>
         <meta charset="utf-8" />
         <link rel="stylesheet" href="{{ SITEURL }}/theme/css/{{ CSS_FILE }}" type="text/css" />
+        <link rel="stylesheet" href="{{ SITEURL }}/theme/css/font-awesome.min.css" type="text/css" />
         <link href='{{ SITEURL }}/theme/images/favicon.ico' rel='icon' type='image/x-icon'/>
         <link href="{{ SITEURL }}/{{ FEED_ALL_ATOM }}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} ATOM Feed" />
         {% if FEED_RSS %}
@@ -50,37 +51,65 @@
                 {% include 'book.html' %}
                 {% include 'twitter_feed.html' %}
                 <div class="widget">
-                        <h2>Categories</h2>
+                        <h2><i class="fa fa-home fa-lg"></i> Categories</h2>
                         <ul>
                         {% for cat, null in categories %}
-                           <li {% if cat == category %}class="active"{% endif %}><a href="{{ SITEURL }}/{{ cat.url }}">{{ cat }}</a></li>
+                           <li {% if cat == category %}class="active"{% endif %}><a href="{{ SITEURL }}/{{ cat.url }}"><i class="fa fa-folder-open fa-lg"></i> {{ cat }}</a></li>
                         {% endfor %}
                         </ul>
                 </div>
         {% if LINKS %}
                 <div class="widget blogroll">
-                        <h2>Blogroll</h2>
+                        <h2><i class="fa fa-external-link fa-lg"></i> HP Advanced Technology Group Blogs</h2>
                         <ul>
                         {% for name, link in LINKS %}
-                            <li><a href="{{ link }}">{{ name }}</a></li>
+                            <li><a href="{{ link }}"><i class="fa fa-globe fa-lg"></i> {{ name }}</a></li>
                         {% endfor %}
                         </ul>
                 </div><!-- /.blogroll -->
         {% endif %}
         {% if SOCIAL %}
                 <div class="widget social">
-                        <h2>Social</h2>
+                        <h2><i class="fa fa-comments fa-lg"></i> Social</h2>
                         <ul>
-                            <li><a href="{{ SITEURL }}/{{ FEED_ALL_ATOM }}" rel="alternate">atom feed</a></li>
+                            <li><a href="{{ SITEURL }}/{{ FEED_ALL_ATOM }}" rel="alternate"><i class="fa fa-rss-square fa-lg"></i> RSS feed</a></li>
                             {% if FEED_RSS %}
-                            <li><a href="{{ SITEURL }}/{{ FEED_RSS }}" rel="alternate">rss feed</a></li>
+                            <li><a href="{{ SITEURL }}/{{ FEED_RSS }}" rel="alternate"><i class="fa fa-rss-square fa-lg"></i> RSS feed</a></li>
                             {% endif %}
 
                         {% for name, link in SOCIAL %}
-                            <li><a href="{{ link }}">{{ name }}</a></li>
+                    {% set name_sanitized = name|lower|replace('+','-plus')|replace(' ','-') %}
+                    {% if name_sanitized in ['flickr', 'spotify', 'stack-overflow', 'github'] %}
+                        {% set iconattributes = '"fa fa-' ~ name_sanitized ~ ' fa-lg"' %}
+                    {% else %}
+                        {% set iconattributes = '"fa fa-' ~ name_sanitized ~ '-square fa-lg"' %}
+                    {% endif %}
+                            <li><a href="{{ link }}"><i class={{ iconattributes }}></i> {{ name }}</a></li>
                         {% endfor %}
                         </ul>
                 </div><!-- /.social -->
+        {% endif %}
+{% if DISPLAY_TAGS_ON_SIDEBAR is not defined %}
+    {% set DISPLAY_TAGS_ON_SIDEBAR = True %}
+{% endif %}
+        {% if DISPLAY_TAGS_ON_SIDEBAR %}
+            {% if DISPLAY_TAGS_INLINE %}
+                {% set tags = tag_cloud | sort(attribute='0') %}
+            {% else %}
+                {% set tags = tag_cloud | sort(attribute='1') %}
+            {% endif %}
+            <div class="widget tags">
+            <h2><i class="fa fa-tags fa-lg"></i>Tags</h2>
+                <ul class="list-group {% if DISPLAY_TAGS_INLINE %}list-inline tagcloud{% endif %}" id="tags">
+                {% for tag in tags %}
+                    <li class="list-group-item tag-{{ tag.1 }}">
+                        <a href="{{ SITEURL }}/{{ tag.0.url }}">
+                            {{ tag.0 }}
+                        </a>
+                    </li>
+                {% endfor %}
+                </ul>
+            </div>
         {% endif %}
         </aside><!-- /#sidebar -->
 
@@ -89,7 +118,6 @@
                 Proudly powered by <a href="http://alexis.notmyidea.org/pelican/">pelican</a>, which takes great advantages of <a href="http://python.org">python</a>.
                 </address><!-- /#about -->
                 <p>The LinuxJedi logo and the content of this blog is licensed under a <a href="http://creativecommons.org/licenses/by-sa/3.0/deed.en_GB">Creative Commons Attribution-ShareAlike 3.0 Unported License</a>.</p>
-                <p>The theme is «notmyidea-lxj», a modified version of «notmyidea-cms», the default theme.</p>
         </footer><!-- /#footer -->
 
 {% include 'analytics.html' %}
