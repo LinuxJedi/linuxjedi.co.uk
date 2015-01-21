@@ -16,6 +16,7 @@ I have previously worked in the following roles:
 * A lead developer at `HP Helion Public Cloud <http://www.hpcloud.com/>`_
 
 I have been a tutorial or session speaker at the following events:
+
 * `2010 O'Reilly MySQL Conference & Expo <http://en.oreilly.com/mysql2010/public/schedule/speaker/48896>`_
 * `2011 O'Reilly MySQL Conference & Expo <http://en.oreilly.com/mysql2011/public/schedule/speaker/48896>`_
 * `Percona Live London 2012 <http://www.percona.com/live/london-2012/sessions/mysql-compatible-open-source-connectors>`_
