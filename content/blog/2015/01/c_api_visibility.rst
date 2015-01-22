@@ -11,7 +11,7 @@ So, when you create a dynamic library in C the default thing that happens is eve
 
 In MySQL's case and likely others this can cause a problem with collisions during linking.  MySQL can use its bundled in YaSSL library to supply SSL, and due to the functions being exposed this can cause problems if your application links to libmysqlclient and OpenSSL since they both use the same public API calls in many places.
 
-RedHat and other distributions actually solve this in MySQL by stripping the binaries of unneeded symbols at compile time.  This is indeed one effective solution.  But I don't believe this is the correct solution.  In fact Ulrich Drepper in `How To Write Shared Libraries <https://software.intel.com/sites/default/files/m/a/1/e/dsohowto.pdf>`_ pretty much reserves this is a last resort.
+RedHat and other distributions actually solve this in MySQL by stripping the binaries of unneeded symbols at compile time.  This is indeed one effective solution.  But I don't believe this is the correct solution.  In fact Ulrich Drepper in `How To Write Shared Libraries <https://software.intel.com/sites/default/files/m/a/1/e/dsohowto.pdf>`_ pretty much reserves this as a last resort.
 
 Link Time Visibility
 --------------------
