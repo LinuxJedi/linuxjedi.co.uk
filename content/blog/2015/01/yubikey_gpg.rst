@@ -1,13 +1,13 @@
-YubiKey NEO with OpenPGP
-========================
+YubiKey NEO with GnuPG
+======================
 
 :date: 2015-01-28 10:24
 :category: Security
 :tags: YubiKey, Security, HP, Advanced Technology Group
 
-Last week I published a blog post on using `YubiKey for OS Logins <http://linuxjedi.co.uk/posts/2015/Jan/19/yubikey-for-os-logins/>`_.  Since then I've had a request from inside HP to create a blog post on using the YubiKey NEO with OpenPGP which is another thing I have done with my NEO.
+Last week I published a blog post on using `YubiKey for OS Logins <http://linuxjedi.co.uk/posts/2015/Jan/19/yubikey-for-os-logins/>`_.  Since then I've had a request from inside HP to create a blog post on using the YubiKey NEO with GnuPG which is another thing I have done with my NEO.
 
-The YubiKey NEO has a built-in CCID smartcard interface which is disabled by default.  OpenGPG can use this instead of a passphrase for your keys.  This blog post will give some indication on how to do this.  It is assuming you have some experience of using gpg, I wanted to keep this as short as possible and it can be a complex topic.  As with any process I highly recommend backing up your existing gpg keys if you have any:
+The YubiKey NEO has a built-in CCID smartcard interface which is disabled by default.  GnuPG can use this instead of a passphrase for your keys.  This blog post will give some indication on how to do this.  It is assuming you have some experience of using gpg, I wanted to keep this as short as possible and it can be a complex topic.  As with any process I highly recommend backing up your existing gpg keys if you have any:
 
 .. code-block:: bash
 
