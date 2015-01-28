@@ -22,6 +22,7 @@ TRANSLATION_FEED_ATOM = None
 LINKS = (('Brian Aker', 'http://krow.net/'),
          ('Eric Gustafson', 'https://egustafson.github.io/oscon-2014-p1.html'),
          ('Patrick Galbraith', 'http://patg.net/'),
+         ('Yazz Atlas', 'http://askyazz.com/'),
         )
 
 # Social widget

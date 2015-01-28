@@ -17,7 +17,7 @@ I used the exact same test rig and configuration as the previous Sysbench tests 
 
 .. code-block:: bash
 
-   attachbench --db=sbtest --user=test --pass=test --db=testdb --queries=1000000 --connections=32 --host=/tmp/mysql.sock --port=0
+   $ attachbench --db=sbtest --user=test --pass=test --db=testdb --queries=1000000 --connections=32 --host=/tmp/mysql.sock --port=0
 
 I've added the results to the previous select test to the graph for comparison.  The two "Select" result sets are for Sysbench with one connection per thread.  The third is with AttachBench running the same queries, just with many connections in a single thread.
 

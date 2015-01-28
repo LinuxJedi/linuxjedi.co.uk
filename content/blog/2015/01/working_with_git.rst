@@ -14,9 +14,9 @@ I use `Semantic Versioning <http://semver.org/>`_ everywhere I can.  In fact I u
 
 .. code-block:: bash
 
-   git checkout v1.1
-   git tag -s v1.1.2 -m 'Version 1.1.2 release'
-   git push --tags
+   $ git checkout v1.1
+   $ git tag -s v1.1.2 -m 'Version 1.1.2 release'
+   $ git push --tags
 
 Forking
 -------
@@ -33,13 +33,13 @@ A fork is typically created as follows:
 
    .. code-block:: bash
 
-      git clone git@github.com:USERNAME/Repository
+      $ git clone git@github.com:USERNAME/Repository
 
 3. Then you should set the upstream remote so that you can easily grab the latest code as needed.  I've used HTTPS here because you don't need to be authenticated to do this unless it is a private repository:
 
    .. code-block:: bash
 
-      git remote add upstream https://github.com/PROJECT/Repository
+      $ git remote add upstream https://github.com/PROJECT/Repository
 
 Starting a New Branch
 ---------------------
@@ -48,10 +48,10 @@ Whenever you are starting a new group of work, create a new branch.  This holds 
 
 .. code-block:: bash
 
-   git checkout master
-   git pull --ff-only upstream master
-   git push
-   git checkout -b my_feature
+   $ git checkout master
+   $ git pull --ff-only upstream master
+   $ git push
+   $ git checkout -b my_feature
 
 This pulls the latest code from the upstream master to your master, pushes that to your fork and then creates a new checkout based on that code.
 
@@ -62,8 +62,8 @@ If you have worked on some code and at the same time someone else has merged cod
 
 .. code-block:: bash
 
-   git fetch upstream
-   git merge upstream/master
+   $ git fetch upstream
+   $ git merge upstream/master
 
 This fetches the upstream code into a local cache and then will merge it.  If there are conflicts they will be flagged for you to resolve.
 
@@ -74,6 +74,6 @@ When your code is good and ready you can send it up as a pull request.  To do th
 
 .. code-block:: bash
 
-   git push --set-upstream origin my_feature
+   $ git push --set-upstream origin my_feature
 
 Then when you go to the project's repository you will see a button to file a pull request.  If you are using continuous integration such as Travis CI you should wait for that to give a green result and preferably peer review too before clocking the merge button.

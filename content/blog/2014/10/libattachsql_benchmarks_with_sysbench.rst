@@ -39,13 +39,13 @@ First the basic select test was run, which queries for random single integers in
 
 .. code-block:: bash
 
-   sysbench --test=sysbench/tests/db/select.lua --db-driver=mysql --mysql-socket=/tmp/mysql.sock --mysql-user=test --mysql-password=test --mysql-db=testdb --num-threads=8 --max-requests=1000000 run
+   $ sysbench --test=sysbench/tests/db/select.lua --db-driver=mysql --mysql-socket=/tmp/mysql.sock --mysql-user=test --mysql-password=test --mysql-db=testdb --num-threads=8 --max-requests=1000000 run
 
 And libAttachSQL:
 
 .. code-block:: bash
 
-   sysbench --test=sysbench/tests/db/select.lua --db-driver=attachsql --attachsql-socket=/tmp/mysql.sock --attachsql-user=test --attachsql-password=test --attachsql-db=testdb --num-threads=8 --max-requests=1000000 run
+   $ sysbench --test=sysbench/tests/db/select.lua --db-driver=attachsql --attachsql-socket=/tmp/mysql.sock --attachsql-user=test --attachsql-password=test --attachsql-db=testdb --num-threads=8 --max-requests=1000000 run
 
 The results were as follows:
 
@@ -62,13 +62,13 @@ As before this was run on using libmysqlclient with:
 
 .. code-block:: bash
 
-   sysbench --test=sysbench/tests/db/select_random_points.lua --db-driver=mysql --mysql-socket=/tmp/mysql.sock --mysql-user=test --mysql-password=test --mysql-db=testdb --num-threads=8 --max-requests=1000000 run
+   $ sysbench --test=sysbench/tests/db/select_random_points.lua --db-driver=mysql --mysql-socket=/tmp/mysql.sock --mysql-user=test --mysql-password=test --mysql-db=testdb --num-threads=8 --max-requests=1000000 run
 
 And with libAttachSQL:
 
 .. code-block:: bash
 
-   sysbench --test=sysbench/tests/db/select_random_points.lua --db-driver=attachsql --attachsql-socket=/tmp/mysql.sock --attachsql-user=test --attachsql-password=test --attachsql-db=testdb --num-threads=8 --max-requests=1000000 run
+   $ sysbench --test=sysbench/tests/db/select_random_points.lua --db-driver=attachsql --attachsql-socket=/tmp/mysql.sock --attachsql-user=test --attachsql-password=test --attachsql-db=testdb --num-threads=8 --max-requests=1000000 run
 
 The results were as follows:
 

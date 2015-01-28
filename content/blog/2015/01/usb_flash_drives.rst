@@ -76,37 +76,37 @@ First of all you need to figure out the drive path for your flash drive.  It wil
 
 .. code-block:: bash
 
-   diskutil list
+   $ diskutil list
 
 Now you need to find out the block size (it is typically 512).  Make a note of this number because you will need it later:
 
 .. code-block:: bash
 
-   diskutil info /dev/disk{drive_no} | grep "Block Size"
+   $ diskutil info /dev/disk{drive_no} | grep "Block Size"
 
 The drive can't be changed until we unmount the partitions so run this for every partition that is currently in-use for your drive:
 
 .. code-block:: bash
 
-   diskutil unmount /dev/disk{drive_no}s{partition_no}
+   $ diskutil unmount /dev/disk{drive_no}s{partition_no}
 
 Due to the nature of the UDF format it is possible that the operating system would still detect the drive as FAT32 afterwards so we need to blank the drive with zeros.  This could take some time:
 
 .. code-block:: bash
 
-   diskutil secureErase 0 /dev/disk{drive_no}
+   $ diskutil secureErase 0 /dev/disk{drive_no}
 
 Now the drive can be formatted, replace *block_size* with the number you wrote down above:
 
 .. code-block:: bash
 
-   sudo newfs_udf -b {block_size} /dev/disk{drive_no}
+   $ sudo newfs_udf -b {block_size} /dev/disk{drive_no}
 
 Finally the drive can be mounted again for use as normal:
 
 .. code-block:: bash
 
-   diskutil mount /dev/disk{drive_no}
+   $ diskutil mount /dev/disk{drive_no}
 
 Linux
 ^^^^^
@@ -115,16 +115,16 @@ In Linux things get a little easier.  First of all unmount the partitions on the
 
 .. code-block:: bash
 
-   sudo blockdev --getbsz /dev/sd{drive_letter}
+   $ sudo blockdev --getbsz /dev/sd{drive_letter}
 
 We then need to zero out the drive so that it isn't incorrectly detected:
 
 .. code-block:: bash
 
-   sudo dd if=/dev/zero of=/dev/sd{drive_letter} bs=1M count=1
+   $ sudo dd if=/dev/zero of=/dev/sd{drive_letter} bs=1M count=1
 
 Then we need to make the UDF format, replacing *block_size* with the number noted above:
 
 .. code-block:: bash
 
-   sudo mkudffs -b {block_size} --media-type=hd /dev/sd{drive_letter}
+   $ sudo mkudffs -b {block_size} --media-type=hd /dev/sd{drive_letter}
