@@ -2,6 +2,7 @@ Live Kernel Patching - Why You Should *NOT* Use It
 ==================================================
 
 :date: 2015-02-14 22:00
+:modified: 2015-02-14 23:11
 :category: General
 :tags: HP, Advanced Technology Group, Kernel
 
@@ -20,3 +21,14 @@ For web servers, have multiple servers load balanced, you can have multiple load
 I commend SUSE and RedHat in helping to replace a technology that otherwise was long since dead in the Open Source world.  Oracle seemingly killing the development of the Open Source KSplice was an annoyance to many.  But in today's world, is a technology we really need?
 
 I would be interested to hear in the comments if there is a use case I have missed.
+
+Update
+------
+2015-02-14 23:11
+
+Robert Collins pointed out on Facebook that the overhead for the jump is likely to be too minimal to cause a performance issue and anything that is called too often is not worth patching (I am inclined to agree).
+
+Robert also points out that there is a cost involved in migrating many VMs when the hosts need upgrading for a zero-day.  I sort-of agree with this scenario.  For public cloud this is a problem, although I believe typically the rolling upgrade is performed by pausing VMs and resuming rather than migration.  With public cloud I feel this is acceptable with a short notice period.
+
+For private cloud there are ways around this issue, typically VMs are throw-away in private cloud so it is easy to just blow them away and recreate them in an already updated part of the data centre rather than migrate.
+
