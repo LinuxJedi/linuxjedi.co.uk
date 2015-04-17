@@ -1,7 +1,7 @@
 About LinuxJedi
 ===============
 
-My name is Andrew Hutchings but am known to many as 'LinuxJedi'. My day job is as a Principal Software Engineer for HP's Advanced Technology Group. I live in the UK with my wife and two children but am often travelling to the US for meetings and conferences.
+My name is Andrew Hutchings but am known to many as 'LinuxJedi'. My day job is as a Senior Developer Advolcate for `Nginx Inc. <http://nginx.com/>`_. I live in the UK with my wife and two children but am often travelling to the US for meetings and conferences.
 
 In my spare time I like to hack useful code onto several open source projects.  You can also find more about me in my `LinkedIn page <http://uk.linkedin.com/in/linuxjedi>`_.
 
@@ -14,6 +14,7 @@ I have previously worked in the following roles:
 * Rackspace as a Software Developer on the `Drizzle Project <http://www.drizzle.org/>`_
 * `SkySQL <http://www.skysql.com/>`_ as a Senior Sustaining Engineer
 * A lead developer at `HP Helion Public Cloud <http://www.hpcloud.com/>`_
+* Principal Software Engineer for HP's Advanced Technology Group
 
 I have been a tutorial or session speaker at the following events:
 
