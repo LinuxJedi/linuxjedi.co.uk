@@ -1,7 +1,7 @@
 About LinuxJedi
 ===============
 
-My name is Andrew Hutchings but am known to many as 'LinuxJedi'. My day job is as a Senior Developer Advolcate for `Nginx Inc. <http://nginx.com/>`_. I live in the UK with my wife and two children but am often travelling to the US for meetings and conferences.
+My name is Andrew Hutchings but am known to many as 'LinuxJedi'. My day job is as a Senior Developer Advocate for `Nginx Inc. <http://nginx.com/>`_. I live in the UK with my wife and two children but am often travelling to the US for meetings and conferences.
 
 In my spare time I like to hack useful code onto several open source projects.  You can also find more about me in my `LinkedIn page <http://uk.linkedin.com/in/linuxjedi>`_.
 
