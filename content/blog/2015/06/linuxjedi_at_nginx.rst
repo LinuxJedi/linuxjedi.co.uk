@@ -9,7 +9,7 @@ Several months ago I was having a Sunday brunch with some friends in Seattle. On
 
 My role is "Senior Developer Advocate" and there are many parts of my role, but I guess it could be summarised as a cross between a community manager and community developer.
 
-I made many friends during my time at HP and it was hard leaving them, the Advanced Technology Group in particular since this was the last team I worked in. Brian Aker has been my boss and mentor for many years through several companies and in particular he will always be a good friend.
+I made many friends during my time at HP and it was hard leaving them, especially the Advanced Technology Group since this was the last team I worked in. Brian Aker has been my boss and mentor for many years through several companies and in particular he will always be a good friend.
 
 NGINX Conference
 ----------------
