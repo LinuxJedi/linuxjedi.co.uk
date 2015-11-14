@@ -48,3 +48,6 @@ ARTICLE_URL = 'posts/{date:%Y}/{date:%b}/{date:%d}/{slug}/'
 ARTICLE_SAVE_AS = 'posts/{date:%Y}/{date:%b}/{date:%d}/{slug}/index.html'
 
 DISPLAY_TAGS_INLINE = True
+
+PLUGIN_PATHS = ['plugins']
+PLUGINS = ['tag_cloud']
