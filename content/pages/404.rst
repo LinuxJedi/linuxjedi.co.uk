@@ -2,4 +2,4 @@
 :Slug: 404
 :status: hidden
 
-You may have been trying to access an archived blog post, in which case you can find it on my old `Blogger based blog <http://thelinuxjedi.blogspot.com>`_.  Alternatively you can go to the `home of this blog <http://linuxjedi.co.uk>`_.
+You may have been trying to access an archived blog post, in which case you can find it on my old `wordpress based blog <https://zeyuanhu.wordpress.com>`_.  Alternatively you can go to the `home of this blog <http://zhu45.org>`_.
