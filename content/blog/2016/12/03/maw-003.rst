@@ -77,7 +77,7 @@ This can be seen from Line[12]. Also, this routine has a return type ``List`` in
 
     The definition for using or not using *dummy* node is the same. However,
     implementation difference can be seen by observing how the program construct
-    a list: in my case, `initializeList <{filename}/maw-002.rst>`_.
+    a list: in my case, `initializeList <{filename}/blog/2016/11/28/maw-002.rst>`_.
 
 However, this solution wastes a ton of memory space and too many ``malloc`` operations,
 which basically duplicate the data. This is the place where the algorithm can be improved.
