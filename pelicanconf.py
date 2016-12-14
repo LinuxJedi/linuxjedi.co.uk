@@ -2,14 +2,14 @@
 # -*- coding: utf-8 -*- #
 from __future__ import unicode_literals
 
-#AUTHOR = 'Andrew Hutchings'
-SITENAME = "LinuxJedi's /dev/null"
-SITESUBTITLE = "The /dev/null ramblings of a Linux Jedi"
+#AUTHOR = 'Zeyuan Hu'
+SITENAME = "Tech Stuff"
+SITESUBTITLE = "A tmp place to rest"
 SITEURL = ''
 
 PATH = 'content'
 
-TIMEZONE = 'Europe/London'
+TIMEZONE = 'Asia/Shanghai'
 
 DEFAULT_LANG = 'en'
 
@@ -26,7 +26,7 @@ LINKS = (('Brian Aker', 'http://krow.net/'),
         )
 
 # Social widget
-SOCIAL = (('GitHub', 'http://github.com/LinuxJedi'),
+SOCIAL = (('GitHub', 'http://github.com/xxks-kkk'),
 #          ('Another social link', '#'),
          )
 
