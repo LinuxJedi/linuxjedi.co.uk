@@ -19,11 +19,11 @@ CATEGORY_FEED_ATOM = None
 TRANSLATION_FEED_ATOM = None
 
 # Blogroll
-LINKS = (('Brian Aker', 'http://krow.net/'),
-         ('Eric Gustafson', 'https://egustafson.github.io/oscon-2014-p1.html'),
-         ('Patrick Galbraith', 'http://patg.net/'),
-         ('Yazz Atlas', 'http://askyazz.com/'),
-        )
+# LINKS = (('Brian Aker', 'http://krow.net/'),
+#          ('Eric Gustafson', 'https://egustafson.github.io/oscon-2014-p1.html'),
+#          ('Patrick Galbraith', 'http://patg.net/'),
+#          ('Yazz Atlas', 'http://askyazz.com/'),
+#         )
 
 # Social widget
 SOCIAL = (('GitHub', 'http://github.com/xxks-kkk'),
