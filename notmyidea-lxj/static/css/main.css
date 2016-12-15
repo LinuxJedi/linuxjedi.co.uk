@@ -469,3 +469,16 @@ li:last-child .hentry, #content > .hentry {border: 0; margin: 0;}
     padding-right:5px;
     padding-left:5px
 }
+
+div.topic {
+    border: 2px solid #c6c9cb;
+    padding: 10px 20px;
+    border-right-style: none;
+    border-left-style: none;
+    margin: 20px;
+}
+
+p.topic-title{
+    font-size: 1.1em;
+    font-weight: bold;
+}
