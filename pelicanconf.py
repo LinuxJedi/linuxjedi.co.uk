@@ -28,6 +28,8 @@ TRANSLATION_FEED_ATOM = None
 # Social widget
 SOCIAL = (('GitHub', 'http://github.com/xxks-kkk'),
           ('Stack Overflow', 'http://stackoverflow.com/users/1460102/jerry'),
+          ('WordPress', 'http://zeyuanhu.wordpress.com/'),
+          ('LinkedIn', 'https://cn.linkedin.com/in/zhu45')
          )
 
 DEFAULT_PAGINATION = 10

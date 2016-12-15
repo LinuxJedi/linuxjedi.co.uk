@@ -81,7 +81,7 @@
 
                         {% for name, link in SOCIAL %}
                     {% set name_sanitized = name|lower|replace('+','-plus')|replace(' ','-') %}
-                    {% if name_sanitized in ['flickr', 'spotify', 'stack-overflow', 'github'] %}
+                    {% if name_sanitized in ['flickr', 'spotify', 'stack-overflow', 'github', 'wordpress','linkedin'] %}
                         {% set iconattributes = '"fa fa-' ~ name_sanitized ~ ' fa-lg"' %}
                     {% else %}
                         {% set iconattributes = '"fa fa-' ~ name_sanitized ~ '-square fa-lg"' %}
