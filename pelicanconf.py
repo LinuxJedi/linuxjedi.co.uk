@@ -27,7 +27,7 @@ TRANSLATION_FEED_ATOM = None
 
 # Social widget
 SOCIAL = (('GitHub', 'http://github.com/xxks-kkk'),
-#          ('Another social link', '#'),
+          ('Stack Overflow', 'http://stackoverflow.com/users/1460102/jerry'),
          )
 
 DEFAULT_PAGINATION = 10
