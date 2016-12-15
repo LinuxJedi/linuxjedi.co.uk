@@ -16,6 +16,7 @@
 /* Body */
 body {
     background: #F8FAFB;
+    background: rgba(255,255,200,0.5) top left;
     color: #000305;
     font-size: 87.5%; /* Base font size: 14px */
     font-family: 'Trebuchet MS', Trebuchet, 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -90,9 +91,10 @@ ol {
 .post-info {
     color: #93A4AD;
     font-size: 80%;
-    background-color: #F8FAFB;
+    background-color: rgba(200,225,255,0.5) top left;
     padding: 2px;
     border-radius: 2px;
+    margin: 20px;
 }
 
 .post-info p{
@@ -234,13 +236,12 @@ img.left, figure.left {float: right; margin: 0 0 2em 2em;}
 	Featured
 *****************/
 #content {
-	background: #fff;
 	border-radius: 10px;
 	-moz-border-radius: 10px;
 	-webkit-border-radius: 10px;
     float: left;
     margin: 1em 10px 2em 7%;
-	background: #fff;
+    background: rgba(200,225,255,0.5) top left;
 	overflow: hidden;
 	padding: 20px 20px;
 	min-width: 600px;
@@ -253,7 +254,7 @@ img.left, figure.left {float: right; margin: 0 0 2em 2em;}
 #sidebar {
     float: right; 
     margin: 1em 7% 2em 10px;
-	background: #fff;
+	background: rgba(200,225,255,0.5) top left;
 	overflow: hidden;
 	padding: 20px 20px;
 	width: 17%;
