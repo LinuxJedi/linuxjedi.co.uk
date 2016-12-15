@@ -5,8 +5,8 @@ Minimal Emacs Tutorial
 ############################
 
 :date: 2015-10-18 16:18
-:category: emacs
-:tags: emacs, tutorial, emacs-basic
+:category: tools
+:tags: emacs, tutorial
 
 *******************
 Learn about Emacs
