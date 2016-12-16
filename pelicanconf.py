@@ -55,5 +55,5 @@ PLUGIN_PATHS = ['plugins']
 PLUGINS = ['tag_cloud']
 
 # disable category
-DIRECT_TEMPLATES = ['index', 'tags', 'archives']
+# DIRECT_TEMPLATES = ['index', 'tags', 'archives']
 USE_FOLDER_AS_CATEGORY = False

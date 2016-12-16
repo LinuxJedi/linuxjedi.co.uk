@@ -39,9 +39,9 @@
                 {% endfor %}
                 {% endif %}
                 <li><a href="{{ SITEURL }}/{{ ARCHIVES_URL }}">Blog</a></li>
-                <!-- {#{% for cat, null in categories %} -->
-                <!--     <li {% if cat == category %}class="active"{% endif %}><a href="{{ SITEURL }}/{{ cat.url }}">{{ cat }}</a></li> -->
-                <!-- {% endfor %}#} -->
+                {#{% for cat, null in categories %}
+                    <li {% if cat == category %}class="active"{% endif %}><a href="{{ SITEURL }}/{{ cat.url }}">{{ cat }}</a></li>
+                {% endfor %}#}
                 </ul></nav>
         </header><!-- /#banner -->
 
@@ -52,14 +52,14 @@
           <!-- {% include 'book.html' %} -->
           <h2><i class="fa fa-twitter fa-lg"></i> Twitter Feed</h2>
                 {% include 'twitter_feed.html' %}
-                <!-- <div class="widget"> -->
-                <!--         <h2><i class="fa fa-home fa-lg"></i> Categories</h2> -->
-                <!--         <ul> -->
-                <!--         {% for cat, null in categories %} -->
-                <!--            <li {% if cat == category %}class="active"{% endif %}><a href="{{ SITEURL }}/{{ cat.url }}"><i class="fa fa-folder-open fa-lg"></i> {{ cat }}</a></li> -->
-                <!--         {% endfor %} -->
-                <!--         </ul> -->
-                <!-- </div> -->
+                <div class="widget">
+                        <h2><i class="fa fa-home fa-lg"></i> Categories</h2>
+                        <ul>
+                        {% for cat, null in categories %}
+                           <li {% if cat == category %}class="active"{% endif %}><a href="{{ SITEURL }}/{{ cat.url }}"><i class="fa fa-folder-open fa-lg"></i> {{ cat }}</a></li>
+                        {% endfor %}
+                        </ul>
+                </div>
         {% if LINKS %}
                 <div class="widget blogroll">
                         <h2><i class="fa fa-external-link fa-lg"></i> HP Advanced Technology Group</h2>
