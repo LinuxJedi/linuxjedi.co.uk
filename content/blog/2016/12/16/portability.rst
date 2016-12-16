@@ -5,6 +5,7 @@ Lesson Learned: Portability
 ############################
 
 :date: 2016-12-16 23:20
+:category: misc
 :tags: software engineering, shell, AIX
 
 Portability is a kind of issue that people always talk about in software engineering feild.
