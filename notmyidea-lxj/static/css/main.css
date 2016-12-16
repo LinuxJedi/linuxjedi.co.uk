@@ -90,7 +90,7 @@ ol {
 }
 
 .post-info {
-    color: #93A4AD;
+    /* color: #93A4AD; */
     font-size: 80%;
     background-color: rgba(200,225,255,0.5) top left;
     padding: 2px;
