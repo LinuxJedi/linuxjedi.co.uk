@@ -35,7 +35,7 @@ SOCIAL = (('GitHub', 'http://github.com/xxks-kkk'),
 DEFAULT_PAGINATION = 10
 
 # Uncomment following line if you want document-relative URLs when developing
-#RELATIVE_URLS = True
+RELATIVE_URLS = True
 
 THEME='notmyidea-lxj'
 DEFAULT_DATE_FORMAT = '%a %d %b %Y, %H:%M'
@@ -57,3 +57,7 @@ PLUGINS = ['tag_cloud']
 # disable category
 # DIRECT_TEMPLATES = ['index', 'tags', 'archives']
 USE_FOLDER_AS_CATEGORY = False
+
+# Archives page related setting
+ARCHIVES_URL = 'archives'
+ARCHIVES_SAVE_AS = 'archives/index.html'
