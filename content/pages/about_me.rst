@@ -7,3 +7,5 @@ In my spare time I like to learn more about programming.  You can also find more
 `resume <https://dl.dropboxusercontent.com/u/50728380/zeyuan-hu-cv.pdf>`_.
 
 I am contactable via. my personal email address ferrishu3886@gmail.com and am on twitter as `@zeyuanhu <https://twitter.com/zeyuanhu>`_
+
+.. image:: /images/me.jpg
