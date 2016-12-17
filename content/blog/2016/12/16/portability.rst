@@ -8,7 +8,7 @@ Lesson Learned: Portability
 :category: misc
 :tags: software engineering, shell, AIX
 
-Portability is a kind of issue that people always talk about in software engineering feild.
+Portability is a kind of issue that people always talk about in software engineering field.
 I never have been through such problem on my own probably because I don't have to port my
 stuff into different platforms. However, this is not the case anymore during the work.
 
