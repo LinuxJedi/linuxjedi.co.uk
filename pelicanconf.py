@@ -61,3 +61,68 @@ USE_FOLDER_AS_CATEGORY = False
 # Archives page related setting
 ARCHIVES_URL = 'archives/index.html'
 ARCHIVES_SAVE_AS = 'archives/index.html'
+
+# Ensure the pages appear in the menu 
+# Usually, pages will go to the menu by default. I use this as a safeguard.
+'''MENUITEMS = [('About Zeyuan', '/about-zeyuan.html'),
+             ('Projects', '/projects.html')
+            ]'''
+
+# year archive
+YEAR_ARCHIVE_SAVE_AS = 'archives/{date:%Y}/period_archives.html'
+YEAR_ARCHIVE_URL = 'archives/{date:%Y}/period_archives.html'
+
+# tag
+TAG_URL = 'tag/{slug}.html'
+TAG_SAVE_AS = 'tag/{slug}.html'
+
+
+
+#################################
+#
+# Custom Jinja Filters
+#   see: http://jinja.pocoo.org/docs/templates/#filters
+#
+#################################
+
+
+def suffix(d, wrap=True):
+    tmp = 'th' if 11 <= d <= 13 else {1: 'st', 2: 'nd', 3: 'rd'}.get(d % 10, 'th')
+    if wrap:
+        return '<span class="day_suffix">' + tmp + '</span>'
+    else:
+        return tmp
+
+
+def tagsort(tags):
+    return sorted(tags, lambda a, b: len(b[1]) - len(a[1]))
+
+
+def custom_strftime(format, t):
+    return t.strftime(format).replace('{S}', str(t.day) + suffix(t.day))
+
+
+def month_name(month_number):
+    import calendar
+    return calendar.month_name[month_number]
+
+
+def archive_date_format(date):
+    return custom_strftime('%b.%d.%y', date)
+
+
+def sidebar_date_format(date):
+    return custom_strftime('%a {S} %B, %Y', date)
+
+
+def dump(thing):
+    return vars(thing)
+
+# Which custom Jinja filters to enable
+JINJA_FILTERS = {
+    "month_name": month_name,
+    "archive_date_format": archive_date_format,
+    "sidebar_date_format": sidebar_date_format,
+    "tagsort": tagsort,
+    "dump": dump,
+}
