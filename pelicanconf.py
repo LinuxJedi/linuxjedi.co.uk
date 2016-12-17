@@ -59,5 +59,5 @@ PLUGINS = ['tag_cloud']
 USE_FOLDER_AS_CATEGORY = False
 
 # Archives page related setting
-ARCHIVES_URL = 'archives'
+ARCHIVES_URL = 'archives/index.html'
 ARCHIVES_SAVE_AS = 'archives/index.html'
