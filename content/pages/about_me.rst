@@ -9,3 +9,5 @@ In my spare time I like to learn more about programming.  You can also find more
 I am contactable via. my personal email address ferrishu3886@gmail.com and am on twitter as `@zeyuanhu <https://twitter.com/zeyuanhu>`_
 
 .. image:: /images/me.jpg
+   :height: 225.1px
+   :width: 400px
