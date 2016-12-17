@@ -53,6 +53,6 @@ For another example, when I try to increment counter inside a loop, on SUSE,
 I can do ``((n++))`` but on AIX, I need to do ``((n=n+1))``.
 
 This makes me realize why most of our development scripts (i.e. to help build the source code)
-use perl instead of shell.
+use perl instead of shell. I have to rewrite the whole script in Perl.
 
 This is a very important lesson for a fresh college graduate by that time.
