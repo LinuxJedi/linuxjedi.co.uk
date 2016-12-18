@@ -52,7 +52,7 @@ ARTICLE_SAVE_AS = 'posts/{date:%Y}/{date:%b}/{date:%d}/{slug}/index.html'
 DISPLAY_TAGS_INLINE = True
 
 PLUGIN_PATHS = ['plugins']
-PLUGINS = ['tag_cloud']
+PLUGINS = ['tag_cloud', 'render_math']
 
 # disable category
 # DIRECT_TEMPLATES = ['index', 'tags', 'archives']
