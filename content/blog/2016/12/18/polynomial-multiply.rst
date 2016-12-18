@@ -17,10 +17,10 @@ Problem
 Write a function to multiply two polynomials, using a linked list implementation. You must make sure that
 the output polynomial is sorted by exponent and has at most one term of any power.
 
-  a. Give an algorithm to solve this problem in O(M^2 N^2) time.
-  b. Write a program to perform the multiplication in O(M^2 N) time, where M is the number
+  a. Give an algorithm to solve this problem in :math:`O(M^2N^2)` time.
+  b. Write a program to perform the multiplication in :math:`O(M^2N)` time, where :math:`M` is the number
      of terms in the polynomiial of fewer terms.
-  c. Write a program to perform the multiplication in O(MN log(MN)) time.
+  c. Write a program to perform the multiplication in :math:`O(MNlog(MN))` time.
   d. Which time bound above is the best?
 
 **********
