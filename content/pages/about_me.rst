@@ -11,3 +11,7 @@ I am contactable via. my personal email address ferrishu3886@gmail.com and am on
 .. image:: /images/me.jpg
    :height: 225.1px
    :width: 400px
+
+.. note::
+
+     Zeyuan is not a spokesperson or representative for anyone. The content here is only his personal opinion, and does not represent the views of his employer or other organizations.
