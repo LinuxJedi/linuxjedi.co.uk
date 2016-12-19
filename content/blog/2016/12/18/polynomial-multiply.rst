@@ -184,7 +184,10 @@ taking :math:`O(N)`; and we do `deleteList` during the while loop taking :math:`
     For this implementation, I kind of using an interface within the function. The logic
     begins with ``while (dummyShort != NULL)`` are the same for both :math:`M<N` and :math:`M>N`.
     So, there is potential to write the same logic twice for these two cases respectively. The solution 
-    I use is to provide an interface using ``dummyLong`` and ``dummyShort`` variables. 
+    I use is to provide an interface using ``dummyLong`` and ``dummyShort`` variables.
+
+    Please note we need to multiply one term from the polynomials with fewer terms by all the terms from
+    the polynomial with more terms. If we do the other way around, the runtime will be :math:`O(MN^2)`.
 
 ===============
 Question 3 & 4
