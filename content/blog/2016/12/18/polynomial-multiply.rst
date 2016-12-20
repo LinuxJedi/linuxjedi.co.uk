@@ -173,7 +173,7 @@ The ``add`` function has a runtime :math:`O(max(M,N))` and thus we can get our r
     O(max(N,0)) + O(max(N,N)) + O(max(N,2N)) + ... + O(max(N, N(M-1))) = O(M^2N)
 
 Also, we calculate the length of :math:`A` taking :math:`O(M)`; we calculate the length of :math:`B`
-taking :math:`O(N)`; and we do `deleteList` during the while loop taking :math:`O(MN)`. So, the total runtime is:
+taking :math:`O(N)`; and we do ``deleteList`` during the while loop taking :math:`O(MN)`. So, the total runtime is:
 
 .. math::
 
