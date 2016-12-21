@@ -79,5 +79,14 @@ so, I decide to use ``|`` as the delimiter:
 .. code-block:: shell
 
     sed -i "s|INSTHOME|$HOME|g" config.ini
-  
+
+.. note::
+
+    I can also use single quote ``'`` but the command should be modified like the below
+    by leaving out to-be-expanded variable name outside of single quotes.
+
+    .. code-block:: shell
+
+           sed -i 's|INSTHOME|'$HOME'|g' config.ini
+    
 Now, everything works nice and clean.
