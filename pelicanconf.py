@@ -76,6 +76,8 @@ YEAR_ARCHIVE_URL = 'archives/{date:%Y}/period_archives.html'
 TAG_URL = 'tag/{slug}.html'
 TAG_SAVE_AS = 'tag/{slug}.html'
 
+# Disqus
+DISQUS_SITENAME='zhu45-org'
 
 
 #################################
