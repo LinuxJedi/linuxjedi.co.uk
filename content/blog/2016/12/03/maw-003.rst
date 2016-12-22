@@ -6,7 +6,7 @@ Reverse Singly Linked List
 
 :date: 2016-12-03 20:34
 :category: Data Struct and Algo Analysis in C
-:tags: c, singly-linked-list
+:tags: singly-linked-list, recursion
 
 *******
 Problem
