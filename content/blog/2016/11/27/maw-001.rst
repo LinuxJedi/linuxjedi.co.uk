@@ -135,15 +135,9 @@ C related
     ``array[index]`` is the same as ``*(array+index)``, so ``&A[1]`` is the same as
     ``&*(A+1)``, which is ``A+1``
 
-- to use ``exit`` function, you need ``#include <stdlib.h>``
-
-- Don't forget about ``;`` during ``struct`` definition. Otherwise, you can get 
-  "error: two or more data types in declaration specifiers"
-
 - We use ``static`` for ``initializeNoHeaderList`` to make the function only visible 
   to the file we implement it (i.e. ``main.c``). This is the way we keep a helper function
   private.
 
-- For include guards (i.e. ``#ifndef``, ``#define``), read `this nice post <http://www.cprogramming.com/tutorial/cpreprocessor.html>`_
 
 
