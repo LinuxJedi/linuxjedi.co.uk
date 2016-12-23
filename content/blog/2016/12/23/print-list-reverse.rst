@@ -36,9 +36,9 @@ The question itself is not hard if you're familar with linked list and recursion
     }
 
 Again, in our implementation of linked list, we use header node. Given the simiplicity of the problem,
-I think it is a good time to revisit some basic rules in recursion.
+I think it is good time to revisit some basic rules in recursion.
 
-To be honest, recursion always gives me a hard time because I always try to mentally expand all the call
+To be honest, recursion always gives me hard time because I always try to mentally expand all the call
 stack and then work backwards to see if the recursion function gives what I expect. This is super energy
 consuming and error-prone.
 
