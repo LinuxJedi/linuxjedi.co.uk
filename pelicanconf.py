@@ -79,6 +79,8 @@ TAG_SAVE_AS = 'tag/{slug}.html'
 # Disqus
 DISQUS_SITENAME='zhu45-org'
 
+# Google analytics
+GOOGLE_ANALYTICS='UA-37565522-2'
 
 #################################
 #
