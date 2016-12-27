@@ -82,6 +82,10 @@ DISQUS_SITENAME='zhu45-org'
 # Google analytics
 GOOGLE_ANALYTICS='UA-37565522-2'
 
+# Exclude the draft page
+ARTICLE_EXCLUDES = [ '/drafts' ]
+
+
 #################################
 #
 # Custom Jinja Filters
