@@ -315,7 +315,7 @@ Since we are not in zero-indexed. Our $J(6,2)$ example looks like the following:
 | n = 1 | 5 | 5 | 5 | 5 | 5 | 5 | J(1,2) = 0
 ```
 
-Let's apply the same logic from the [Stating from 1 section](#starting-from-1) to this case. After person $m-1$ get eliminated, we have an array like this:
+Let's apply the same logic from the one-indexed case. After person $m-1$ get eliminated, we have an array like this:
 
 ```
 0 1 2 ... m-2 X m ... n-1
