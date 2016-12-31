@@ -171,6 +171,9 @@ the solution to the generalized recurrence is to illustrate dynamic programming 
 
 ## General solution
 
+/*The big picture here is we need to find out the relative position of the final survivor to the
+"first" person during each recursive call and then calculate the actual position for actual $n$*/
+
 The general solution utilitizes the dynamic programming paradigm by performing the first step
 and using the solution of the subproblem we create to solve the initial problem. 
 In terms of the solution, there is a difference when we start with the first person as $1$ or $0$.
