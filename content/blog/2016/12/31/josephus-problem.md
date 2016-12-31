@@ -1,7 +1,7 @@
 Title: Josephus Problem
 Date: 2016-12-31 20:24
 Category: Data Struct and Algo Analysis in C
-Tags:double-linked-list, recurrence,
+Tags:double-linked-list, recursion, dynamic-programming
 
 ## Preface
 
@@ -110,7 +110,7 @@ steps has two parts, depending on whether $n$ (and thus $l$) is even or odd.
 
         $$
         \begin{align*}
-        F(2^a + l) &= 2F(2^{a-1} + (l-1)/2) + 1 &&\text{(by equation 1)} \\
+        F(2^a + l) &= 2F(2^{a-1} + (l-1)/2) + 1 &&\text{(by equation 2)} \\
                 &= 2(2(l-1)/2 + 1) + 1      &&\text{(by induction hypothesis)} \\
                 &= 2l + 1
         \end{align*}
@@ -163,7 +163,7 @@ when $n = 10$, $m = 3$.
 
 \* ---- Note ---- *
 
-Inside *Concrete Mathematics: A Foundation for Computer Science*, after talking about the
+> Inside *Concrete Mathematics: A Foundation for Computer Science*, after talking about the
 solution to the Josephus problem, the author shift their focus to solve a generalized
 recurrence of \ref{eq:1} and \ref{eq:2}, which is (1.11) in the book. This has nothing to do
 with the Josephus problem and I'm guessing the reason why the author want to talk about 
@@ -171,8 +171,78 @@ the solution to the generalized recurrence is to illustrate dynamic programming 
 
 ## General solution
 
+The general solution utilitizes the dynamic programming paradigm by performing the first step
+and using the solution of the subproblem we create to solve the initial problem. 
+In terms of the solution, there is a difference when we start with the first person as $1$ or $0$.
 
- 
+### Starting from 0
+
+We still use the re-numbering philosophy like we use for the $M=2$ case. However, this time,
+we immediately do the re-numbering once we eliminate a person. For instance, let $n = 10$, $m = 2$.
+We start from $1$ and the first person we eliminate is $2$. According to the rule, we should start to
+pass potato from $3$. Before we doing so, we immediately re-number $3$ into $1$, and do so for the following
+numbers (i.e. $3$, $4$, ..., $10$ are renumbered as $1$, $2$, $3$, ..., $8$).
+Then, we start to pass potato again. By doing so, we make a original $n = 10$, $m = 2$ problem into 
+a $n = 9$, $m = 2$ problem. The following picture illustrates this point:
+
+```text
+
+Initial:                          1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7 -> 8 -> 9 -> 10
+right after eliminate 2:                    1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7 -> 8 
+right after eliminate 4:                              1 -> 2 -> 3 -> 4 -> 5 -> 6
+...
+```
+
+Now, let $J(n,m)$ to denote the old number (position) and let $J(n-1, m)$ denote the new number (posiiton).
+Then we can build the following equation based upon the above insight:
+
+$$J(n,m) = (J(n-1,m) + m) \bmod n \text{; with }  J(1,m) = 0$$
+
+### Starting from 1
+
+The key insight is the following: the result of $J(n,m)$ is best NOT thought of as the *number* that is the 
+Josephus survivor, but rather as the *index* of the number that is the Josephus survivor. 
+
+Let
+
+
+
+For example, $J(5,2)$
+will tell you the *index* of the person out of a ring of five that ends up surviving.
+
+With this intuition in mind, let's take a look at an example. Suppose we want to know $J(n,2)$. You can imagine 
+we have $n$ people lined up like this: 
+
+```
+1 2 3 4 5 ... n
+```
+
+The first thing that happens is that person $2$ get eliminated, as shown here:
+
+```
+1 X 3 4 5 ... n
+```
+
+Now, we are left with a subproblem of the following form: there are $n - 1$ people remaining, every other
+person is going to be eliminated, and the first person who will start to pass potato is person $3$. In other 
+words, the subproblem $J(n-1, 2)$ now looks like:
+
+```
+3 4 5 ... n 1
+```
+
+$J(n-1, 2)$ will be the *index* of who survives in a line of $n - 1$ of people. Given that we have the *index*
+of the person who will survive, and we also know who the starting person is, we can determine which person 
+will be left. Here's how we'll do it.
+
+The starting person in this line is the person who comes right after the person who was last executed. This will 
+be person $3$. The 1-indexed position in the ring of $n-1$ people is given by $J(n-1, 2)$. We can then walk 
+forward $J(n-1, 2)$ positions, wrapping around the ring if necessary, to get our final position. In other words, the 
+survivor is given by position
+
+$$(3 + J(n-1,2) - 1) \bmod n $$
+
+
 ### Implementation
 
 
@@ -193,3 +263,4 @@ the solution to the generalized recurrence is to illustrate dynamic programming 
 - http://www.cut-the-knot.org/recurrence/r_solution.shtml
 - http://www.exploringbinary.com/powers-of-two-in-the-josephus-problem
 - http://www.math.northwestern.edu/~mlerma/problem_solving/solutions/josephus.pdf
+- http://blue.butler.edu/~phenders/InRoads/MathCounts8.pdf
