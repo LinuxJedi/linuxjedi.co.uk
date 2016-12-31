@@ -1,7 +1,7 @@
 Title: Josephus Problem
 Date: 2016-12-31 20:24
 Category: Data Struct and Algo Analysis in C
-Tags:double-linked-list, recursion, dynamic-programming
+Tags: recursion, dynamic-programming
 
 ## Preface
 
@@ -175,42 +175,48 @@ The general solution utilitizes the dynamic programming paradigm by performing t
 and using the solution of the subproblem we create to solve the initial problem. 
 In terms of the solution, there is a difference when we start with the first person as $1$ or $0$.
 
-### Starting from 0
-
-We still use the re-numbering philosophy like we use for the $M=2$ case. However, this time,
-we immediately do the re-numbering once we eliminate a person. For instance, let $n = 10$, $m = 2$.
-We start from $1$ and the first person we eliminate is $2$. According to the rule, we should start to
-pass potato from $3$. Before we doing so, we immediately re-number $3$ into $1$, and do so for the following
-numbers (i.e. $3$, $4$, ..., $10$ are renumbered as $1$, $2$, $3$, ..., $8$).
-Then, we start to pass potato again. By doing so, we make a original $n = 10$, $m = 2$ problem into 
-a $n = 9$, $m = 2$ problem. The following picture illustrates this point:
-
-```text
-
-Initial:                          1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7 -> 8 -> 9 -> 10
-right after eliminate 2:                    1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7 -> 8 
-right after eliminate 4:                              1 -> 2 -> 3 -> 4 -> 5 -> 6
-...
-```
-
-Now, let $J(n,m)$ to denote the old number (position) and let $J(n-1, m)$ denote the new number (posiiton).
-Then we can build the following equation based upon the above insight:
-
-$$J(n,m) = (J(n-1,m) + m) \bmod n \text{; with }  J(1,m) = 0$$
-
 ### Starting from 1
 
 The key insight is the following: the result of $J(n,m)$ is best NOT thought of as the *number* that is the 
 Josephus survivor, but rather as the *index* of the number that is the Josephus survivor. 
 
-Let
+Let's first take a look an example when $n = 6$ and $m = 2$.
 
+```text
 
+fig.1
 
-For example, $J(5,2)$
-will tell you the *index* of the person out of a ring of five that ends up surviving.
+  1 2      1 X      1 X      1 X      1 X      X X
+ 6   3 -> 6   3 -> 6   3 -> X   3 -> X   X -> X   X
+  5 4      5 4      5 X      5 X      5 X      5 X
 
-With this intuition in mind, let's take a look at an example. Suppose we want to know $J(n,2)$. You can imagine 
+fig.2
+
+| index | 1 | 2 | 3 | 4 | 5 | 6 |
+|-------|---|---|---|---|---|---|
+| n = 6 | 1 | 2 | 3 | 4 | 5 | 6 | J(6,2) = 5
+| n = 5 | 3 | 4 | 5 | 6 | 1 | 3 | J(5,2) = 3
+| n = 4 | 5 | 6 | 1 | 3 | 5 | 6 | J(4,2) = 1
+| n = 3 | 1 | 3 | 5 | 1 | 3 | 5 | J(3,2) = 3
+| n = 2 | 5 | 1 | 5 | 1 | 5 | 1 | J(2,2) = 1
+| n = 1 | 5 | 5 | 5 | 5 | 5 | 5 | J(1,2) = 1
+
+fig.3
+
+| index | 1 | 2 | 3 | 4 | 5 | 6 |
+|-------|---|---|---|---|---|---|
+| n = 6 | 1 | X | 3 | 4 | 5 | 6 | J(6,2) = 5 = (2-1 + 3) mod 6 + 1
+| n = 5 | 3 | X | 5 | 6 | 1 | 3 | J(5,2) = 3 = (2-1 + 1) mod 5 + 1
+| n = 4 | 5 | X | 1 | 3 | 5 | X | J(4,2) = 1 = (2-1 + 3) mod 4 + 1
+| n = 3 | 1 | X | 5 | 1 | X | 5 | J(3,2) = 3 = (2-1 + 1) mod 3 + 1
+| n = 2 | 5 | X | 5 | X | 5 | X | J(2,2) = 1 = (2-1 + 1) mod 2 + 1
+| n = 1 | 5 | 5 | 5 | 5 | 5 | 5 | J(1,2) = 1
+```
+
+By looking at fig.1, we know that $J(6,2) = 5$. Now, if we take a look at fig.2, the row with $n = 5% shows that $J(5,2) = 3$. By the insight,
+$3$ here means the *index* not the *number*. So, our final survivor is $5$, which is positioned on $3$ in this row.
+
+Let's generalize the example a little bit. Suppose we want to know $J(n,2)$. You can imagine 
 we have $n$ people lined up like this: 
 
 ```
@@ -240,27 +246,128 @@ be person $3$. The 1-indexed position in the ring of $n-1$ people is given by $J
 forward $J(n-1, 2)$ positions, wrapping around the ring if necessary, to get our final position. In other words, the 
 survivor is given by position
 
-$$(3 + J(n-1,2) - 1) \bmod n $$
+$$
+\begin{equation}
+(3 + J(n-1, 2) - 1) \bmod n \label{eq:4}
+\end{equation}
+$$
+
+Let's take a look at $n = 5$ in fig.2 again. Now, the starting position is $3$ and we walk forward by $J(5,2) - 1$ steps (i.e. $2$ steps) 
+and we get the final survivor, which is $5$. The reason we doing $\bmod n$ is because we want to keep final survivor within the bounds of the circle.
+
+However, there is a problem with our equation \ref{eq:4}. If we are indeed using one-indexing, what happens if the final survivor is at position $n$?
+In that case, we would accidentally get back position $0$ as our answer, but we really want position $n$. For example, suppose $J(5,2) = 4$. In other words,
+the final survivor is $6$, which is positioned at $4$ when $n = 5$. Then, to apply equation \ref{eq:4}, we get $0$, which is not $6$.
+
+To fix this issue, we'll use a trick for using mod to wrap around with one-indexing: we'll take the inside quantity (the one-indexed position) and 
+subtract one to get the zero-indexed position. We'll mod that quantity by $n$ to get the zero-indexed position wrapped around. Finally, we'll add 
+back one to get the one-indexed position, wrapped around. That looks like:
+
+$$(3 + J(n-1, 2) - 2) \bmod n + 1$$
+
+In other words, $-2$ term comes from two independent $-1$'s: the first $-1$ is because $J(n-1, 2)$ returns a one-indexed index, so to step forward by
+the right number of positions we have to take $J(n-1,2) - 1$ steps forward. The second $-1$ comes from the fact that we're using one-indexing rather than
+zero-indexing.
+
+Now, we're finally ready to generalize the solution to arbitrary $m$, not just $m = 2$. After person $m$ get eliminated, we have an array like this:
+
+```
+1 2 3 ... m-1 X m+1 ... n
+```
+
+We now essentailly need to solve a subproblem where person $m+1$ comes first:
+
+```
+m+1 m+2 ... n 1 2 ... m-1
+```
+
+So we compute $J(n-1, m) to get the one-indexed survivor of a ring of $n-1$ people, then shift forward by that many steps:
+
+$$(m+1 + J(n-1, m) - 1)$$
+
+We need to worry about the case where we wrap around, so we need to mod by $n$:
+
+$$(m+1 + J(n-1, m) - 1) \bmod n$$
+
+However, we're one-indexed, so we need to use the trick of subtracing $1$ from the inside quantity and then adding $1$ at the end:
+
+$$(m+1 + J(n-1, m) - 2) \bmod n + 1$$
+
+which simplifies to:
+
+$$(m-1 + J(n-1, m)) \bmod n + 1$$
+
+Notice that $J(1,m) = 1$, which indicates that we're one-indexed.
 
 
-### Implementation
+### Starting from 0
+
+Since we are not in zero-indexed. Our $J(6,2)$ example looks like the following:
+
+```text
+| index | 0 | 1 | 2 | 3 | 4 | 5 |
+|-------|---|---|---|---|---|---|
+| n = 6 | 1 | 2 | 3 | 4 | 5 | 6 | J(6,2) = 4 = (2 + 2 ) mod 6
+| n = 5 | 3 | 4 | 5 | 6 | 1 | 3 | J(5,2) = 2 = (0 + 2 ) mod 5
+| n = 4 | 5 | 6 | 1 | 3 | 5 | 6 | J(4,2) = 0 = (2 + 2 ) mod 4
+| n = 3 | 1 | 3 | 5 | 1 | 3 | 5 | J(3,2) = 2 = (0 + 2 ) mod 3
+| n = 2 | 5 | 1 | 5 | 1 | 5 | 1 | J(2,2) = 0 = (0 + 2 ) mod 2 
+| n = 1 | 5 | 5 | 5 | 5 | 5 | 5 | J(1,2) = 0
+```
+
+Let's apply the same logic from the [Stating from 1 section](#starting-from-1) to this case. After person $m-1$ get eliminated, we have an array like this:
+
+```
+0 1 2 ... m-2 X m ... n-1
+```
+
+We now essentailly need to solve a subproblem where person $m$ comes first:
+
+```
+m m+1 ... n-1 0 1 2 ... m-2
+```
+
+So, we compute $J(n-1,m)$ to giive us the zero-indexed survivor of a ring of $n-1$ people and we shfit forward by that many steps:
+
+$$(m + J(n-1,m))$$
+
+We take care of wrapping around by mod $n$:
+
+$$(m + J(n-1,m)) \bmod n$$
+
+Since we are zero-indexed, we are done. If we want to transform our answer to one-indexed, we can do:
+
+$$(m + J(n-1,m) \bmod n + 1$$
+
+Note that $J(1,m) = 0$ in this case, which indicates that we're zero-indexed.
 
 
+<!-- ### Implementation -->
 
-#### Brutal Force
+<!-- There are many ways to solve this question. -->
+
+<!-- *Brute force* -->
+
+<!-- We can use a cricular double linked list to implement the solution. -->
+
+<!-- *Recurrence* -->
+
+<!-- Use the recurrence relation we just derived. -->
 
 
-#### Mathematically
+## What's left out
+
+- [Equivalence Class Solution](http://blue.butler.edu/~phenders/InRoads/MathCounts8.pdf) is interesting to check out.
+- [Rank tree](https://www.scribd.com/document/3567390/Rank-Trees) as a data sturcture is worth to check out to solve this problem. [This paper](http://www.imt.ro/romjist/Volum12/Number12_1/pdf/02-MCosulschi.pdf) gives a more detailed analysis.
 
 
-### What's left out
-
-
-### Reference
-
-- https://en.wikipedia.org/wiki/Josephus_problem
-- Graham, R.L.; Knuth, D.E.; Patashnik, O. (1989), Concrete Mathematics: A Foundation for Computer Science, Addison Wesley, p. 8, ISBN 978-0-201-14236-5
-- http://www.cut-the-knot.org/recurrence/r_solution.shtml
-- http://www.exploringbinary.com/powers-of-two-in-the-josephus-problem
-- http://www.math.northwestern.edu/~mlerma/problem_solving/solutions/josephus.pdf
-- http://blue.butler.edu/~phenders/InRoads/MathCounts8.pdf
+<!-- ## Reference -->
+<!-- - https://en.wikipedia.org/wiki/Josephus_problem -->
+<!-- - Graham, R.L.; Knuth, D.E.; Patashnik, O. (1989), Concrete Mathematics: A Foundation for Computer Science, Addison Wesley, p. 8, ISBN 978-0-201-14236-5 -->
+<!-- - http://www.cut-the-knot.org/recurrence/r_solution.shtml -->
+<!-- - http://www.exploringbinary.com/powers-of-two-in-the-josephus-problem -->
+<!-- - http://www.math.northwestern.edu/~mlerma/problem_solving/solutions/josephus.pdf -->
+<!-- - http://blue.butler.edu/~phenders/InRoads/MathCounts8.pdf -->
+<!-- - http://stackoverflow.com/questions/31775604/explanation-for-recursive-implementation-of-josephus-prob?answertab=active#tab-top -->
+<!-- - http://stackoverflow.com/questions/21737771/can-someone-please-explain-the-use-of-modulus-in-this-code?rq=1 -->
+<!-- - https://rosettacode.org/wiki/Josephus_problem -->
