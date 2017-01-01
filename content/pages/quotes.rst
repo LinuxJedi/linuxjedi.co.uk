@@ -4,7 +4,7 @@
 Quotes
 ######
 
-Last Update: Dec 04, 2016
+Last Update: Jan 01, 2017
 
 "The Master in the art of living makes little distinction between his work 
 and his play, his labor and his leisure, his mind and his body, his 
@@ -15,6 +15,9 @@ To him he is always doing both."
 **-- Zen Philosophy** 
 
 .. stop-show-quotes
+
+"宝剑锋从磨砺出，梅花香自苦寒来"
+**-- From <警世贤文·勤奋篇>**
 
 "There are two kinds of gifts. First, there is the innate gift of a given skill.
 *This is a minor gift.* If you have this gift, a skill such as doing math or playing
