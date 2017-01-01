@@ -284,7 +284,7 @@ We now essentailly need to solve a subproblem where person $m+1$ comes first:
 m+1 m+2 ... n 1 2 ... m-1
 ```
 
-So we compute $J(n-1, m) to get the one-indexed survivor of a ring of $n-1$ people, then shift forward by that many steps:
+So we compute $J(n-1, m)$ to get the one-indexed survivor of a ring of $n-1$ people, then shift forward by that many steps:
 
 $$(m+1 + J(n-1, m) - 1)$$
 
@@ -330,7 +330,7 @@ We now essentailly need to solve a subproblem where person $m$ comes first:
 m m+1 ... n-1 0 1 2 ... m-2
 ```
 
-So, we compute $J(n-1,m)$ to giive us the zero-indexed survivor of a ring of $n-1$ people and we shfit forward by that many steps:
+So, we compute $J(n-1,m)$ to give us the zero-indexed survivor of a ring of $n-1$ people and we shfit forward by that many steps:
 
 $$(m + J(n-1,m))$$
 
