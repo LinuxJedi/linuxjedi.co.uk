@@ -150,7 +150,8 @@ Other
 
 - **M-x whitespace-mode** allows you to explicitly see white-space, tab, newline. Especially useful when work
   with python.
-
+- **M-x sort-lines** allows you to sort the marked region alphabetically. Especially useful when work with lots of Java
+  ``import`` or C ``#include``
 
 ====================
 HowTos
