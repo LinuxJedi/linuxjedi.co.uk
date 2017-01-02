@@ -37,9 +37,6 @@ DEFAULT_PAGINATION = 10
 # Uncomment following line if you want document-relative URLs when developing
 RELATIVE_URLS = True
 
-THEME='pelican-bootstrap3'
-JINJA_EXTENSIONS = ['jinja2.ext.i18n']
-
 DEFAULT_DATE_FORMAT = '%a %d %b %Y, %H:%M'
 
 # Cleaner page links
@@ -59,11 +56,19 @@ DISPLAY_TAGS_INLINE = True
 #
 #################################
 
+THEME='pelican-bootstrap3'
+JINJA_EXTENSIONS = ['jinja2.ext.i18n']
 PLUGIN_PATHS = ['plugins']
 PLUGINS = ['tag_cloud', 'render_math', 'i18n_subsites']
 HIDE_SIDEBAR = True
 DISPLAY_CATEGORIES_ON_MENU = False # disable display categories in the navbar
 DISPLAY_PAGES_ON_MENU = False
+PYGMENTS_STYLE = 'default'
+
+
+###################################
+# End bootstrap theme configuration
+###################################
 
 # disable category
 # DIRECT_TEMPLATES = ['index', 'tags', 'archives']
