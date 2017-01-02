@@ -39,6 +39,7 @@ RELATIVE_URLS = True
 
 THEME='notmyidea-lxj'
 DEFAULT_DATE_FORMAT = '%a %d %b %Y, %H:%M'
+HIDE_SIDEBAR = False
 
 # Cleaner page links
 PAGE_URL = '{slug}.html'

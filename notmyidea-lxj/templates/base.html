@@ -59,6 +59,7 @@
         {% block content %}
         {% endblock %}
 
+        {% if not HIDE_SIDEBAR %}
         <aside id="sidebar">
           <!-- {% include 'book.html' %} -->
 <!--          <h2><i class="fa fa-twitter fa-lg"></i> Twitter Feed</h2>
@@ -125,6 +126,7 @@
             </div>
         {% endif %}
         </aside><!-- /#sidebar -->
+        {% endif %}
 
         <!-- <footer id="footer" class="body"> -->
         <!--         <address id="about" class="vcard body"> -->
