@@ -22,12 +22,22 @@ Afterwards, I present a recurrence solution to solve the general problem.
 ## Josephus problem
 
 The *Josephus problem* is the following game: $N$ people, numbered $1$ to $N$, are
-sitting in a circle. Starting at person 1, a hot potato is passed. After $M$ passes,
-the person holding the hot potato is eliminated, the circle closes ranks, and the
+sitting in a circle. Starting at person 1, a hot potato is passed. the $M$th person 
+holding the hot potato is eliminated, the circle closes ranks, and the
 game continues with the person who was sitting after the eliminated person picking
-up the hot potato. The last remaining person wins. Thus, if $M = 0$ and $N = 5$, players
-are eliminated in order, and player 5 wins. If $M = 1$ and $N = 5$, the order of elimination
+up the hot potato. The last remaining person wins. Thus, if $M = 1$ and $N = 5$, players
+are eliminated in order, and player 5 wins. If $M = 2$ and $N = 5$, the order of elimination
 is $2$,$4$,$1$,$5$.
+
+You can play with different $M$, $N$ on this [site](http://webspace.ship.edu/deensley/mathdl/Joseph.html) to get a better sense of the problem.
+
+\* ---- Note ---- *
+
+> MAW uses a problem description that is slight different than the problem description usually find online. In the book, he defines $M$ in term of 
+number of passes. However, in our problem description, we use $M$ to indicate the $M$th person get eliminated. Here is an example to show the difference.
+In MAW description, $M = 0$ and $N = 5$, players are eliminated in order. However, in our own intepretation, $M$ should be $1$ in order to achieve the same 
+elimination order. Similarly, in the book, $M = 1$ when we have $2$, $4$, $1$, $5$ elimination order for the second example.  Mathematically, 
+$M_{new} = M_{MAW} + 1$.
 
 ## Josephus problem with $M = 2$
 
