@@ -37,7 +37,9 @@ DEFAULT_PAGINATION = 10
 # Uncomment following line if you want document-relative URLs when developing
 RELATIVE_URLS = True
 
-THEME='notmyidea-lxj'
+THEME='pelican-bootstrap3'
+JINJA_EXTENSIONS = ['jinja2.ext.i18n']
+
 DEFAULT_DATE_FORMAT = '%a %d %b %Y, %H:%M'
 
 # Cleaner page links
@@ -52,7 +54,7 @@ ARTICLE_SAVE_AS = 'posts/{date:%Y}/{date:%b}/{date:%d}/{slug}/index.html'
 DISPLAY_TAGS_INLINE = True
 
 PLUGIN_PATHS = ['plugins']
-PLUGINS = ['tag_cloud', 'render_math']
+PLUGINS = ['tag_cloud', 'render_math', 'i18n_subsites']
 
 # disable category
 # DIRECT_TEMPLATES = ['index', 'tags', 'archives']
