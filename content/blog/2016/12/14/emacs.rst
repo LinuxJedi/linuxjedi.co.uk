@@ -5,8 +5,9 @@ Minimal Emacs Tutorial
 ############################
 
 :date: 2015-10-18 16:18
+:modified: 2017-01-03 21:45
 :category: tools
-:tags: emacs, tutorial
+:tags: emacs
 
 *******************
 Learn about Emacs
@@ -138,7 +139,7 @@ File Management (dired mode)
 - **^** go to parent dir
 - **g** refresh dir listing
 - **q** Quit dired mode (buffer still exists)
-- **RET** Open the file or directory
+- **RET** Open the file or directory (this will open with another buffer). If you want to stick with one buffer, use **a**.
 - **o** Open file in another window (move cursor to that window as well)
 - **C-o** Open file in another window but stay on dired buffer
 - **+** create new dir
@@ -152,7 +153,8 @@ Other
   with python.
 - **M-x sort-lines** allows you to sort the marked region alphabetically. Especially useful when work with lots of Java
   ``import`` or C ``#include``
-
+- **C-x l** count number of the lines for the file; give the current line number; list how many lines left.
+  
 ====================
 HowTos
 ====================
