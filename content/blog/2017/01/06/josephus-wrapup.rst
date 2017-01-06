@@ -139,3 +139,29 @@ of ``while``:
 
 ..
    https://www.cs.bu.edu/teaching/
+
+****************************************************************
+Use system implementation if find, otherwise use my own version
+****************************************************************
+
+I'm trying to use ``fls`` inside `int cyclicShiftJosephus(int N, int M) <https://github.com/xxks-kkk/algo/blob/77a66a5e911252a93e44bfb6d9bc4c62d85cdffc/linkedList/josephus/nonLinkedListSol.c>`_,
+which return the last (most significant) bit set in value and return the index of that bit.
+However, not all system has ``fls`` shipped by default. So, I implement my own version. But, I would prefer
+the program to use system version if it can find one. Otherwise, use mine.
+
+One solution is to use ``#ifndef`` with the structure looks like
+
+.. code-block:: c
+
+    #ifndef fls
+    int fls(int mask) { ... }
+    #endi
+
+Another solution is to use `weak symbol <https://en.wikipedia.org/wiki/Weak_symbol>`_. However, this solution may not be portable.
+Then, it looks something like this
+
+.. code-block:: c
+
+     int  __attribute__((weak)) fls(int mask){ .. }
+
+If system ``fls`` is defined as strong, my ``fls`` implementation will be overridden.
