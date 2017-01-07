@@ -29,8 +29,6 @@ body {
     min-width: 1000px;
 }
 
-
-
 /* Headings */
 h1 {font-size: 2em }
 h2 {font-size: 1.571em}	/* 22px */
@@ -81,7 +79,7 @@ em, i {font-style: italic;}
 /* Lists */
 ul {
 	list-style: outside disc;
-	margin: 1em 0 1.5em 1.5em;
+	margin: 0.5em 0 0.5em 1.5em;
 }
 
 ol {
@@ -473,14 +471,21 @@ li:last-child .hentry, #content > .hentry {border: 0; margin: 0;}
 }
 
 div.topic {
-    border: 2px solid #c6c9cb;
+    border: 1px solid #c6c9cb;
     padding: 10px 20px;
-    border-right-style: none;
-    border-left-style: none;
+/*    border-right-style: none;
+    border-left-style: none;*/
     margin: 20px;
 }
 
 p.topic-title{
     font-size: 1.1em;
     font-weight: bold;
+}
+
+.toc {
+    border: 1px solid #c6c9cb;
+    padding: 10px 20px;
+    /*    border-right-style: none;     border-left-style: none;*/
+    margin: 20px;
 }

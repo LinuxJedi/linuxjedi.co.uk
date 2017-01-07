@@ -54,6 +54,7 @@ DISPLAY_TAGS_INLINE = True
 
 PLUGIN_PATHS = ['plugins']
 PLUGINS = ['tag_cloud', 'render_math', 'extract_toc']
+MD_EXTENSIONS = (['toc'])
 
 # disable category
 # DIRECT_TEMPLATES = ['index', 'tags', 'archives']
