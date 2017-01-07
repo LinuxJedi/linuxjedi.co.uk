@@ -6,8 +6,6 @@ Josephus Problem & Radix Sort Reflection
 :category: programming languages
 :tags: c, circular-double-linked-list, double-linked-list
 
-.. contents::
-
 This post is a reflection on the two problems (MAW 3.13 & 3.10) I
 have been working on for the past five days.
 
