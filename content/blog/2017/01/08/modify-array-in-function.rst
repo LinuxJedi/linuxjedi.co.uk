@@ -96,7 +96,7 @@ iteration, ``i`` becomes ``1`` and let's see what change to our ``array``::
   (gdb) p *0x7fffffffe050
   $10 = 5                
 
-  (gdb) x/4x array                                                                           
+  (gdb) x/4bx array                                                                           
   0x7fffffffe050: 0x05    0x00    0x00    0x00
   
 We can see that the first element of our ``test`` array becomes ``5`` and the starting address of our
@@ -111,6 +111,8 @@ doesn't change at all: ``0x7fffffffe050``. This leads to our second observation:
 - However, doing so, we doesn't change the address of the array. It seems that array is a local variable inside both caller function
   and callee function. Its address is passed from ``test_change`` to ``change``::
 
+    Inside change:
+    
                      +---+---+--+
     array ----->  -> | 1 | 2 | 3|
                  /-> +---+---+--+
@@ -142,6 +144,8 @@ the output confirms our observation above: array is local variable to the caller
 passed (copied) from caller to callee. After that, address inside callee can reassign and will have no effect on the array (address) in caller. In other words, even though
 the address inside ``change2`` and ``test_change2`` are the same, but they are independent with each other::
 
+    after change2:
+     
                      +---+---+--+
     test  ---------> | 1 | 2 | 3|
                      +---+---+--+
@@ -160,8 +164,116 @@ Modify the array itself
 
 Before we start to answer the above question. Let me clear out an important concept: "array on stack" and "array on heap".
 
+"array on Stack" with the declaration looks like ``int test[3] = {1,2,3}`` in our test routines. The array declared like this stays on the stack and local to the
+function calls. "array on heap" is the dynamic array involving ``malloc``, which I mention in the `previous post <{filename} /blog/2017/01/06/josephus-wrapup.rst>`_. When we talk about
+resize the array, we mean the latter case.
+
+Let's take a look at ``change3``:
+
+.. code-block:: c
+
+    void
+    change3(int **array, int length)
+    {
+      int* tmp = calloc(length, sizeof(int));
+      int i;
+      for (i = 0; i < length; i++)
+      {
+        *(tmp+i) = 5;
+      }
+      free(*array);
+      *array = tmp;
+    }
+
+and our corresponding test routine ``test_change3()``:
+
+.. code-block:: c
+
+    void test_change3()
+    {
+      printf("TEST: change3\n");
+      int i, length = 3;
+      int* test = calloc(length, sizeof(int));
+      test[0] = 1;
+      test[1] = 2;
+      test[2] = 3;
+      printf("Before:");
+      print(test, length);
+      printf("before change, test address: %p\n", test);
+      change3(&test, length);
+      printf("After:");
+      print(test, length);
+      printf("after change, test address: %p\n", test);
+    }
+                                                                        
+The first task is to understand ``int **array``. There is a template sentence when comes to C type declaration: "<VariableName> is ... <typeName>". In our case,
+The template sentence becomes "array is ... int". Now let's work out the "..." with "right-left" rule:
+
+  "go right when you can, go left when you must"
+
+In our case, we start with "array" and go right, and nothing left with declaraiton. So, we must go left. the first symbol is ``*``, which reads as "pointer to".
+So now our template sentence becomes "array is pointer to ... int". Great! Let's continue to go left, we see another ``*``, which makes our sentence becomes
+"array is pointer to pointer to ... int". Then we meet ``int``, which means all the symbol in the declaration is consumed and our sentence is complete:
+"array is pointer to pointer to int". This means ``array`` variable itself is a pointer containing an address of a pointer, which holds an address of a int.
+
+Let's see if this is true with gdb.::
+
+  (gdb) p array         
+  $1 = (int **) 0x7fffffffe070    
+
+  (gdb) p/a *0x7fffffffe070
+  $8 = 0x601010           
+
+  (gdb) p *0x601010                                      
+  $7 = 1                
+
+  (gdb) p *array                  
+  $2 = (int *) 0x601010           
+
+  (gdb) p **array                 
+  $3 = 1                          
+
+The address holds by ``array`` is ``0x7fffffffe070``. We further examine the value holds by ``0x7fffffffe070`` and by our assumption, it should be another address
+and it is: ``0x601010``. Then, we check the value hold by that address, which is expected ``1`` the first element of our ``test`` array.
+
+Our goal is to let ``test`` array in ``test_change3()`` be ``5,5,5``::
+
+    Before change3
+    
+                     +---+---+--+
+    test  ---------> | 1 | 2 | 3|
+                     +---+---+--+
+    
+                     +---+---+--+
+    tmp   ---------> | 5 | 5 | 5|
+                     +---+---+--+
+ 
+
+    After change3
+
+                           +---+---+--+
+    tmp   ---------------> | 5 | 5 | 5|
+                       /-> +---+---+--+
+    test(array) -------
+                    
+
+From the picture we can see that we want to modify ``array`` inside ``change3`` pointing to ``5,5,5`` and this change will persist to the ``test`` array in our caller function.
+In other words, we want both ``test`` and ``array`` no longer independent but want them "tie up" as the same pointer with different names. How do we do that?
 
 
+
+
+
+
+************
+Reference
+************
+
+1. If you would like to read more about decoding C type declarations. You can read more here:
+
+   - `Reading C type declarations <http://unixwiz.net/techtips/reading-cdecl.html>`_ 
+   - `Right-left rule to understand C type declaration <http://ieng9.ucsd.edu/~cs30x/rt_lt.rule.html>`_
+   - Chapter 3 in "Expert C Programming" by Peter Van Der Linden
 
 
 
