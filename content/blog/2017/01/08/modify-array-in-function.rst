@@ -5,7 +5,7 @@ Modify array inside function in C
 :date: 2017-01-08 09:23
 :category: programming languages
 :tags: c
-:Status: draft
+:Status: Published
 
 In this post, I want to write down the lesson learned
 about modifying array inside a function in C with an example
@@ -296,13 +296,13 @@ With the information above, let's compose our conceptual picture::
 
   Before *array = tmp;
   
-     4 bytes                                            4 bytes                                    
+     4 bytes                                         4 bytes                                    
   +-----------+-----------+----------+------------+-----------+----------+--------+-------+----------+------
   |  1        | 2         | 3        |   ...      |    5      |     5    |  5     |  ...  | 0x601010 | ...
   +-----------+-----------+----------+------------+-----------+----------+--------+-------+----------+------
-  ^           ^           ^                           ^           ^          ^                ^
-  0x601010   0x601014     0x601018                   0x601030    0x601034   0x601048        0x7fffffffe070
-                                                     tmp                                    array
+  ^           ^           ^                       ^           ^          ^                ^
+  0x601010   0x601014     0x601018                0x601030    0x601034   0x601048         0x7fffffffe070
+                                                  tmp                                     array
                                                      
 Now, let's execute ``*array = tmp``, we get the following::
 
@@ -315,13 +315,13 @@ Now the picture looks like::
 
   After *array = tmp;
   
-     4 bytes                                            4 bytes                                    
+     4 bytes                                         4 bytes                                    
   +-----------+-----------+----------+------------+-----------+----------+--------+-------+----------+------
   |  1        | 2         | 3        |   ...      |    5      |     5    |  5     |  ...  | 0x601030 | ...
   +-----------+-----------+----------+------------+-----------+----------+--------+-------+----------+------
-  ^           ^           ^                           ^           ^          ^                ^
-  0x601010   0x601014     0x601018                   0x601030    0x601034   0x601048        0x7fffffffe070
-                                                     tmp                                    array
+  ^           ^           ^                       ^           ^          ^                ^
+  0x601010   0x601014     0x601018               0x601030    0x601034   0x601048        0x7fffffffe070
+                                                 tmp                                    array
                                                      
 We don't modify the address of the ``array`` itself (still ``0x7fffffffe070``) but the content that stored at ``0x7fffffffe070``
 which is no longer ``0x601010`` but ``0x601030``, which is the starting address of the ``tmp``: ``5,5,5``.
@@ -353,6 +353,8 @@ Hoepfully, after our examination, we can understand ``arrayInsert`` for MAW 3.15
       *((*list)) = elem;
     }
 
+`Get the complete source code <https://github.com/xxks-kkk/Code-for-blog/blob/master/2017/array-to-function/array-to-function.c>`_.
+    
 ************
 Reference
 ************
