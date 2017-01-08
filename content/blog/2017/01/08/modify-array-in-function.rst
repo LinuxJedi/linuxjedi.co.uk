@@ -260,10 +260,98 @@ Our goal is to let ``test`` array in ``test_change3()`` be ``5,5,5``::
 From the picture we can see that we want to modify ``array`` inside ``change3`` pointing to ``5,5,5`` and this change will persist to the ``test`` array in our caller function.
 In other words, we want both ``test`` and ``array`` no longer independent but want them "tie up" as the same pointer with different names. How do we do that?
 
+The solution is given by ``change3`` but we really need to think about why it makes sense. Firstly, we want to use gdb to examine the address
+of key variables::
 
+  (gdb) p array                                                       
+  $4 = (int **) 0x7fffffffe070                                        
+  (gdb) p *array                     
+  $5 = (int *) 0x601010
+  (gdb) p (*array)+1                                             
+  $14 = (int *) 0x601014                                         
+  (gdb) p (*array)+2                                             
+  $15 = (int *) 0x601018                                         
+  (gdb) p *(*array)                                              
+  $18 = 1 
+  (gdb) p *(*array)+1                                            
+  $16 = 2                                                        
+  (gdb) p *(*array)+2                                            
+  $17 = 3                                                        
+  
+  (gdb) p tmp                                                                 
+  $7 = (int *) 0x601030                                                       
+  (gdb) p tmp+1                                                               
+  $8 = (int *) 0x601034                                                       
+  (gdb) p tmp+2                                                               
+  $9 = (int *) 0x601038                                                       
+  (gdb) p *tmp                                                                
+  $10 = 5                                                                     
+  (gdb) p *(tmp+1)                                                            
+  $11 = 5                                                                     
+  (gdb) p *(tmp+2)                                                            
+  $12 = 5 
 
+We first print out the ``array`` address of each element and we print out the ``tmp`` address of each element.
+With the information above, let's compose our conceptual picture::
 
+  Before *array = tmp;
+  
+     4 bytes                                            4 bytes                                    
+  +-----------+-----------+----------+------------+-----------+----------+--------+-------+----------+------
+  |  1        | 2         | 3        |   ...      |    5      |     5    |  5     |  ...  | 0x601010 | ...
+  +-----------+-----------+----------+------------+-----------+----------+--------+-------+----------+------
+  ^           ^           ^                           ^           ^          ^                ^
+  0x601010   0x601014     0x601018                   0x601030    0x601034   0x601048        0x7fffffffe070
+                                                     tmp                                    array
+                                                     
+Now, let's execute ``*array = tmp``, we get the following::
 
+  (gdb) p *array                                                                             
+  $19 = (int *) 0x601010                                                                     
+  (gdb) p *array                                                                             
+  $20 = (int *) 0x601030 
+
+Now the picture looks like::
+
+  After *array = tmp;
+  
+     4 bytes                                            4 bytes                                    
+  +-----------+-----------+----------+------------+-----------+----------+--------+-------+----------+------
+  |  1        | 2         | 3        |   ...      |    5      |     5    |  5     |  ...  | 0x601030 | ...
+  +-----------+-----------+----------+------------+-----------+----------+--------+-------+----------+------
+  ^           ^           ^                           ^           ^          ^                ^
+  0x601010   0x601014     0x601018                   0x601030    0x601034   0x601048        0x7fffffffe070
+                                                     tmp                                    array
+                                                     
+We don't modify the address of the ``array`` itself (still ``0x7fffffffe070``) but the content that stored at ``0x7fffffffe070``
+which is no longer ``0x601010`` but ``0x601030``, which is the starting address of the ``tmp``: ``5,5,5``.
+This may seem like magic. However, in C, a variable (i.e. ``test`` in ``test_change3()``) is merely a synonym for address.
+by invoking ``change3`` through ``&test``, we pass in the address ``0x601010`` via a carrier ``0x7fffffffe070``, and we modify the
+address to ``0x601030`` and send the address back again through carrier.
+
+With this understanding, we can see why the output looks like::
+
+  TEST: change3
+  Before:1 2 3
+  before change, test address: 0x601010
+  After:5 5 5
+  after change, test address: 0x601030
+
+Hoepfully, after our examination, we can understand ``arrayInsert`` for MAW 3.15.a proposed at the beginning of the post:
+
+.. code-block:: c
+
+    void
+    arrayInsert(int elem, int** list, int length)
+    {
+      *list = realloc(*list, sizeof(int) * (length+1));
+      int i;
+      for (i = 0; i < length; i++)
+      {
+        (*list)[length - i] = (*list)[length-i-1];
+      }
+      *((*list)) = elem;
+    }
 
 ************
 Reference
