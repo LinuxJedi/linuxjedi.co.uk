@@ -16,6 +16,9 @@ To him he is always doing both."
 
 .. stop-show-quotes
 
+"The most dangerous person is one who listens, thinks and observes."
+**-- Bruce Lee**
+   
 "宝剑锋从磨砺出，梅花香自苦寒来"
 **-- From <警世贤文·勤奋篇>**
 

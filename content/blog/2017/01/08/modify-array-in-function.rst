@@ -106,10 +106,11 @@ that before the function call, during the function call, and after the function 
 doesn't change at all: ``0x7fffffffe050``. This leads to our second observation:
 
 - We can change the **contents** of array in the caller function (i.e. ``test_change()``) through callee function (i.e. ``change``)
-  by passing the array itself to the function (i.e. ``int *array``) without any ``return`` statement, 
+  by passing the the value of array to the function (i.e. ``int *array``). This modification can be effective in the
+  caller function without any ``return`` statement.
 
 - However, doing so, we doesn't change the address of the array. It seems that array is a local variable inside both caller function
-  and callee function. Its address is passed from ``test_change`` to ``change``::
+  and callee function. Its address is copied and passed from ``test_change`` to ``change``::
 
     Inside change:
     
@@ -166,7 +167,7 @@ Before we start to answer the above question. Let me clear out an important conc
 
 "array on Stack" with the declaration looks like ``int test[3] = {1,2,3}`` in our test routines. The array declared like this stays on the stack and local to the
 function calls. "array on heap" is the dynamic array involving ``malloc``, which I mention in the `previous post <{filename} /blog/2017/01/06/josephus-wrapup.rst>`_. When we talk about
-resize the array, we mean the latter case.
+resize the array, we mean the latter case. In other words, we can only change the array itself (number of elements) with dynamically allocated array in the heap.
 
 Let's take a look at ``change3``:
 
@@ -354,7 +355,8 @@ Hoepfully, after our examination, we can understand ``arrayInsert`` for MAW 3.15
     }
 
 `Get the complete source code <https://github.com/xxks-kkk/Code-for-blog/blob/master/2017/array-to-function/array-to-function.c>`_.
-    
+
+
 ************
 Reference
 ************
