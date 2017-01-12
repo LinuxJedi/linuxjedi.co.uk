@@ -16,6 +16,9 @@ To him he is always doing both."
 
 .. stop-show-quotes
 
+"Don't be afraid to fail, be afraid not to try."
+**-- Unknown**
+   
 "The most dangerous person is one who listens, thinks and observes."
 **-- Bruce Lee**
    
