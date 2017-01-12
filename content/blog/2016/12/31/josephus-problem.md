@@ -3,8 +3,6 @@ Date: 2016-12-31 20:24
 Category: Data Struct and Algo Analysis in C
 Tags: recursion, dynamic-programming
 
-[TOC]
-
 ## Preface
 
 This is actually MAW 3.10. I gradually realize how dense MAW is.

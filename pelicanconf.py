@@ -53,8 +53,7 @@ ARTICLE_SAVE_AS = 'posts/{date:%Y}/{date:%b}/{date:%d}/{slug}/index.html'
 DISPLAY_TAGS_INLINE = True
 
 PLUGIN_PATHS = ['plugins']
-PLUGINS = ['tag_cloud', 'render_math', 'extract_toc']
-MD_EXTENSIONS = (['toc'])
+PLUGINS = ['tag_cloud', 'render_math']
 LOCAL_CONTENT_CACHE = False
 
 # disable category
