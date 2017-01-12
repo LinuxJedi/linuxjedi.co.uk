@@ -84,7 +84,7 @@ $$
 So now our goal is to solve the recurrence equations \ref{eq:1} and \ref{eq:2} given $F(1) = 1$ to find a closed form. Let's do
 this by building a table of small values:
 
-```text
+```
 | n    | 1 | 2   3 | 4   5   6   7 | 8   9   10   11   12   13   14   15 | 16 |
 |------|---|-------|---------------|-------------------------------------|----|
 | F(n) | 1 | 1   3 | 1   3   5   7 | 1   3   5    7    9    11   13   15 | 1  |
@@ -148,7 +148,7 @@ reason we can derive the nice recurrence equations \ref{eq:1} and \ref{eq:2} is 
 observation is a different way. $F(2k)$ denotes the old numbering before the first-round. $F(k)$ denotes the new numbering 
 after the first-round.
 
-```text
+```
       m = 2               m = 3
 +-------+------+    +-------+------+
 | F(2k) | F(k) |    | F(2k) | F(k) |
@@ -197,7 +197,7 @@ Josephus survivor, but rather as the *index* of the number that is the Josephus 
 
 Let's first take a look an example when $n = 6$ and $m = 2$.
 
-```text
+```
 
 fig.1
 
@@ -319,7 +319,7 @@ Notice that $J(1,m) = 1$, which indicates that we're one-indexed.
 
 Since we are not in zero-indexed. Our $J(6,2)$ example looks like the following:
 
-```text
+```
 | index | 0 | 1 | 2 | 3 | 4 | 5 |
 |-------|---|---|---|---|---|---|
 | n = 6 | 1 | 2 | 3 | 4 | 5 | 6 | J(6,2) = 4 = (2 + 2 ) mod 6
