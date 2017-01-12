@@ -4,7 +4,7 @@
 Quotes
 ######
 
-Last Update: Jan 01, 2017
+Last Update: Jan 12, 2017
 
 "The Master in the art of living makes little distinction between his work 
 and his play, his labor and his leisure, his mind and his body, his 
