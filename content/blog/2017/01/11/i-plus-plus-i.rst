@@ -7,7 +7,7 @@ Difference between ``i++`` and ``++i``
 :tags: c
 
 I'm starting to read through `Hacking: The Art of Exploitation <https://www.amazon.com/Hacking-Art-Exploitation-Jon-Erickson/dp/1593271441>`_ on
-my way to work to keep honing C. I resolve a puzzle I have about C, as shown in the title.
+my four hours daily commute to work in order to get myself more comfortable working with C. I resolve a puzzle I have about C, as shown in the title.
 
 - ``i++`` means increment the value of ``i`` by ``1`` *after* evaluating the arithmetic operation.
 
