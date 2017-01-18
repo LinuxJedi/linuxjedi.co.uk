@@ -118,6 +118,7 @@ Searching and Replacing
              - Type ``y`` to replace this one and go to the next one
 	     - Type ``n`` to skip to next without replacing
 	     - Type ``!`` to replace this one and remaining replacements without asking
+             - `See more options in GNU manual <https://www.gnu.org/software/emacs/manual/html_node/emacs/Query-Replace.html>`_
 
 - **Esc-x replace-string** replace all occurrences of OLD STRING with NEW STRING.
 
