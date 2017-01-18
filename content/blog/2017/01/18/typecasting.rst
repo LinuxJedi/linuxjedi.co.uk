@@ -2,9 +2,9 @@
 Typecasting in C
 ################
 
-:date: 2017-01-18 23:00
+:date: 2017-01-19 00:53
 :category: programming languages
-:tags: c
+:tags: c, pointer
 
 This post covers the typecasting in C with the aim to get a clear understanding
 of the most commonly-seen C manipulation. This writeup is adapted from
@@ -18,10 +18,14 @@ TL;DR
 - Pointer type determines the size of the data it points to. In other words, when you
   do pointer arithemetic (i.e ``+``), the number of bytes change (i.e increase) in terms of memory
   address is determined by the pointer type.
+- ``void`` pointer is a generic pointer and we need to cast them to the proper data type in order to
+  de-reference it.
+- Pointer is merely a memory address. With typecasting, any type with enough size to hold
+  the memory address can work like a pointer.
 
-******
-Detail
-******
+********
+Details
+********
 
 Typecasting is simply a way to temporarily change a variable's data type,
 despite how it was originally define. When a variable is typecast into a different type, 
@@ -81,7 +85,6 @@ amounts. Since a char is only 1 byte, the pointer to the next char would natural
 But since an integer is 4 bytes, a pointer to the next integer has to be 4 bytes over.
 
 .. code-block:: c
-   :hl_lines: 13-15
                 
     #include <stdio.h>
 
@@ -140,7 +143,6 @@ of integer data, one byte at a time. So, we need to make sure that pointer type 
 we need typecasting.
 
 .. code-block:: c
-   :hl_lines: 19, 25
       
     #include <stdio.h>
 
