@@ -90,7 +90,7 @@ Look how clean I can make my code is if I can understand the difference between 
 --- 01/19/2017 UPDATE ---
 
 ``++i`` and ``i++`` is really a powerful technique to shorten the C code. However, it can be error-prune
-if the user is not careful enough.
+if we are not careful enough.
 
 Let's take a look at the following code snippet, which is adapted from the program on K & R p.117.
 
