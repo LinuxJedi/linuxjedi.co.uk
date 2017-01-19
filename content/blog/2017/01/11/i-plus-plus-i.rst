@@ -149,5 +149,5 @@ Let's see another example from K & R p. 105.
 
 In this case, the value of ``*t++`` is the character that ``t`` pointed to before ``t`` was incremented; the
 postfix ``++`` doesn't change ``t`` until after this character has been fetched. This makes sense if we
-consider it from precedence of the operators' view. ``*`` and ``++`` has the same precedence in our table. Thus,
+consider it from precedence of the operators' view. ``*`` and ``++`` have the same precedence in our table. Thus,
 we evaluate the expression in ordinary order: from left to right. We first evaluate ``*s`` then we increment ``s``.
