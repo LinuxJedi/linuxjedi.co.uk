@@ -1,5 +1,5 @@
-Title: num of function calls in recursive Fibonacci routine
-Date: 2017-01-22 23:00
+Title: Num of function calls in recursive Fibonacci routine
+Date: 2017-01-23 00:12
 Category: Data Struct and Algo Analysis in C
 Tags: math, call-stack, recursion
 
@@ -60,7 +60,7 @@ $$
 We define $F(0) = F(1) = 1$. Now, we want to find out the number of recursive calls made to calculate $F(n)$. We use $G(n)$ to denote the number of calls made by the recursive program in calculating $F(n)$. Let's examine the output above. We see that $G(0) = G(1) = 1$ and to compute $G(n)$ for arbitrary $n$, we'll make an initial call, and then $G(n-1)$ calls to calculate $F(n-1)$ and $G(n-2)$ calls to calculate $F(n-2)$. Thus, we have the following recurrence relation for $G(n)$:
 $$
 \begin{equation}
-G(n) = G(n-1) + G(n-2) + 1 \label{eq: 2}
+G(n) = G(n-1) + G(n-2) + 1 \label{eq:2}
 \end{equation}
 $$
 Let's solve this recurrence relation by establish the relationship between $F(n)$ and $G(n)$ and then, we can get the closed form based upon the closed form of $F(n)$. 
@@ -68,28 +68,28 @@ Let's solve this recurrence relation by establish the relationship between $F(n)
 Let's suppose that $G(n)$ depends on $F(n)$ in some way. In other words, $G(n)$ is a function of $F(n)$. Let's try linear form first:
 $$
 \begin{equation}
-G(n) = a F(n) + b \text{ where a, b are unknown constants}  \label {eq: 3}
+G(n) = a F(n) + b \text{ where a, b are unknown constants}  \label {eq:3}
 \end{equation}
 $$
-Since we know that $G(0) = G(1) = 1​$ and $F(0) = F(1) = 1​$, then \ref{eq: 3} becomes 
+Since we know that $G(0) = G(1) = 1​$ and $F(0) = F(1) = 1​$, then \ref{eq:3} becomes 
 
 $$
-\begin{equation}
+\begin{eqnarray*}
 G(1)  & = & a F(1) + b \\
 1 & = & a + b
-\end{equation}
+\end{eqnarray*}
 $$
 
-Now let's plugin \ref{eq:3} into \ref{eq:2} and using the \ref{eq: 1} and we have:
+Now let's plugin \ref{eq:3} into \ref{eq:2} and using the \ref{eq:1} and we have:
 
 $$
-\begin{equation}
+\begin{eqnarray*}
 G(n) & = & G(n-1) + G(n-2) + 1 \\
 a F(n) + b & = & G(n-1) + G(n-2) + 1 \\
 a (F(n-1) + F(n-2)) + b & = & G(n-1) + G(n-2) + 1 \\
 a (F(n-1) + F(n-2)) + b & = & a F(n-1) + b + a F(n-2)) + b + 1 \\
 b & = & -1
-\end{equation}
+\end{eqnarray*}
 $$
 
 Now, our \ref{eq:3} becomes $G(n) = 2F(n) - 1$. That is, the number of function calls
@@ -113,7 +113,7 @@ stack size              (kbytes, -s) 10240
 
 As you can see, the default stack size is `10 MB`. Let's see how large space our `Fib`
 is going to use on stack: as of `gcc 4.6`, there is an option `-fstack-usage` to allow
-us check the function max amount of stack use. `Read more info here <https://gcc.gnu.org/onlinedocs/gnat_ugn/Static-Stack-Usage-Analysis.html>`_.
+us check the function max amount of stack use. [Read more info here](https://gcc.gnu.org/onlinedocs/gnat_ugn/Static-Stack-Usage-Analysis.html>).
 
 ```
 numCalls.c:17:1:Fib     48      static
@@ -128,7 +128,7 @@ for $N = 50$.
 ### Future work
 
 - [This paper](http://vulms.vu.edu.pk/Courses/CS201/Downloads/p60-robertson.pdf) mentions that 
-  \ref{eq:2} and \ref{eq:2} with their initial conditions respectively form second-order 
+  \ref{eq:1} and \ref{eq:2} with their initial conditions respectively form second-order 
   Discrete Dynamical System (DDS). This offers some more mathematical insights. This actually reminds
   me equation 1.11 in *Concrete Mathematics: A Foundation for Computer Science* working on 
   a generalized Josephus problem recurrence relation with a system of three equations and three unknown
