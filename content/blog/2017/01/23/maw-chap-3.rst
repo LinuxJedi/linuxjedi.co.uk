@@ -1,0 +1,98 @@
+##########################
+MAW: Chapter 3 Reflection
+##########################
+
+:date: 2017-01-23 10:45
+:category: misc
+:tags: meta
+
+I finally finish Chapter 3: List, Stacks, and Queues with almost all the problems
+solved. It's time to do some summary and reflection.
+
+************
+Key concept
+************
+
+One important philosophy in this chapter is the 
+separation between the interface exposed to the user and the implementation details behind the scene.
+The interface exposed to the user is the Abstract Data Types (ADTs). In this chapter, 
+the interface in this chapter is "List". However, there are multiple implementations can meet the
+requirement of the interface, which are "Array" and "Linked Lists". We can further 
+categorize "List" interface into different subcategories "Stack", "Queue", "Deque". 
+In other words, even we talk about "Stack" ADT, "Queue" ADT, and "Deque" ADT, they are
+all essentially the "List" but with some restrictions in terms of list operations. 
+Here is a picture that helps us to understand this concept better:
+
+.. image:: /images/maw-chap3.PNG
+
+******************
+Chapter Structure
+******************
+
+**Linked List**
+
+- Singly Linked List 
+- Doubly Linked List
+- Circular Linked List
+- Applications:
+  - Polynomial ADT
+  - Raxi Sort
+
+**Stacks**
+
+- Linked List implementation
+- Array implementation
+- Applications:
+  - Balancing Symbols
+  - Postfix Expression
+    - Postfix expression evaluation
+    - Infix to Postfix Conversion
+  - Function Call Stack
+
+**Queue**
+
+- Array implementation
+- Linked List implementation
+
+*****************
+Notable Questions
+*****************
+
+- 3.4, 3.5
+
+Reason: implement set operations using "List" interface. Especialy the union one
+        provides insights on how we can implement addition of polynomials (3.6)
+        and integer addition (3.9)
+    
+- 3.6, 3.7, 3.8, 3.9
+
+Reason: a set of problems relating to Polynomial ADT
+
+- 3.10, 3.24
+
+Reason: problems to practice recurrence relation. Josephus problem is particular
+        interesting because it's a good combination of mathematics, algorithm (dynamic programming)
+        and data structures.
+
+- 3.12, 3.21, 3.23
+
+Reason: commonly-seen interview questions
+
+- 3.13
+
+Reason: require us to actually implement a radix sort in a real problem.
+
+- 3.18
+
+Reason: balancing symbols using Stack. A really cool problem that the end-product
+        is a tool that you can use in your daily work.
+
+- 3.19, 3.20
+
+Reason: Postfix, Infix related problems. Learn about "shunting yard" algorithm
+        and how left associate operators (i.e +, -) is different from 
+        right associate operators (i.e ^) in terms of implementation.
+
+- 3.25, 3.26
+
+Reason: Implement Queue and its variation, Deque, using different data structures.

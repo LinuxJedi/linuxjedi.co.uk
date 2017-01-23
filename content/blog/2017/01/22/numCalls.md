@@ -3,11 +3,9 @@ Date: 2017-01-23 00:12
 Category: Data Struct and Algo Analysis in C
 Tags: math, call-stack, recursion
 
-This is MAW 3.24:
+This is MAW 3.24: 
 
-    If the recursive rotuine in Section 2.4 used to compute
-    Fibonacci numbers is run for N = 50, is stack space likely to run out?
-    Why or why not?
+> If the recursive rotuine in Section 2.4 used to computeFibonacci numbers is run for N = 50, is stack space likely to run out?Why or why not?
 
 ```{c}
 unsigned long
