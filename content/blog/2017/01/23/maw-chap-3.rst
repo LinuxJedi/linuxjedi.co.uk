@@ -10,7 +10,7 @@ I finally finish Chapter 3: List, Stacks, and Queues with almost all the problem
 solved. It's time to do some summary and reflection.
 
 ************
-Key concept
+Reflection
 ************
 
 One important philosophy in this chapter is the 
@@ -24,6 +24,40 @@ all essentially the "List" but with some restrictions in terms of list operation
 Here is a picture that helps us to understand this concept better:
 
 .. image:: /images/maw-chap3.PNG
+
+In terms of actual implementation, we can get a sense of what's the basic structure that a data structure
+should have. Take a linked list implementation of a queue as an example. The key characteristics
+of a queue is that it should have a :math:`O(1)` operation on both enqueue and dequeue. This leads us to
+the pointer to pointing both the front and rear of the list. Thus, our queue looks like:
+
+.. code-block:: c
+   :caption: queue.h
+
+        struct QueueRecord;
+        struct QueueCDT;
+        typedef struct QueueRecord* PtrToNode;
+        typedef struct QueueCDT* QueueADT; 
+
+.. code-block:: c
+   :caption: queue.c
+
+        struct QueueRecord
+        {
+          ET Element;
+          PtrToNode Next;
+        };
+
+        struct QueueCDT
+        {
+          PtrToNode Front;
+          PtrToNode Rear;
+        };
+
+Here, our queue pointed by ``QueueADT`` is defined by two pointers: ``Front`` and ``Rear``.
+Then, Those two pointers are pointing to our actual ``QueueRecord``, which how we form our linked list implementation.
+So, when we implement a data structure, we can take a top-down view by first thinking about
+what characterizes our data structure. That's the very important first step we take. Then, we can think
+follow the flow naturally by defining what are the required elements to implement those characteristics.
 
 ******************
 Chapter Structure
