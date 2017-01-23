@@ -107,3 +107,4 @@ Some material I left out when I work through this chapter:
 - function calls as an example of stack (this part is going to be covered from computer system point of view
   in the coming posts).
 - cursor implementation of linked list (this part is not on the top priority for now).
+- 3.7.c, 3.14, 3.16, 3.18.a, 3.22.b
