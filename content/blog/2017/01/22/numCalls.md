@@ -123,7 +123,7 @@ But, of course, the runing time is another thing. I mean it's going to be very s
 for $N = 50$.
 
 
-### Future work
+## Future work
 
 - [This paper](http://vulms.vu.edu.pk/Courses/CS201/Downloads/p60-robertson.pdf) mentions that 
   \ref{eq:1} and \ref{eq:2} with their initial conditions respectively form second-order 
