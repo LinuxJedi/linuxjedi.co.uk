@@ -4,7 +4,7 @@
 Quotes
 ######
 
-Last Update: Jan 12, 2017
+Last Update: Jan 23, 2017
 
 "The Master in the art of living makes little distinction between his work 
 and his play, his labor and his leisure, his mind and his body, his 
@@ -15,6 +15,11 @@ To him he is always doing both."
 **-- Zen Philosophy** 
 
 .. stop-show-quotes
+
+“Your beliefs become your thoughts, Your thoughts become your words, 
+Your words become your actions, Your actions become your habits, 
+Your habits become your values, Your values become your destiny.”
+**-- Mahatma Gandhi**
 
 "Don't be afraid to fail, be afraid not to try."
 **-- Unknown**
