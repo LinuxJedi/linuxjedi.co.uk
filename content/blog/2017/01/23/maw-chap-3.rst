@@ -28,10 +28,10 @@ Here is a picture that helps us to understand this concept better:
 In terms of actual implementation, we can get a sense of what's the basic structure that a data structure
 should have. Take a linked list implementation of a queue as an example. The key characteristics
 of a queue is that it should have a :math:`O(1)` operation on both enqueue and dequeue. This leads us to
-the pointer to pointing both the front and rear of the list. Thus, our queue looks like:
+the pointer to pointing both the front and rear of the list. Thus, our queue "queue.h" and "queue.c" 
+look like respectively:
 
 .. code-block:: c
-   :caption: queue.h
 
         struct QueueRecord;
         struct QueueCDT;
@@ -39,7 +39,6 @@ the pointer to pointing both the front and rear of the list. Thus, our queue loo
         typedef struct QueueCDT* QueueADT; 
 
 .. code-block:: c
-   :caption: queue.c
 
         struct QueueRecord
         {
@@ -69,6 +68,7 @@ Chapter Structure
 - Doubly Linked List
 - Circular Linked List
 - Applications:
+  
   - Polynomial ADT
   - Raxi Sort
 
@@ -77,10 +77,9 @@ Chapter Structure
 - Linked List implementation
 - Array implementation
 - Applications:
+
   - Balancing Symbols
-  - Postfix Expression
-    - Postfix expression evaluation
-    - Infix to Postfix Conversion
+  - Postfix Expression (Postfix expression evaluation; Infix to Postfix Conversion)
   - Function Call Stack
 
 **Queue**
@@ -94,43 +93,43 @@ Notable Questions
 
 - 3.4, 3.5
 
-Reason: implement set operations using "List" interface. Especialy the union one
-        provides insights on how we can implement addition of polynomials (3.6)
-        and integer addition (3.9)
+  implement set operations using "List" interface. Especialy the union one
+  provides insights on how we can implement addition of polynomials (3.6)
+  and integer addition (3.9)
     
 - 3.6, 3.7, 3.8, 3.9
 
-Reason: a set of problems relating to Polynomial ADT
+  a set of problems relating to Polynomial ADT
 
 - 3.10, 3.24
 
-Reason: problems to practice recurrence relation. Josephus problem is particular
-        interesting because it's a good combination of mathematics, algorithm (dynamic programming)
-        and data structures.
+  problems to practice recurrence relation. Josephus problem is particular
+  interesting because it's a good combination of mathematics, algorithm (dynamic programming)
+  and data structures.
 
 - 3.12, 3.21, 3.23
 
-Reason: commonly-seen interview questions
+  commonly-seen interview questions
 
 - 3.13
 
-Reason: require us to actually implement a radix sort in a real problem.
+  require us to actually implement a radix sort in a real problem.
 
 - 3.18
 
-Reason: balancing symbols using Stack. A really cool problem that the end-product
-        is a tool that you can use in your daily work.
+  balancing symbols using Stack. A really cool problem that the end-product
+  is a tool that you can use in your daily work.
 
 - 3.19, 3.20
 
-Reason: Postfix, Infix related problems. Learn about "shunting yard" algorithm
-        and how left associate operators (i.e +, -) is different from 
-        right associate operators (i.e ^) in terms of implementation.
+  Postfix, Infix related problems. Learn about "shunting yard" algorithm
+  and how left associate operators (i.e +, -) is different from 
+  right associate operators (i.e ^) in terms of implementation.
 
 - 3.25, 3.26
 
-Reason: Implement Queue and its variation, Deque, using different data structures.
-        In particular, circular array implementation.
+  Implement Queue and its variation, Deque, using different data structures.
+  In particular, circular array implementation.
 
 **********
 Left Out
