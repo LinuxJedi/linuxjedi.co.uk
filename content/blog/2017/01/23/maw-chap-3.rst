@@ -96,3 +96,14 @@ Reason: Postfix, Infix related problems. Learn about "shunting yard" algorithm
 - 3.25, 3.26
 
 Reason: Implement Queue and its variation, Deque, using different data structures.
+        In particular, circular array implementation.
+
+**********
+Left Out
+**********
+
+Some material I left out when I work through this chapter:
+
+- function calls as an example of stack (this part is going to be covered from computer system point of view
+  in the coming posts).
+- cursor implementation of linked list (this part is not on the top priority for now).
