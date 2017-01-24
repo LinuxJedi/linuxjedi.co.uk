@@ -19,7 +19,7 @@ can be empty; otherwise, a tree consists of a distinguish node *r*, called the
 *root*, and zero or more nonempty (sub)tress :math:`T_1`, :math:`T_2`, ..., :math:`T_k`,
 each of whose roots are connected by a directed *edge* from *r*.
 
-.. images:: /images/subtree.PNG
+.. image:: /images/subtree.PNG
 
 **child**, **parent**
 
@@ -81,7 +81,7 @@ and the children of the nodes which are at *level 1* will be at *level 2* and so
 In other words, in a tree each step from top to bottom is called as a *level* and the *level*
 count starts with '0' and incremented by one at each level (step).
 
-.. images:: /images/tree-level.PNG
+.. image:: /images/tree-level.PNG
 
 ****************
 Some properties
@@ -89,7 +89,7 @@ Some properties
 
 - A tree is a collection of N nodes, one of which is the root, and N-1 edges.
   (since each edge connects some node to its parent, and every node except 
-   the root has one parent.)
+  the root has one parent.)
 - The root is at depth 0.
 - All leaves are at height 0.
 - The height of a tree is equal to the height of the root.
@@ -123,5 +123,5 @@ Let's work through MAW 4.1, 4.2, and 4.3 to get the tree terminology clear.
 Reference
 *********
 
-- http://btechsmartclass.com/DS/U3_T1.html
+- `Tree - Terminology <http://btechsmartclass.com/DS/U3_T1.html>`_
 - MAW Chapter 4
