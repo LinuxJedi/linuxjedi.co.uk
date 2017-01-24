@@ -119,9 +119,5 @@ Let's work through MAW 4.1, 4.2, and 4.3 to get the tree terminology clear.
   - *height*: 3
 - The depth of the tree is 4
 
-*********
-Reference
-*********
-
-- `Tree - Terminology <http://btechsmartclass.com/DS/U3_T1.html>`_
-- MAW Chapter 4
+..
+   `Tree - Terminology <http://btechsmartclass.com/DS/U3_T1.html>`_
