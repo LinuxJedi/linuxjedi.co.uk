@@ -10,17 +10,18 @@ updated as I work through the chapter.
 
 ## Insights
 
-- Recursive tree definition is a natural fit with induction (i.e., MAW 4.5, 4.6, 4.7)
+- Recursive tree definition is a natural fit with induction (i.e., MAW 4.5, 4.6, 4.7).
 - Usually there are two ways to prove a problem in tree, one direction is from induction
-  and the other one is from basic tree property.
+  and the other one is from basic tree property (i.e., MAW 4.4, 4.6).
 
 ## Solutions
 
-**MAW 4.4**
+### MAW 4.4
 
 > Show that in a binary tree of $N$ nodes, there are $N + 1$ `NULL` pointers
 > representing children.
 
+**Proof:**
 For a binary tree with $N$ nodes, there are two types of edges (pointers): 
 
 1. edges that are doesn't exist (`NULL` pointers).
@@ -34,29 +35,29 @@ the root has one parent. In other words, each node, except the root node, has on
 pointer from its parent. So, we have $N-1$ edges existing. Thus the remaining
 $2N - (N-1) = N+1$ edges are actually non-existing. Thus, we have $N+1$ `NULL` pointers.
 
-**MAW 4.5**
+### MAW 4.5
 
 > Show that the maximum number of nodes in a binary tree of height $H$ is $2^{H+1}-1$.
 
+**Proof:** 
 Let's prove this by induction.
 
 *Base case:* $H = 0$. A binary tree of height $0$ has only one node, root. $2^{H+1}-1$ equals
 one for $H = 0$. Therefore ture for $H = 0$.
 
-*Inductive Hypothesis* Assume that the maximum number of nodes in a binary tree of height $H$ is
+*Inductive Hypothesis:* Assume that the maximum number of nodes in a binary tree of height $H$ is
 $2^{H+1}-1$ for $H = 1, 2, ..., k$. Consider a tree $T$ of height $k+1$. The root of $T$ has 
 a left subtree and a right subtree each of which has height at most $k$. These can have
 at most $2^{k+1}-1$ nodes each by the inductive hypothesis. Adding the root node gives the 
 maximum number of nodes in a binary tree of height $k+1$, 
 
 $$
-\begin{eqnarray*} 
-        2(2^{k+1} - 1) + 1\\
-        & = & 2^{(k+1)+1} - 1 
-\end{eqnarray*}
+\begin{equation} 
+2(2^{k+1} - 1) + 1 = 2^{(k+1)+1} - 1 
+\end{equation}
 $$
 
-**MAW 4.6**
+### MAW 4.6
 
 > A *full node* is a node with two children. Prove that the number of full nodes
 > plus one is equal to the number of leaves in a nonempty binary tree.
@@ -65,13 +66,14 @@ Let's use two methods to prove this question.
 
 *Method 1:*
 
+**Proof:**
 Let's use the following notation for our proof:
 
 $$
 \begin{eqnarray*}
-N & = & \text{number of nodes in a nonempty binary tree}
-F & = & \text{number of full nodes}
-H & = & \text{number of nodes with one child}
+N & = & \text{number of nodes in a nonempty binary tree} \\
+F & = & \text{number of full nodes} \\
+H & = & \text{number of nodes with one child} \\
 L & = & \text{number of leaves}
 \end{eqnarray*}
 $$
@@ -90,6 +92,7 @@ $$
 
 *Method 2:*
 
+**Proof:**
 Let's prove by induction. If there are $N$ full nodes in a non-empty binary tree
 then there are $N+1$ leaves.
 
@@ -112,12 +115,13 @@ hypothesis there are $k+1$ leaves. Add all the nodes that were removed back into
 tree the same way to create the original tree. We are adding one full node and 
 one leaf node. Therefore, we have $k+1$ full nodes with $k+2$ leaves.
 
-**MAW 4.7**
+### MAW 4.7
 
 > Suppose a binary tree has leaves $l_{1}, l_{2}, ..., l_{M}$ at depths
 > $d_{1}, d_{2}, ...,d_{M}$, repectively. Prove that $\sum_{i=1}^M 2^{-d_{i}} \leq 1$
 > and determine when the quality is true.
 
+**Proof:**
 Let's prove this by induction. 
 
 *Base case:* when $M = 1$, there is one node: the root is a leaf wit depth zero. Then
@@ -142,6 +146,6 @@ is contradiction to the equality.
 \* ---- Note ---- *
 
 > This problem is called [Kraft–McMillan inequality](https://en.wikipedia.org/wiki/Kraft%E2%80%93McMillan_inequality),
-  which is one of fundamental theorem in Information theory. I find [this youtube playlist about information theory]
+  which is one of fundamental theorem in Information theory. I find [this youtube playlist about information theory](https://www.youtube.com/playlist?list=PLE125425EC837021F)
   is really good as an intro to the field because it doesn't make the material look very daunting and super technical,
   which some [lecture note](http://circuit.ucsd.edu/~yhk/ece154c-spr16/pdfs/LectureNotes01.pdf) manages to achieve.
