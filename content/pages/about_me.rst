@@ -13,6 +13,7 @@ I am contactable via. my personal email address ferrishu3886@gmail.com and am on
    :height: 225.1px
    :width: 400px
 
+**Personal motto:** "Discipline is the bridge between goals and accomplishment." --Jim Rohn
 ..
    .. note::
 

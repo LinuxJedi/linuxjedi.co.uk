@@ -16,6 +16,12 @@ To him he is always doing both."
 
 .. stop-show-quotes
 
+"Most people want to avoid pain, and discipline is usually painful."
+**--John C. Maxwell**
+
+""Discipline is the bridge between goals and accomplishment."
+**--Jim Rohn**
+
 “Your beliefs become your thoughts, Your thoughts become your words, 
 Your words become your actions, Your actions become your habits, 
 Your habits become your values, Your values become your destiny.”

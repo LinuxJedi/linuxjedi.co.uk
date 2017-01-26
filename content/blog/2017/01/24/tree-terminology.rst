@@ -108,10 +108,12 @@ Let's work through MAW 4.1, 4.2, and 4.3 to get the tree terminology clear.
 - "A" is the *root*
 - "G", "H", "I", "L", "M", "K" are the *leaves*
 - "A":
+
   - *children*: "B", "C"
   - *depth*: 0
   - *height*: 4
 - "B":
+
   - *parent*: "A"
   - *children*: "D", "E"
   - *siblings*: "C"
