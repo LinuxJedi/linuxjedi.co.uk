@@ -138,3 +138,10 @@ This new tree has the same property has the previous one, and by the statement w
 above, we should have the same sum as the old, which is one. Eventually, we are left
 with two node, one of them is root. Now, we calculate the sum, which gives $1/2$. This 
 is contradiction to the equality.
+
+\* ---- Note ---- *
+
+> This problem is called [Kraft–McMillan inequality](https://en.wikipedia.org/wiki/Kraft%E2%80%93McMillan_inequality),
+  which is one of fundamental theorem in Information theory. I find [this youtube playlist about information theory]
+  is really good as an intro to the field because it doesn't make the material look very daunting and super technical,
+  which some [lecture note](http://circuit.ucsd.edu/~yhk/ece154c-spr16/pdfs/LectureNotes01.pdf) manages to achieve.
