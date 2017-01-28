@@ -56,6 +56,23 @@ $$
 \end{eqnarray*}
 $$
 
+Remarks:
+
+The maximum condition achieves when we have *perfect binary tree*: A binary tree
+in which all internal nodes have exactly two children and all leaves are at the same
+level.
+
+.. image:: /images/perfect-binary-tree.png
+
+and it has property: each level has exactly twice as many nodes as the previous level 
+(since each internal node has exactly two children). Then, we have
+
+$$
+\begin{equation}
+n = \sum_{i=0}^{h} 2^i = 2^{h+1} - 1 \text{where n is the number of nodes} 
+\end{equation}
+$$
+
 **MAW 4.6**
 
 > A *full node* is a node with two children. Prove that the number of full nodes
