@@ -4,7 +4,7 @@
 Quotes
 ######
 
-Last Update: Jan 23, 2017
+Last Update: Jan 26, 2017
 
 "The Master in the art of living makes little distinction between his work 
 and his play, his labor and his leisure, his mind and his body, his 
@@ -19,7 +19,7 @@ To him he is always doing both."
 "Most people want to avoid pain, and discipline is usually painful."
 **--John C. Maxwell**
 
-""Discipline is the bridge between goals and accomplishment."
+"Discipline is the bridge between goals and accomplishment."
 **--Jim Rohn**
 
 “Your beliefs become your thoughts, Your thoughts become your words, 
@@ -34,7 +34,7 @@ Your habits become your values, Your values become your destiny.”
 **-- Bruce Lee**
    
 "宝剑锋从磨砺出，梅花香自苦寒来"
-**-- From <警世贤文·勤奋篇>**
+**-- 选自 <警世贤文·勤奋篇>**
 
 "There are two kinds of gifts. First, there is the innate gift of a given skill.
 *This is a minor gift.* If you have this gift, a skill such as doing math or playing

@@ -54,6 +54,10 @@ The *length* of this path is the number of edges on the path, namely :math:`k-1`
 For any node :math:`n_i`, the *depth* of :math:`n_i`, is the length of the unique
 path from the root to :math:`n_i`. 
 
+**internal path length**
+
+The sum of the depths of all nodes in a tree is known as the *internal path length*.
+
 **height**
 
 The *height* of :math:`n_i` is the length of the longest path from :math:`n_i` to
