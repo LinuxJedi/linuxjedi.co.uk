@@ -308,3 +308,4 @@ $$
 > depends on which element we pick first. I tend to think about $E[Y_n]$ as expectation of the conditional expectation.
 
 [//]: # (https://www.cs.rochester.edu/~gildea/csc282/slides/C12-bst.pdf)
+[//]: # (http://cs.stackexchange.com/questions/6342/proof-that-a-randomly-built-binary-search-tree-has-logarithmic-height)
