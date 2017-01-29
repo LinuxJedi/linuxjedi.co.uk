@@ -197,9 +197,9 @@ $$
 \begin{eqnarray*}
 h_{n} &=& 1 + max(h_{i-1}, h_{n-i}) \\
 2^{h_n} &=& 2^{1 + max(h_{i-1}, h_{n-i})} \\
-        &=& 2 * 2^{max(h_{i-1}, h_{n-i})} \\
-        &=& 2 * max(2^{h_{i-1}}, 2^{h_{n-i}}) \\
-Y_n     &=& 2 * max(Y_{i-1}, Y_{n-i}) 
+        &=& 2 \cdot 2^{max(h_{i-1}, h_{n-i})} \\
+        &=& 2 \cdot max(2^{h_{i-1}}, 2^{h_{n-i}}) \\
+Y_n     &=& 2 \cdot max(Y_{i-1}, Y_{n-i}) 
 \end{eqnarray*}
 $$
 
@@ -210,7 +210,7 @@ likely, then $P(I=i) = 1/n$.
 $$
 \begin{eqnarray*}
 E[Y_n] &=& \sum_{i=1}^n E[Y_n|I=i]P(I=i) \\
-       &=& \sum_{i=1}^n E[Y_n|I=i]1/n \\
+       &=& \sum_{i=1}^n E[Y_n|I=i]\frac{1}{n} \\
        &=& \frac{2}{n}\sum_{i=1}^n E[max(Y_{i-1},Y_{n-i})] \\
        &\le& \frac{2}{n}\sum_{i=1}^n (E[Y_{i-1}] + E[Y_{n-i}])
 \end{eqnarray*}
@@ -236,8 +236,8 @@ Then, we will show that for all integers $n>0$,
 
 $$
 \begin{eqnarray*}
-E[Y_n] &\le& frac{1}{4}\dbinom{n+3}{3} \\
-       &=& \frac{1}{4}*\frac{(n+3)(n+2)(n+1)}{6} \\ 
+E[Y_n] &\le& \frac{1}{4}\dbinom{n+3}{3} \\
+       &=& \frac{1}{4}\cdot\frac{(n+3)(n+2)(n+1)}{6} \\ 
        &=& O(n^3)
 \end{eqnarray*}
 $$
@@ -248,7 +248,7 @@ $f(x) = 2^x$, then $E[f(X)] = E[Y_n]$. So, we have
 
 $$
 \begin{equation}
-2^E[h_n] \le \frac{1}{4}\dbinom{n+3}{3} = O(n^3)
+2^{E[h_n]} \le \frac{1}{4}\dbinom{n+3}{3} = O(n^3)
 \end{equation}
 $$
 
@@ -266,7 +266,7 @@ $$
 \dbinom{n+3}{4} &=& \dbinom{n+2}{3} + \dbinom{n+2}{4} \\
                 &=& \dbinom{n+2}{3} + \dbinom{n+1}{3} + \dbinom{n+1}{4} \\
                 &=& \dbinom{n+2}{3} + \dbinom{n+!}{3} + \dbinom{n}{3} + \dbinom{n}{4} \\
-                \vdots
+                &\vdots& \\
                 &=& \dbinom{n+2}{3} + \dbinom{n+!}{3} + \dbinom{n}{3} + \dots + \dbinom{4}{3} + \dbinom{4}{4} \\
                 &=& \sum_{i=0}^{n-1}\dbinom{i+3}{3}
 \end{eqnarray*}
@@ -290,19 +290,19 @@ E[Y_n] &\le& \frac{4}{n}\sum_{i=0}^{n-1}E[Y_i] \\
        &\le& \frac{1}{4}\dbinom{i+3}{3} \\
        &=&   \frac{1}{n}\sum_{i=0}^{n-1}\dbinom{i+3}{3} \\
        &=&   \frac{1}{n}\dbinom{n+3}{4} \\
-       &=&   \frac{1}{n}\dbinom{(n+3)!}{4!(n-1)!} \\
-       &=&   \frac{1}{4}\dbinom{(n+3)!}{3!n!} \\
-       &=&   \frac{1}{4}\dbinom{n+3}{3}
+       &=&   \frac{1}{n}\frac{(n+3)!}{4!(n-1)!} \\
+       &=&   \frac{1}{4}\frac{(n+3)!}{3!n!} \\
+       &=&   \frac{1}{4}\frac{n+3}{3}
 \end{eqnarray*}
 $$
 
 \* ---- Note ---- *
 
-> I [reference this lecture note](https://www.cs.bgu.ac.il/~fds112/wiki.files/P05.pdf) when I develop the proof 
-> on my own. Overall, I share the similar proof with this one. However, we have slightly difference in terms of how we 
-> define $E[Y_n]$. The note defines an indicator random variables $Z_{n,i} = I{I=i}$, where $I=i$ means we pick $i_{th}$ element as our 
+> I [reference this lecture note](https://www.cs.bgu.ac.il/~fds112/wiki.files/P05.pdf) when I try to develop the proof. 
+> Overall, I share the similar proof with this one. However, we have slightly difference in terms of how we 
+> define $E[Y_n]$. The note defines an indicator random variables $Z_{n,i} = I\{I=i\}$, where $I=i$ means we pick $i_{th}$ element as our 
 > first element inserting into the empty tree. Since, we pick the first insertion element equally
-> likely, then $P(I=i) = 1/n$, and thus, $E[Z_{n,i}] = 1/n$ by $E[I_A] = P(A)$. Then, he defines $Y_n = \sum_{i=1}^nZ_{n,i} * (2 * max(Y_{i-1}, Y_{n-i}))$
+> likely, then $P(I=i) = \frac{1}{n}$, and thus, $E[Z_{n,i}] = \frac{1}{n}$ by $E[I_A] = P(A)$. Then, he defines $Y_n = \sum_{i=1}^nZ_{n,i} \cdot (2 \cdot max(Y_{i-1}, Y_{n-i}))$
 > because only one $Z_{n,i}$ can be $1$ and all others are $0$. It seems right but when he calculates the $E[Y_n]$, he states that
 > $Z_{n,i}$ is independent of $Y_{i-1}$ and $Y_{n-i}$. However, I don't think so as the height of the tree $h_n$, which $Y_n$ is constructed from 
 > depends on which element we pick first. I tend to think about $E[Y_n]$ as expectation of the conditional expectation.
