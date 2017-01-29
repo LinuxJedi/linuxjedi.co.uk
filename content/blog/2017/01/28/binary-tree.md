@@ -38,14 +38,14 @@ This is the summary of *binary tree* and *binary search tree* part in MAW Chapte
 - The average of height of a random binary search tree is $O(\log n)$ (i.e., $E[h] = O(\log n)$) (MAW 4.14)
 - All the basic operations `find`, `findMin`, `findMax`, `insert`, and `delete`
   $O(H)$ time, where $H$ is the height of the tree.
-  - worst case: height $H = n - 1$
-  - base case: height $H = \log N$, where the tree is a complete binary tree.
+    - worst case: height $H = n - 1$
+    - base case: height $H = \log N$, where the tree is a complete binary tree.
 - Randomly built binary search trees:
-  - The *average height* is much closer to the best case.
-  - Little is known about the average height when *both insertion and deletion* are used.
-  - characteristics
-    - Keys inserting in *random order* into an initially empty tree.
-    - Each of the $n!$ *permutations* of the input keys is *equally likely*.
+    - The *average height* is much closer to the best case.
+    - Little is known about the average height when *both insertion and deletion* are used.
+    - characteristics
+        - Keys inserting in *random order* into an initially empty tree.
+        - Each of the $n!$ *permutations* of the input keys is *equally likely*.
 
 ## Reference
 
