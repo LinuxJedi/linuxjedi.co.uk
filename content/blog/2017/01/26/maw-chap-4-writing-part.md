@@ -13,6 +13,7 @@ updated as I work through the chapter.
 - Recursive tree definition is a natural fit with induction (i.e., MAW 4.5, 4.6, 4.7).
 - Usually there are two ways to prove a problem in tree, one direction is from induction
   and the other one is from basic tree property (i.e., MAW 4.4, 4.6).
+- Combinatorics (relating to binomials) and Probability theory (discrete part) are important to look at (i.e., MAW 4.14)
 
 ## Solutions
 
