@@ -36,6 +36,16 @@ This is the summary of *binary tree* and *binary search tree* part in MAW Chapte
 - The number of full nodes plus one is equal to the number of leaves in a nonempty binary tree
 - The average depth of a node in a binary search tree constructed from random data is $O(\log n)$
 - The average of height of a random binary search tree is $O(\log n)$ (i.e., $E[h] = O(\log n)$) (MAW 4.14)
+- All the basic operations `find`, `findMin`, `findMax`, `insert`, and `delete`
+  $O(H)$ time, where $H$ is the height of the tree.
+  - worst case: height $H = n - 1$
+  - base case: height $H = \log N$, where the tree is a complete binary tree.
+- Randomly built binary search trees:
+  - The *average height* is much closer to the best case.
+  - Little is known about the average height when *both insertion and deletion* are used.
+  - characteristics
+    - Keys inserting in *random order* into an initially empty tree.
+    - Each of the $n!$ *permutations* of the input keys is *equally likely*.
 
 ## Reference
 

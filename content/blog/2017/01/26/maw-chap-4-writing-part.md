@@ -159,3 +159,152 @@ is contradiction to the equality.
   which is one of fundamental theorem in Information theory. I find [this youtube playlist about information theory](https://www.youtube.com/playlist?list=PLE125425EC837021F)
   is really good as an intro to the field because it doesn't make the material look very daunting and super technical,
   which some [lecture note](http://circuit.ucsd.edu/~yhk/ece154c-spr16/pdfs/LectureNotes01.pdf) manages to achieve.
+
+### MAW 4.14
+
+> Prove that the depth of a random binary search tree (depth of the deepest node) is $O(\log N)$, on average.
+
+This question can be restated like the following: suppose that we insert $n$ distinct elements into an 
+initially empty tree. Assuming that the $n!$ permutations are equally likely to occur, then show that
+the average height of the tree is $O(\log N)$.
+
+Before we dive into the proof, let's think about how we can construct a random binary search tree.
+We construct a tree $T$ by inserting in order randomly selected $n$ distinct elements into an 
+initially empty tree. Here the actual values of the elements do not matter. What matters is the position
+of the inserted element in the $n$ elements. Thus, we construct a random binary search tree as the following:
+
+An element $i$ from the $n$ elements is selected uniformly ar random and is inserted to the empty tree. Then all 
+the other elements are inserted. Here all the elements greater than $i$ go into the right subtree of $i$
+and all the elements smaller than $i$ go into the left subtree. Thus, the height of the tree constructed
+is one plus the larger of the height of the left subtree and the height of the right subtree.
+
+**Proof:**
+Following our construction process above, if we randomly choose the $i^{th}$ key, the left
+subtree has $i-1$ elements and the right subtree has $n-i$ elements. Let $h_{n}$ be the
+height of a randomly built binary search tree on $n$ keys. Then we have
+
+$$
+\begin{equation} 
+h_{n} = 1 + max(h_{i-1}, h_{n-i}) \label{eqn:1}
+\end{equation}
+$$
+
+Now, let's define $Y_{n} = 2^{h_n}$. If we can show 
+that $E[Y_n]$ is polynomial in $n$, we then have $E[h_n] = O(\log n)$. Again, $Y_n$ 
+depends on $i$ not $n$. Let's represent \ref{eqn:1} in terms of $Y_n$:
+
+$$
+\begin{eqnarray*}
+h_{n} &=& 1 + max(h_{i-1}, h_{n-i}) \\
+2^{h_n} &=& 2^{1 + max(h_{i-1}, h_{n-i})} \\
+        &=& 2 * 2^{max(h_{i-1}, h_{n-i})} \\
+        &=& 2 * max(2^{h_{i-1}}, 2^{h_{n-i}}) \\
+Y_n     &=& 2 * max(Y_{i-1}, Y_{n-i}) 
+\end{eqnarray*}
+$$
+
+Now, let's calculate $E[Y_n]$. Here, $I=i$ means we pick $i_{th}$ element as our 
+first element inserting into the empty tree.Since, we pick the first insertion element equally
+likely, then $P(I=i) = 1/n$.
+
+$$
+\begin{eqnarray*}
+E[Y_n] &=& \sum_{i=1}^n E[Y_n|I=i]P(I=i) \\
+       &=& \sum_{i=1}^n E[Y_n|I=i]1/n \\
+       &=& \frac{2}{n}\sum_{i=1}^n E[max(Y_{i-1},Y_{n-i})] \\
+       &\le& \frac{2}{n}\sum_{i=1}^n (E[Y_{i-1}] + E[Y_{n-i}])
+\end{eqnarray*}
+$$
+
+Now we expand the last summation as
+
+$$
+\begin{equation}
+(E[Y_0] + E[Y_{n-1}]) + \dots + (E[Y_{n-1}] + E[Y_0]) = 2\sum_{i=0}^{n-1}E[Y_i]
+\end{equation}
+$$
+
+Thus, we have
+
+$$
+\begin{equation}
+E[Y_n] \le \frac{4}{n}\sum_{i=0}^{n-1}E[Y_i]
+\end{equation}
+$$
+
+Then, we will show that for all integers $n>0$, 
+
+$$
+\begin{eqnarray*}
+E[Y_n] &\le& frac{1}{4}\dbinom{n+3}{3} \\
+       &=& \frac{1}{4}*\frac{(n+3)(n+2)(n+1)}{6} \\ 
+       &=& O(n^3)
+\end{eqnarray*}
+$$
+
+Then, we use *Jensen's inequality*, which states that $f(E[X]) \le E[f(X)]$ provided
+the expectations exist and are finite, and f(x) is convex. Let this $X$ be $h_n$ and
+$f(x) = 2^x$, then $E[f(X)] = E[Y_n]$. So, we have
+
+$$
+\begin{equation}
+2^E[h_n] \le \frac{1}{4}\dbinom{n+3}{3} = O(n^3)
+\end{equation}
+$$
+
+By taking the log of both sides, we have $E[h_n] = O(\log n)$
+
+**Remarks:**
+
+- Let's first prove $\sum_{i=0}^{n-1}\dbinom{i+3}{3} = \dbinom{n+3}{4}$
+
+**Proof:** Use *Pascal's identity:* $\dbinom{n}{k} = \dbinom{n-1}{k-1} + \dbinom{n-1}{k}$
+Also using the simple identity $\dbinom{4}{4} = 1 = \dbinom{3}{3}$. We have:
+
+$$
+\begin{eqnarray*}
+\dbinom{n+3}{4} &=& \dbinom{n+2}{3} + \dbinom{n+2}{4} \\
+                &=& \dbinom{n+2}{3} + \dbinom{n+1}{3} + \dbinom{n+1}{4} \\
+                &=& \dbinom{n+2}{3} + \dbinom{n+!}{3} + \dbinom{n}{3} + \dbinom{n}{4} \\
+                \vdots
+                &=& \dbinom{n+2}{3} + \dbinom{n+!}{3} + \dbinom{n}{3} + \dots + \dbinom{4}{3} + \dbinom{4}{4} \\
+                &=& \sum_{i=0}^{n-1}\dbinom{i+3}{3}
+\end{eqnarray*}
+$$
+
+- Let's prove $E[Y_n] \le \frac{1}{4}\dbinom{n+3}{3}$ by induction.
+
+**Proof:** *Base case:* $n=1$. 
+
+$$
+\begin{equation}
+1 = Y_1 = E[Y_1] \le \frac{1}{4}\dbinom{1+3}{3} = 1.
+\end{equation}
+$$
+
+*Inductive Hypothesis:* Assume that $E[Y_i]\le\frac{1}{4}\dbinom{i+3}{3}$ for all $i<n$. Then,
+
+$$
+\begin{eqnarray*}
+E[Y_n] &\le& \frac{4}{n}\sum_{i=0}^{n-1}E[Y_i] \\
+       &\le& \frac{1}{4}\dbinom{i+3}{3} \\
+       &=&   \frac{1}{n}\sum_{i=0}^{n-1}\dbinom{i+3}{3} \\
+       &=&   \frac{1}{n}\dbinom{n+3}{4} \\
+       &=&   \frac{1}{n}\dbinom{(n+3)!}{4!(n-1)!} \\
+       &=&   \frac{1}{4}\dbinom{(n+3)!}{3!n!} \\
+       &=&   \frac{1}{4}\dbinom{n+3}{3}
+\end{eqnarray*}
+$$
+
+\* ---- Note ---- *
+
+> I [reference this lecture note](https://www.cs.bgu.ac.il/~fds112/wiki.files/P05.pdf) when I develop the proof 
+> on my own. Overall, I share the similar proof with this one. However, we have slightly difference in terms of how we 
+> define $E[Y_n]$. The note defines an indicator random variables $Z_{n,i} = I{I=i}$, where $I=i$ means we pick $i_{th}$ element as our 
+> first element inserting into the empty tree. Since, we pick the first insertion element equally
+> likely, then $P(I=i) = 1/n$, and thus, $E[Z_{n,i}] = 1/n$ by $E[I_A] = P(A)$. Then, he defines $Y_n = \sum_{i=1}^nZ_{n,i} * (2 * max(Y_{i-1}, Y_{n-i}))$
+> because only one $Z_{n,i}$ can be $1$ and all others are $0$. It seems right but when he calculates the $E[Y_n]$, he states that
+> $Z_{n,i}$ is independent of $Y_{i-1}$ and $Y_{n-i}$. However, I don't think so as the height of the tree $h_n$, which $Y_n$ is constructed from 
+> depends on which element we pick first. I tend to think about $E[Y_n]$ as expectation of the conditional expectation.
+
+[//]: # (https://www.cs.rochester.edu/~gildea/csc282/slides/C12-bst.pdf)
