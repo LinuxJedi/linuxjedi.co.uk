@@ -205,7 +205,7 @@ $$
 
 Now, let's calculate $E[Y_n]$. Here, $I=i$ means we pick $i_{th}$ element as our 
 first element inserting into the empty tree.Since, we pick the first insertion element equally
-likely, then $P(I=i) = 1/n$.
+likely, then $P(I=i) = \frac{1}{n}$.
 
 $$
 \begin{eqnarray*}
@@ -292,7 +292,7 @@ E[Y_n] &\le& \frac{4}{n}\sum_{i=0}^{n-1}E[Y_i] \\
        &=&   \frac{1}{n}\dbinom{n+3}{4} \\
        &=&   \frac{1}{n}\frac{(n+3)!}{4!(n-1)!} \\
        &=&   \frac{1}{4}\frac{(n+3)!}{3!n!} \\
-       &=&   \frac{1}{4}\frac{n+3}{3}
+       &=&   \frac{1}{4}\dbinom{n+3}{3}
 \end{eqnarray*}
 $$
 
