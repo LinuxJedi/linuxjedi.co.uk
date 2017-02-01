@@ -1,5 +1,5 @@
 Title: Solving recurrence relations in a nutshell
-Date: 2017-02-01 23:21
+Date: 2017-02-02 01:05
 Category: Mathematics
 Tags: recursion, combinatorics, math
 
@@ -13,7 +13,7 @@ is to help at least me quickly solve any types of recurrence relation in the fut
 The content closely follows Chapter 7
 "Recurrence Relations and Generating Functions" of 
 ["Introductory Combinatorics"](https://www.amazon.com/Introductory-Combinatorics-5th-Richard-Brualdi/dp/0136020402),
-which is the textbook I used when I took combinatorics class.
+which is the textbook I used.
 
 \* ---- Note ---- *
 
@@ -202,10 +202,196 @@ $$
 
 Then we can use initial values to determine $c1$, $c2$, $c3$, $c4$ and we have $h_n = \frac{7}{9} (-1)^n - \frac{3}{9}n(-1)^n + \frac{2}{9}2^n$.
 
-\* ---- Note ---- *
+<!--\* ---- Note ---- *
 
 > You probably already notice from the previous example that "characteristic equation" method really depends on the diffculty in finding all roots
 > of a polynomial equation. Sometimes finding the roots of characteristic equation can be quite diffcult. That's what second method tries to address.
-> If you find out that characteristic equation is really diffcult to solve, you can always use "generating function" method.
+> If you find out that characteristic equation is really diffcult to solve, you can always use "generating function" method.-->
 
 ### Method 2: Generating function
+
+*Definition:* Let $h_0, h_1, h_2, \dots, h_n, \dots$ be an infinite sequence of numbers. Its **generating function** is defined to be the infinite
+series
+
+$$
+\begin{equation}
+g(x) = h_0 + h_1x + h_2x^2 + \dots + h_nx^n + \cdots
+\end{equation}
+$$
+
+The coefficient of $x^n$ in $g(x)$ is the general solution to $h_n$. As you can see, generating functions are Taylor series (power series expansion)
+of infinitely differentiable functions. If we can find the function (i.e. $g(x)$) and its Taylor series, then the coefficients of the Taylor series give the solution 
+to the problem.
+
+Let's illustrate this method using an example.
+
+*Example:* Solve the recurrence relation 
+
+$$
+\begin{equation*}
+h_n = 5h_{n-1} - 6h_{n-2} \qquad (n \ge 2) 
+\end{equation*}
+$$
+
+subject to the initial values $h_0 = 1$ and $h_1 = -2$.
+
+We first rewrite the recurrence relation into $h_n -5h_{n-1} + 6h_{n-2} = 0 \quad (n \ge 2)$. Let $g(x) = h_0 + h_1x + h_2x^2 + \dots + h_nx^n + \cdots$
+be the generating function for the sequence $h_0, h_1, \dots, h_n, \dots$. We then form the following system of equations with the multipliers chosen based 
+upon our rewritten recurrence relation initially.
+
+$$
+\begin{eqnarray*}
+g(x) &=& h_0 + h_1x + h_2x^2 + \dots + h_nx^n + \cdots \\
+-5xg(x) &=&   -5h_0x - 5h_1x^2 - \dots - 5h_{n-1}x^n - \cdots \\
+6x^2g(x) &=&         6h_0x^2 + \dots + 6h_{n-2}x^n + \cdots
+\end{eqnarray*}
+$$
+
+If you look at the coefficients of $x^n$ term vertically of all these three equations, you can see that they match our recurrence relation exactly.
+Now, we add these three equations together, we obtain
+
+$$
+\begin{equation*}
+(1-5x+6x^2)g(x) = h_0 + (h_1-5h_0)x + (h_2 - 5h_1 + 6h_0)x^2 + \dots + (h_n - 5h_{n-1} + 6h_{n-2})x^n + \cdots .
+\end{equation*}
+$$
+
+since $$h_n - 5h_{n-1} + 6h_{n-2} = 0 \quad (n \ge 2)$ and our initial condition, we have
+
+$$
+\begin{equation*}
+(1-5x+6x^2)g(x) = h_0 + (h_1 - 5h_0)x = 1 -7x
+\end{equation*}
+$$
+
+Thus,
+
+$$
+\begin{equation*}
+g(x) = \frac{1-7x}{1-5x+6x^2}
+\end{equation*}
+$$
+
+Now, we need to expand $g(x)$ in order to get the coefficient of $h_n$. Since $1-5x+6x^2 = (1-2x)(1-3x)$, we can write
+
+$$
+\begin{equation*}
+\frac{1-7x}{1-5x+6x^2} = \frac{c_1}{1-2x} + \frac{c_2}{1-3x}
+\end{equation*}
+$$
+
+for some constants $c1$ and $c2$. We can determine $c1$ and $c2$ by multiplying both sides of this equation by $1-5x+6x^2$ to get
+
+$$
+\begin{equation*}
+1 - 7x = (c_1 + c_2) + (-3c_1 -2c_2)x
+\end{equation*}
+$$
+
+We can get $c_1 = 5$ and $c_2 = -4$. Since 
+
+$$
+\begin{equation*}
+\frac{1}{(1-rx)^n} = \sum_{k=0}^\infty\dbinom{n+k-1}{k}r^kx^k \qquad \Big(|x| < \frac{1}{|r|}\Big)
+\end{equation*}
+$$
+
+We have 
+
+$$
+\begin{equation*}
+\frac{1}{1-2x} = 1 + 2x + 2^2x^2 + \dots + 2^nx^n + \cdots
+\end{equation*}
+$$
+
+$$
+\begin{equation*}
+\frac{1}{1-3x} = 1 + 3x + 3^2x^2 + \dots + 3^nx^n + \cdots
+\end{equation*}
+$$
+
+So
+
+$$
+\begin{eqnarray*}
+g(x) &=& 5(1 + 2x + 2^2x^2 + \dots + 2^nx^n + \cdots) -4(1 + 3x + 3^2x^2 + \dots + 3^nx^n + \cdots) \\
+&=& 1 + (-2)x + (-15)x^2 + \dots + (5\times2^n - 4\times3^n)x^n + \cdots
+\end{eqnarray*}
+$$
+
+Thus, $h_n = 5\times2^n - 4\times3^n$.
+
+\* ---- Note ---- *
+
+> Getting the polynomial expansion of $g(x)$ is the hardest part of this method. For instance, factoring the 
+> denominator of $g(x)$ can be tricky for high degree polynomials. I need more practice on solving recurrence
+> relation to decide which method is superior under what kind of situation.
+
+## Linear nonhomogeneous recurrence relation with constant coefficients
+
+**nonhomogeneous** means $b_n$ in \ref{eq:1} is no longer zero constant.
+
+### Method 1: Characteristic equation
+
+*Steps:*
+
+1) Find the general solution of the homogeneous relation.
+
+2) Find a particular solution of the nonhomogeneous relation.
+     
+- If $b_n$ is a polynomial of degree $k$ in $n$, then look for a particular solution $h_n$ that is also a polynomial of degree $k$ in $n$. Thus, try 
+    - $h_n = r$ (a constant) if $b_n = d$ (a constant)
+    - $h_n = rn + s$ if $b_n = dn + e$
+    - $h_n = rn^2 + sn + t$ if $b_n = dn^2 + en + f$
+- If $b_n$ is an exponential, then look for a particular solution that is also an exponential. Thus, try $h_n = pd^n$ if $b_n = d^n$ or $h_n = pnd^n$ if 
+  the first try doesn't work.
+
+3) Combine the general solution and the particular solution so that the combined solution satisfies the initial conditions.
+
+*Example:* Solve 
+
+$$
+\begin{eqnarray*}
+h_n &=& 3h_{n-1} - 4n, \qquad (n \ge 1) \\
+h_0 &=& 2
+\end{eqnarray*}
+$$
+
+We first consider corresponding homogeneous recurrence relation $h_n = 3h_{n-1}$ and its characteristic equation is $x - 3 = 0$. and thus
+we have the general solution $h_n = c3^n, \quad (n \ge 1)$.
+
+Now we seek a particular solution of the nonhomogeneous recurrence relation $h_n = 3h_{n-1}-4n, \quad (n \ge 1)$. We try to find a solution of the 
+form $h_n = rn + s$ for some constant number $r$ and $s$. We plug in our conjecture into the recurrence relation and get
+
+$$
+\begin{equation*}
+rn + s = 3(r(n-1)+s) - 4n = (3r-4)n + (-3r+3s)
+\end{equation*}
+$$
+
+Thus, $r = 2$ and $s = 3$ and $h_n = 2n + 3$. Now, we combine the general solution of the homogeneous relation with the particular solution 
+of the nonhomogeneous relation to obtain
+
+$$
+\begin{equation*}
+h_n = c3^n + 2n + 3
+\end{equation*}
+$$
+
+Now, let's use inital condition to solve for $c$ and we have $c = -1$. So, $h_n = -3^n + 2n + 3$.
+
+\* ---- Note ---- *
+
+> As you can see, solving recurrence relation using characteristic equation has strong connection with solving differential equations (both homogeneous and
+> nonhomogeneous). 
+
+### Method 2: Generating function
+
+There is nothing difference in using "generating function" method to solve nonhomogeneous than solve homogeneous recurrence relation. That's actually 
+a beauty of this method: nothing needs to tweak in order to work under different situation.
+
+\* ---- Note ---- *
+
+> Certainly, not all recurrence relation appeard in computer science can be easily solved by the method described in this post. For instance,
+> inside [Josephus problem]({filename}/blog/2016/12/31/josephus-problem.md), recurrence relation may depend on whether $n$ is odd or even and 
+> methods may not apply nicely. Also, in the book, solving $h_n = h_{n-1} + n^3$ on p. 250 is also not standard as well.
