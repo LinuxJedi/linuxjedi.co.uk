@@ -15,10 +15,17 @@ The content closely follows Chapter 7
 ["Introductory Combinatorics"](https://www.amazon.com/Introductory-Combinatorics-5th-Richard-Brualdi/dp/0136020402),
 which is the textbook I used when I took combinatorics class.
 
+\* ---- Note ---- *
+
+> This note is practical-oriented. I will skip the proof of the theorem whenever possible.
+> If you are interested in the proof side of the universe, please read the book.
+
 ## TOC
 
-- [Linear homogeneous recurrence relation with constant coefficients](#linear-homogeneous-recurrence-relation-with-constant-coefficients)
-    - Method 1: Characteristic equations (#method-1-characteristic-equations-for-linear-homogeneous)
+The post will be organized in the following format:
+
+- Linear homogeneous recurrence relation with constant coefficients
+    - Method 1: Characteristic equations
     - Method 2: Generating functions
     - Example
 - Linear nonhomogeneous recurrence relation with constant coefficients
@@ -28,6 +35,72 @@ which is the textbook I used when I took combinatorics class.
 
 ## Linear homogeneous recurrence relation with constant coefficients
 
-### Method 1: Characteristic equations for linear homogeneous
+**Definition:** Let $h_0, h_1, h_2, \dots, h_n, \dots$ be a sequence of numbers. This sequence is 
+said to satisfy a **linear recurrence relation of order $k$**, provided that there
+exist quantities $a_1, a_2, \dots, a_k,$ with $a_k \ne 0$, and a quantity $b_n$
+(each of these quantities $a_1,a_2,\dots,a_k,b_n$ may depend on $n$) such that 
 
-### Method 2: Generating functions for linear homogeneous
+$$
+\begin{equation}
+h_n = a_1h_{n-1} + a_2h_{n-2} + \dots + a_kh_{n-k} + b_n, (n\gek) \label{eq:1}
+\end{equation}
+$$
+
+**Example:** The Fabonacci sequence $f_0, f_1, f_2, \dots, f_n, \dots$ satisfies
+the linear recurrence relation
+
+$$
+\begin{equation}
+f_n = f_{n-1} + f_{n-2} (n\ge2)
+\end{equation}
+$$
+
+of order 2 with $a_1 = 1, a_2 = 1,$ and $b_n = 0$.
+
+**Definition:** The linear recurrence relation \ref{eq:1} is called **homogeneous** 
+provided that $b_n$ is zero and is said to have **constant coefficients** provided that
+$a_1, a_2, \dots, a_k$ are constants.
+
+### Method 1: Characteristic equations
+
+**Theorem:** Let $q$ be a nonzero number. Then $h_n = q^n$ is a solution of the
+linear homogeneous recurrence relation
+
+$$
+\begin{equation}
+h_n - a_1h_{n-1}-a_2h_{n-2}- \dots - a_kh_{n-k} = 0, (a_k \ne 0, n \ge k) \label{eq:2}
+\end{equation}
+$$
+
+with constant coefficients iff $q$ is a root of the polynomial equation (called **characteristic equation**) 
+
+$$
+\begin{equation}
+x_k-a_1x^{k-1}-a_2x^{k-2}= \dots - a_k = 0 \label{eq:3}
+\end{equation}
+$$
+
+If the polynomial equation has $k$ *distinct* roots $q_1, q_2, \dots, q_k$, then
+
+$$
+\begin{equation}
+h_n = c_1q_1^{n}+c_2q_2^n+ \dots + c_kq_k^n \label{eq:4}
+\end{equation}
+$$
+
+is the general solution of \ref{eq:2} in the following sense: No matter what initial
+values for $h_0, h_1, \dots, h_{k-1}$ are given, there are constants $c_1, c_2, \dots, c_k$
+so that \ref{eq:4} is the unique sequence which satisfies both the recurrence relation 
+\ref{eq:2} and the initial values.
+
+**Example:** Solve the Fabonacci recurrence relation
+
+$$
+\begin{equation}
+f_n = f_{n-1} + f_{n-2} (n\ge2)
+\end{equation}
+$$
+
+subject to the initial values $f_0 = 0$, and $f_1$ = 1.
+
+### Method 2: Generating functions
