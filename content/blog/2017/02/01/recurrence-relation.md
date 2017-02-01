@@ -35,35 +35,35 @@ The post will be organized in the following format:
 
 ## Linear homogeneous recurrence relation with constant coefficients
 
-**Definition:** Let $h_0, h_1, h_2, \dots, h_n, \dots$ be a sequence of numbers. This sequence is 
+Definition: Let $h_0, h_1, h_2, \dots, h_n, \dots$ be a sequence of numbers. This sequence is 
 said to satisfy a **linear recurrence relation of order $k$**, provided that there
 exist quantities $a_1, a_2, \dots, a_k,$ with $a_k \ne 0$, and a quantity $b_n$
 (each of these quantities $a_1,a_2,\dots,a_k,b_n$ may depend on $n$) such that 
 
 $$
 \begin{equation}
-h_n = a_1h_{n-1} + a_2h_{n-2} + \dots + a_kh_{n-k} + b_n, (n\gek) \label{eq:1}
+h_n = a_1h_{n-1} + a_2h_{n-2} + \dots + a_kh_{n-k} + b_n, (n\ge k) \label{eq:1}
 \end{equation}
 $$
 
-**Example:** The Fabonacci sequence $f_0, f_1, f_2, \dots, f_n, \dots$ satisfies
+Example: The Fabonacci sequence $f_0, f_1, f_2, \dots, f_n, \dots$ satisfies
 the linear recurrence relation
 
 $$
 \begin{equation}
-f_n = f_{n-1} + f_{n-2} (n\ge2)
+f_n = f_{n-1} + f_{n-2} (n\ge 2)
 \end{equation}
 $$
 
 of order 2 with $a_1 = 1, a_2 = 1,$ and $b_n = 0$.
 
-**Definition:** The linear recurrence relation \ref{eq:1} is called **homogeneous** 
+Definition: The linear recurrence relation \ref{eq:1} is called **homogeneous** 
 provided that $b_n$ is zero and is said to have **constant coefficients** provided that
 $a_1, a_2, \dots, a_k$ are constants.
 
 ### Method 1: Characteristic equations
 
-**Theorem:** Let $q$ be a nonzero number. Then $h_n = q^n$ is a solution of the
+Theorem 7.4.1: Let $q$ be a nonzero number. Then $h_n = q^n$ is a solution of the
 linear homogeneous recurrence relation
 
 $$
@@ -93,14 +93,42 @@ values for $h_0, h_1, \dots, h_{k-1}$ are given, there are constants $c_1, c_2, 
 so that \ref{eq:4} is the unique sequence which satisfies both the recurrence relation 
 \ref{eq:2} and the initial values.
 
-**Example:** Solve the Fabonacci recurrence relation
+Example: Solve the Fabonacci recurrence relation
 
 $$
-\begin{equation}
-f_n = f_{n-1} + f_{n-2} (n\ge2)
-\end{equation}
+\begin{equation*}
+f_n = f_{n-1} + f_{n-2} (n\ge 2)
+\end{equation*}
 $$
 
 subject to the initial values $f_0 = 0$, and $f_1$ = 1.
+
+We rewrite reccurrence relation into $f(n) - f(n-1) - f(n-2) = 0$ and the characteristic 
+equation of this recurrence relation is
+
+$$
+\begin{equation*}
+x^2 - x - 1 = 0
+\end{equation*}
+$$
+
+and its two roots are $\frac{1+\sqrt(5)}}{2}$, $\frac{1-\sqrt(5)}{2}$, and by theorem 7.4.1,
+
+$$
+\begin{equation*}
+f_n = c_1 (\frac{1+\sqrt(5)}}{2})^n + c_2 (\frac{1-\sqrt(5)}{2})^n
+\end{equation*}
+$$
+
+is the general solution. We now want constants c_1, and c_2 so that 
+
+$$
+\left \{
+\begin{array}{ll}
+(n = 1) c_1 (\frac{1+\sqrt(5)}}{2}) + c_2 (\frac{1-\sqrt(5)}{2}) = 1\\
+(n = 0) c_1 + c_2 = 0 \\
+\end{array}
+\right \}
+$$
 
 ### Method 2: Generating functions
