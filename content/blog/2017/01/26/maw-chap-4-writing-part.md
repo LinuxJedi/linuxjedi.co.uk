@@ -325,9 +325,9 @@ The minimum number of nodes in an AVL tree of height $H$, $S(H) = S(H-1) + S(H-2
 It's a linear nonhomogeneous recurrence relation with constant coefficients. Let's first find 
 out the general solution for corresponding homogeneous recurrence relation $S(H) = S(H-1) + S(H-2)$ first.
 The characteristic equation is $x^2 - x - 1 = 0$ and the roots are $\frac{1+\sqrt 5}{2}$ and $\frac{1-\sqrt 5}{2}$.
-So, we have $S(H) = c_1\Big(\frac{1+\sqrt 5}{2}\Big)^H + c_2\Big(\frac{1-\sqrt 5}{2})^H$.
+So, we have $S(H) = c_1\Big(\frac{1+\sqrt 5}{2}\Big)^H + c_2\Big(\frac{1-\sqrt 5}{2}\Big)^H$.
 
-Now, for a particular solution to the recurrence relation, let's guess $S(H) = r \quad \text{for some constant} r$.
+Now, for a particular solution to the recurrence relation, let's guess $S(H) = r \quad \text{for some constant } r$.
 This solution has to satisfy the recurrence relation as well. Thus, 
 
 $$
@@ -336,13 +336,13 @@ r = r + r + 1
 \end{equation*}
 $$
 
-So, we have $r = -1$. Thus, $S(H) = c_1\Big(\frac{1+\sqrt 5}{2}\Big)^H + c_2\Big(\frac{1-\sqrt 5}{2})^H - 1$. We plugin
+So, we have $r = -1$. Thus, $S(H) = c_1\Big(\frac{1+\sqrt 5}{2}\Big)^H + c_2\Big(\frac{1-\sqrt 5}{2}\Big)^H - 1$. We plugin
 the initial condition to our general solution to solve for $c_1$ and $c_2$. We get $c_1 = 1 + \frac{2}{\sqrt 5}$
 and $c_2 = 1 - \frac{2}{\sqrt 5}$. Thus, we have 
 
 $$
 \begin{equation*}
-S(H) = \Big(1 + \frac{2}{\sqrt 5}\Big)\Big(\frac{1+\sqrt 5}{2}\Big)^H + \Big(1 - \frac{2}{\sqrt 5}\Big)\Big(\frac{1-\sqrt 5}{2})^H - 1
+S(H) = \Big(1 + \frac{2}{\sqrt 5}\Big)\Big(\frac{1+\sqrt 5}{2}\Big)^H + \Big(1 - \frac{2}{\sqrt 5}\Big)\Big(\frac{1-\sqrt 5}{2}\Big)^H - 1
 \end{equation*}
 $$
 
@@ -358,7 +358,11 @@ Now, let $H = 15$ and we have $S(15) = 2583$.
 
 > Show the result of inserting 2,1,4,5,9,3,6,7 into an initially empty AVL tree.
 
-![maw-4-16](/images/maw-4-16.png)(https://github.com/xxks-kkk/Code-for-blog/blob/master/2017/trees/graphviz-src/maw-4-16.gv)
+<a href="https://github.com/xxks-kkk/Code-for-blog/blob/master/2017/trees/graphviz-src/maw-4-16.gv">
+<img src="/images/maw-4-16.png" alt="maw-4-16" style="width: 700px;"/>
+</a>
+
+<!--[![maw-4-16](/images/maw-4-16.png)](https://github.com/xxks-kkk/Code-for-blog/blob/master/2017/trees/graphviz-src/maw-4-16.gv)-->
 
 ### MAW 4.17
 
