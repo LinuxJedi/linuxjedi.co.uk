@@ -1,4 +1,4 @@
-Title: MAW Chapter 4: Tree proof questions
+Title: MAW Chapter 4: Tree writing questions
 Date: 2017-01-26 17:41
 Category: Data Struct and Algo Analysis in C
 Tags: trees, proof, math
@@ -16,6 +16,8 @@ updated as I work through the chapter.
 - Combinatorics (relating to binomials) and Probability theory (discrete part) are important to look at (i.e., MAW 4.14)
 
 ## Solutions
+
+including: MAW 4.4, 4.5, 4.6, 4.7, 4.14, 4.15
 
 ### MAW 4.4
 
@@ -310,3 +312,47 @@ $$
 
 [//]: # (https://www.cs.rochester.edu/~gildea/csc282/slides/C12-bst.pdf)
 [//]: # (http://cs.stackexchange.com/questions/6342/proof-that-a-randomly-built-binary-search-tree-has-logarithmic-height)
+
+### MAW 4.15
+
+> a. Give a precise expression for the minimum number of nodes in an AVL tree of height $H$.
+> b. What is the minimum number of nodes in an AVL tree of height 15? 
+
+The minimum number of nodes in an AVL tree of height $H$, $S(H) = S(H-1) + S(H-2) + 1 \quad (H \ge 2)$ with $S(0) = 1$ and $S(1) = 2$.
+It's a linear nonhomogeneous recurrence relation with constant coefficients. Let's first find 
+out the general solution for corresponding homogeneous recurrence relation $S(H) = S(H-1) + S(H-2)$ first.
+The characteristic equation is $x^2 - x - 1 = 0$ and the roots are $\frac{1+\sqrt 5}{2}$ and $\frac{1-\sqrt 5}{2}$.
+So, we have $S(H) = c_1\Big(\frac{1+\sqrt 5}{2}\Big)^H + c_2\Big(\frac{1-\sqrt 5}{2})^H$.
+
+Now, for a particular solution to the recurrence relation, let's guess $S(H) = r \quad \text{for some constant} r$.
+This solution has to satisfy the recurrence relation as well. Thus, 
+
+$$
+\begin{equation*}
+r = r + r + 1
+\end{equation*}
+$$
+
+So, we have $r = -1$. Thus, $S(H) = c_1\Big(\frac{1+\sqrt 5}{2}\Big)^H + c_2\Big(\frac{1-\sqrt 5}{2})^H - 1$. We plugin
+the initial condition to our general solution to solve for $c_1$ and $c_2$. We get $c_1 = 1 + \frac{2}{\sqrt 5}$
+and $c_2 = 1 - \frac{2}{\sqrt 5}$. Thus, we have 
+
+$$
+\begin{equation*}
+S(H) = \Big(1 + \frac{2}{\sqrt 5}\Big)\Big(\frac{1+\sqrt 5}{2}\Big)^H + \Big(1 - \frac{2}{\sqrt 5}\Big)\Big(\frac{1-\sqrt 5}{2})^H - 1
+\end{equation*}
+$$
+
+Now, let $H = 15$ and we have $S(15) = 2583$.
+
+\* ---- Note ---- *
+
+> initial condition is for the general solution for the recurrence relation, not the homogeneous 
+> part. Thus, we cannot use the initial condition immediately when we have our homogeneous part done.
+> We need to wait until the whole solution (homogeneous part + particular part).
+
+### MAW 4.16
+
+> Show the result of inserting 2,1,4,5,9,3,6,7 into an initially empty AVL tree.
+
+![maw-4-16](/images/maw-4-16.png)(https://github.com/xxks-kkk/Code-for-blog/blob/master/2017/trees/graphviz-src/maw-4-16.gv)
