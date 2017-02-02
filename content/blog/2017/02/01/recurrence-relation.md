@@ -161,7 +161,7 @@ relation corresponding to $q_i$ is
 
 $$
 \begin{equation*}
-H_{n}^{(i)} = c_1q_i^n + c2nq_i^n + \dots + c_{s_i}n^{s_i-1}q_i^n
+H_{n}^{(i)} = c_1q_i^n + c_2nq_i^n + \dots + c_{s_i}n^{s_i-1}q_i^n
 \end{equation*}
 $$
 
@@ -394,4 +394,4 @@ a beauty of this method: nothing needs to tweak in order to work under different
 
 > Certainly, not all recurrence relation appeard in computer science can be easily solved by the method described in this post. For instance,
 > inside [Josephus problem]({filename}/blog/2016/12/31/josephus-problem.md), recurrence relation may depend on whether $n$ is odd or even and 
-> methods may not apply nicely. Also, in the book, solving $h_n = h_{n-1} + n^3$ on p. 250 is also not standard as well.
+> methods may not apply nicely. Also, in the book, solving $h_n = h_{n-1} + n^3$ on p. 250 is not standard as well.
