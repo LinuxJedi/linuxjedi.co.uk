@@ -14,10 +14,13 @@ updated as I work through the chapter.
 - Usually there are two ways to prove a problem in tree, one direction is from induction
   and the other one is from basic tree property (i.e., MAW 4.4, 4.6).
 - Combinatorics (relating to binomials) and Probability theory (discrete part) are important to look at (i.e., MAW 4.14)
+- We can usually study some specific examples, and try to generalize them to form induction proof. 
+  In addition, always remember we want to convert the problem for $n+1$ into the same problem but 
+  with the inductive step on $n$. (MAW 4.17)
 
 ## Solutions
 
-including: MAW 4.4, 4.5, 4.6, 4.7, 4.14, 4.15
+including: MAW 4.4, 4.5, 4.6, 4.7, 4.14, 4.15, 4.16, 4.17
 
 ### MAW 4.4
 
@@ -285,7 +288,7 @@ $$
 \end{equation}
 $$
 
-*Inductive Hypothesis:* Assume that $E[Y_i]\le\frac{1}{4}\dbinom{i+3}{3}$ for all $i<n$. Then,
+*Inductive hypothesis:* Assume that $E[Y_i]\le\frac{1}{4}\dbinom{i+3}{3}$ for all $i<n$. Then,
 
 $$
 \begin{eqnarray*}
@@ -356,3 +359,57 @@ Now, let $H = 15$ and we have $S(15) = 2583$.
 > Show the result of inserting 2,1,4,5,9,3,6,7 into an initially empty AVL tree.
 
 ![maw-4-16](/images/maw-4-16.png)(https://github.com/xxks-kkk/Code-for-blog/blob/master/2017/trees/graphviz-src/maw-4-16.gv)
+
+### MAW 4.17
+
+> Keys $1, 2, \dots, 2^k-1$ are inserted in order into an initially empty AVL tree. Prove that the resulting tree
+> is perfectly balanced.
+
+\* ---- Note ---- *
+
+> The solution and corresponding figures are majorly taken from https://cseweb.ucsd.edu/classes/su05/cse100/cse100hw1.pdf
+> with minor wording tweak to allow easy understanding for myself.
+
+**Proof:**
+Let's use induction on $k$ to prove the following statement:
+
+  The result of inserting any increasing sequence of $2^k - 1$ numbers into an 
+  initially empty AVL tree results in a perfectly balanced tree of height 
+  $k-1$.
+
+*Base case:* $k = 1$. Tree has only one node. This is clearly perfectly balanced.
+*Inductive hypothesis:* Assume hypothesis is true for $k = 1, 2, \dots, h$. We want to prove that it is true for $k = h + 1$, i.e., 
+for sequence $1, 2, \dots, 2^{h+1}-1$.
+
+After the first $2^h - 1$ insertions, by the induction hypothesis, the tree is perfectly balanced, with height $h-1$. $2^{h-1}$ is at the root
+(can be observed for $1 \ge k \le 3$ situation, where the roots are $1$, $2$, $4$ respectively). The left subtree is a perfectly balanced
+tree of height $h-2$, and the right subtree is a perfectly balanced tree containing the numbers $2^{h-1}+1$ through $2^h-1$, also of height $h-2$.
+See the following picture:
+
+![maw-4-17-1](/images/maw-4-17-1.PNG)
+
+Each of the next $2^{h-1}$ insertions ($2^h$ through $2^h + 2^{h-1} - 1$) are inserted into the 
+right subtree, and the entire sequence of numbers in the right subtree (now $2^{h-1}+1$ through $2^h + 2^{h-1}-1$)
+were inserted in order and are a sequence of $2^h - 1$ nodes (i.e. $2^h + 2^{h-1}-1 - (2^{h-1}+1) + 1 = 2^h -1$).
+By induction hypothesis, they form a perfectly balanced tree of height $h-1$. See the following picture:
+
+![maw-4-17-2](/images/maw-4-17-2.PNG)
+
+The next insertion, of the number $2^h + 2^{h-1}$, imbalances the tree at the root because now the height of the right subtree
+is $h$ and the height of the left subtree is $h-2$. Now, we do a single rotation and form a tree with root $2^h$, and 
+a perfectly balanced left subtree of height $h-1$. The right subtree consists of a perfectly balanced tree 
+(of height $h-2$), with the new node: $2^h + 2^{h-1}$. See the following picture:
+
+![maw-4-17-3](/images/maw-4-17-3.PNG)
+
+Thus, the right subtree is as if the numbers $2^h+1, \dots, 2^h + 2^{h-1}$ had been 
+inserted in order. We subsequently insert the numbers $2^h + 2^{h-1} + 1$ through
+$2^{h+1} - 1$ nodes. In other words, we form the right subtree by inserting the 
+numbers $2^{h} + 1, \dots, 2^{h+1} - 1$, which have $2^{h} - 1$ numbers. Then, by
+the inductive hypothesis, these $2^{h} - 1$ insertions form a perfectly balanced
+subtree of height $h-1$. See the following picture:
+
+![maw-4-17-4](/images/maw-4-17-4.PNG)
+
+Since the left and right subtrees are perfectly balanced (height $h-1$), the whole
+tree is perfectly balanced.
