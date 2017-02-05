@@ -360,7 +360,7 @@ With \ref{eqn:2}, we can actually get the bound of the height of an AVL tree.
 
 By \ref{eqn:2}, we see that $S(H) \ge \Big(\frac{1+\sqrt 5}{2}\Big)^H$. Suppose we have $N$ nodes in an AVL 
 tree of height $H$. Then $N \ge S(H) \ge \Big(\frac{1+\sqrt 5}{2}\Big)^H$. Let $\phi = \frac{1+\sqrt 5}{2}$, then
-we have $\log _\phi N \ge H$, which is $H \le 1.44\log _2 N$.
+we have $\log _\phi N \ge H$, which is $H \le 1.44\log _2 N = O(\log N)$.
 
 ### MAW 4.16
 

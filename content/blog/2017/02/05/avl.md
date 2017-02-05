@@ -19,7 +19,7 @@ AVL tree is a *guaranteed* $O(log N)$ binary search tree. It is identical to a B
 that for every node in the tree, the height of the left and right subtrees can differ by at most 1.
 (The height of an empty tree is defined to be -1).
 
-![AVL tree concept]({filename}/images/AVL.PNG)
+<img src="/images/AVL.PNG" alt="AVL-tree-concept" style="width: 700px;"/>
 
 ## Insertion
 
@@ -124,7 +124,7 @@ Cons:
 ## Reference
 
 - MAW Chapter 4
-- https://courses.cs.washington.edu/courses/cse373/06sp/handouts/lecture12.pdf <--- general AVL introduction
-- https://courses.cs.washington.edu/courses/cse332/10sp/lectures/lecture8.pdf <-- talk about AVL deletion
+- https://courses.cs.washington.edu/courses/cse373/06sp/handouts/lecture12.pdf 
+- https://courses.cs.washington.edu/courses/cse332/10sp/lectures/lecture8.pdf
 - http://www.geeksforgeeks.org/avl-tree-set-2-deletion/
 - http://www.mathcs.emory.edu/~cheung/Courses/323/Syllabus/Trees/AVL-delete.html
