@@ -225,17 +225,17 @@ $$
 Now we expand the last summation as
 
 $$
-\begin{equation}
+\begin{equation*}
 (E[Y_0] + E[Y_{n-1}]) + \dots + (E[Y_{n-1}] + E[Y_0]) = 2\sum_{i=0}^{n-1}E[Y_i]
-\end{equation}
+\end{equation*}
 $$
 
 Thus, we have
 
 $$
-\begin{equation}
+\begin{equation*}
 E[Y_n] \le \frac{4}{n}\sum_{i=0}^{n-1}E[Y_i]
-\end{equation}
+\end{equation*}
 $$
 
 Then, we will show that for all integers $n>0$, 
@@ -253,9 +253,9 @@ the expectations exist and are finite, and f(x) is convex. Let this $X$ be $h_n$
 $f(x) = 2^x$, then $E[f(X)] = E[Y_n]$. So, we have
 
 $$
-\begin{equation}
+\begin{equation*}
 2^{E[h_n]} \le \frac{1}{4}\dbinom{n+3}{3} = O(n^3)
-\end{equation}
+\end{equation*}
 $$
 
 By taking the log of both sides, we have $E[h_n] = O(\log n)$
@@ -283,9 +283,9 @@ $$
 **Proof:** *Base case:* $n=1$. 
 
 $$
-\begin{equation}
+\begin{equation*}
 1 = Y_1 = E[Y_1] \le \frac{1}{4}\dbinom{1+3}{3} = 1.
-\end{equation}
+\end{equation*}
 $$
 
 *Inductive hypothesis:* Assume that $E[Y_i]\le\frac{1}{4}\dbinom{i+3}{3}$ for all $i<n$. Then,
@@ -341,9 +341,9 @@ the initial condition to our general solution to solve for $c_1$ and $c_2$. We g
 and $c_2 = 1 - \frac{2}{\sqrt 5}$. Thus, we have 
 
 $$
-\begin{equation*}
-S(H) = \Big(1 + \frac{2}{\sqrt 5}\Big)\Big(\frac{1+\sqrt 5}{2}\Big)^H + \Big(1 - \frac{2}{\sqrt 5}\Big)\Big(\frac{1-\sqrt 5}{2}\Big)^H - 1
-\end{equation*}
+\begin{equation}
+S(H) = \Big(1 + \frac{2}{\sqrt 5}\Big)\Big(\frac{1+\sqrt 5}{2}\Big)^H + \Big(1 - \frac{2}{\sqrt 5}\Big)\Big(\frac{1-\sqrt 5}{2}\Big)^H - 1 \label{eqn:2}
+\end{equation}
 $$
 
 Now, let $H = 15$ and we have $S(15) = 2583$.
@@ -353,6 +353,14 @@ Now, let $H = 15$ and we have $S(15) = 2583$.
 > initial condition is for the general solution for the recurrence relation, not the homogeneous 
 > part. Thus, we cannot use the initial condition immediately when we have our homogeneous part done.
 > We need to wait until the whole solution (homogeneous part + particular part).
+
+**Remarks:**
+
+With \ref{eqn:2}, we can actually get the bound of the height of an AVL tree. 
+
+By \ref{eqn:2}, we see that $S(H) \ge \Big(\frac{1+\sqrt 5}{2}\Big)^H$. Suppose we have $N$ nodes in an AVL 
+tree of height $H$. Then $N \ge S(H) \ge \Big(\frac{1+\sqrt 5}{2}\Big)^H$. Let $\phi = \frac{1+\sqrt 5}{2}$, then
+we have $\log _\phi N \ge H$, which is $H \le 1.44\log _2 N$.
 
 ### MAW 4.16
 
