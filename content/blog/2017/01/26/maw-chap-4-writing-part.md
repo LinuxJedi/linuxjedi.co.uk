@@ -398,21 +398,21 @@ After the first $2^h - 1$ insertions, by the induction hypothesis, the tree is p
 tree of height $h-2$, and the right subtree is a perfectly balanced tree containing the numbers $2^{h-1}+1$ through $2^h-1$, also of height $h-2$.
 See the following picture:
 
-![maw-4-17-1](/images/maw-4-17-1.PNG)
+<img src="/images/maw-4-17-1.PNG" alt="maw-4-17-1" style="height: 400px;"/>
 
 Each of the next $2^{h-1}$ insertions ($2^h$ through $2^h + 2^{h-1} - 1$) are inserted into the 
 right subtree, and the entire sequence of numbers in the right subtree (now $2^{h-1}+1$ through $2^h + 2^{h-1}-1$)
 were inserted in order and are a sequence of $2^h - 1$ nodes (i.e. $2^h + 2^{h-1}-1 - (2^{h-1}+1) + 1 = 2^h -1$).
 By induction hypothesis, they form a perfectly balanced tree of height $h-1$. See the following picture:
 
-![maw-4-17-2](/images/maw-4-17-2.PNG)
+<img src="/images/maw-4-17-2.PNG" alt="maw-4-17-2" style="height: 400px;"/>
 
 The next insertion, of the number $2^h + 2^{h-1}$, imbalances the tree at the root because now the height of the right subtree
 is $h$ and the height of the left subtree is $h-2$. Now, we do a single rotation and form a tree with root $2^h$, and 
 a perfectly balanced left subtree of height $h-1$. The right subtree consists of a perfectly balanced tree 
 (of height $h-2$), with the new node: $2^h + 2^{h-1}$. See the following picture:
 
-![maw-4-17-3](/images/maw-4-17-3.PNG)
+<img src="/images/maw-4-17-3.PNG" alt="maw-4-17-3" style="height: 400px;"/>
 
 Thus, the right subtree is as if the numbers $2^h+1, \dots, 2^h + 2^{h-1}$ had been 
 inserted in order. We subsequently insert the numbers $2^h + 2^{h-1} + 1$ through
@@ -421,11 +421,11 @@ numbers $2^{h} + 1, \dots, 2^{h+1} - 1$, which have $2^{h} - 1$ numbers. Then, b
 the inductive hypothesis, these $2^{h} - 1$ insertions form a perfectly balanced
 subtree of height $h-1$. See the following picture:
 
-![maw-4-17-4](/images/maw-4-17-4.PNG)
+<img src="/images/maw-4-17-4.PNG" alt="maw-4-17-4" style="height: 400px;"/>
 
 Since the left and right subtrees are perfectly balanced (height $h-1$), the whole
 tree is perfectly balanced.
 
 ### MAW 4.23
 
-![maw-4-23](/images/maw-4-23.JPG)
+<img src="/images/maw-4-23.JPG" alt="maw-4-23" style="width: 700px;"/>
