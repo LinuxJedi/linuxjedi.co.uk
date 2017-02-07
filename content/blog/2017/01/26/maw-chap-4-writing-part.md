@@ -20,7 +20,7 @@ updated as I work through the chapter.
 
 ## Solutions
 
-including: MAW 4.4, 4.5, 4.6, 4.7, 4.14, 4.15, 4.16, 4.17
+including: MAW 4.4, 4.5, 4.6, 4.7, 4.14, 4.15, 4.16, 4.17, 4.23
 
 ### MAW 4.4
 
@@ -425,3 +425,7 @@ subtree of height $h-1$. See the following picture:
 
 Since the left and right subtrees are perfectly balanced (height $h-1$), the whole
 tree is perfectly balanced.
+
+### MAW 4.23
+
+![maw-4-23](/images/maw-4-23.JPG)
