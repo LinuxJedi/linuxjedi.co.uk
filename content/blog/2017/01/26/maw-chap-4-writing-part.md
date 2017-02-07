@@ -3,7 +3,7 @@ Date: 2017-01-26 17:41
 Category: Data Struct and Algo Analysis in C
 Tags: trees, proof, math
 
-There are a lot of written proof questions in Chapter 4. Those questions offer
+There are a lot of writing questions in Chapter 4. Some questions offer
 great insights on the general techniques in solving algorithmatic proving questions.
 So, I decide to record them in this single post. Of course, this post will be continually
 updated as I work through the chapter.
