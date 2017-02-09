@@ -20,7 +20,7 @@ updated as I work through the chapter.
 
 ## Solutions
 
-including: MAW 4.4, 4.5, 4.6, 4.7, 4.14, 4.15, 4.16, 4.17, 4.23
+including: MAW 4.4, 4.5, 4.6, 4.7, 4.14, 4.15, 4.16, 4.17, 4.23, 4.24
 
 ### MAW 4.4
 
@@ -432,4 +432,4 @@ tree is perfectly balanced.
 
 ### MAW 4.24
 
-<img src="/images/maw-4-24.JPG" alt="maw-4-24" style="width: 700px;"/>
+<img src="/images/maw-4-24.PNG" alt="maw-4-24" style="width: 700px;"/>
