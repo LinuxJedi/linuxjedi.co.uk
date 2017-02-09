@@ -429,3 +429,7 @@ tree is perfectly balanced.
 ### MAW 4.23
 
 <img src="/images/maw-4-23.JPG" alt="maw-4-23" style="width: 700px;"/>
+
+### MAW 4.24
+
+<img src="/images/maw-4-24.JPG" alt="maw-4-24" style="width: 700px;"/>
