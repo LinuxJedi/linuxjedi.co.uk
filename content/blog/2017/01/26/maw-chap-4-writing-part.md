@@ -432,7 +432,7 @@ tree is perfectly balanced.
 
 ### MAW 4.24
 
-<img src="/images/maw-4-24.JPG" alt="maw-4-24" style="width: 700px;"/>
+<img src="/images/maw-4-24.PNG" alt="maw-4-24" style="width: 700px;"/>
 
 ### MAW 4.25
 
@@ -452,6 +452,7 @@ May need to double check.
 Let's prove by induction. Let $N$ denote the number of nodes in a splay tree.
 
 *Base case:* When $N = 1$, the claim holds.
+
 *Inductive hypothesis:* all nodes $1, \dots, N$ in a splay tree are accessed in sequential
 order, the resulting tree consists of a chain of left children. We want to show that 
 this holds for $N+1$. Once we access first $N$ nodes, there are only one
