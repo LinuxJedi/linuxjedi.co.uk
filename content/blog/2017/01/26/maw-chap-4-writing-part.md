@@ -20,7 +20,7 @@ updated as I work through the chapter.
 
 ## Solutions
 
-including: MAW 4.4, 4.5, 4.6, 4.7, 4.14, 4.15, 4.16, 4.17, 4.23
+including: MAW 4.4, 4.5, 4.6, 4.7, 4.14, 4.15, 4.16, 4.17, 4.23, 4.25, 4.26.a, 
 
 ### MAW 4.4
 
@@ -433,3 +433,30 @@ tree is perfectly balanced.
 ### MAW 4.24
 
 <img src="/images/maw-4-24.JPG" alt="maw-4-24" style="width: 700px;"/>
+
+### MAW 4.25
+
+This problem is solved through brute-force calculation. You can reference the example
+from figure 4.46 to figure 4.55. I calculate for internal path length of the 
+tree and ``find(1)``, ``find(2)``. The answer is slightly off than the solution manual.
+May need to double check.
+
+<img src="/images/maw-4-26.JPG" alt="maw-4-26" style="width: 700px; height: 400px;"/>
+
+### MAW 4.26
+
+> a. Show that if all nodes in a splay tree are accessed in sequential order, 
+> the resulting tree consists of a chain of left children.
+
+**Proof:**
+Let's prove by induction. Let $N$ denote the number of nodes in a splay tree.
+
+*Base case:* When $N = 1$, the claim holds.
+*Inductive hypothesis:* all nodes $1, \dots, N$ in a splay tree are accessed in sequential
+order, the resulting tree consists of a chain of left children. We want to show that 
+this holds for $N+1$. Once we access first $N$ nodes, there are only one
+position for $N+1$ node: the right child of the root. The rest of positions are impossible because if the 
+$N+1$ node is the right child of any node between the left most node and the root of the resulting tree,
+then by BST, $N+1$ node's value is smaller than root's value and bigger than left most node's value.
+This violates the induction hypothesis because we are no longer access a splay tree in sequential order.
+Now we simply swap the right child of the root with root and we get a chain of left children. 
