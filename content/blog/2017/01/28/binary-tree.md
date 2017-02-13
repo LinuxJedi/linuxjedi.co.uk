@@ -17,6 +17,11 @@ This is the summary of *binary tree* and *binary search tree* part in MAW Chapte
 
 - A *full* binary tree (proper binary tree or 2-tree) is a binary tree in which each node
   has exactly zero or two children.
+
+\* ---- Note ---- *
+
+> A *full node* in a binary tree is a node that has exactly two non-null children.
+
 - A *complete* binary tree is a binary tree, which is completely filled, with the possible
   exception of the bottom level, which is filled from left to right.
 

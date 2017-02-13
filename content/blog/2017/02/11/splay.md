@@ -28,12 +28,12 @@ rotating it up the trees does not have this property. However, the following thr
 ```
 
                              y             x
-   Zig (terminal case):     /     ====>     \
+   Zig (terminal case):     /     ====>     \               (same as AVL single rotation)
                            x                 y
 
                     z              z
                    /              /             x
-   Zig-zag:       y     ====>    x   ====>     / \
+   Zig-zag:       y     ====>    x   ====>     / \          (same as AVL double rotation)
                    \            /             y   z
                     x          y
 
@@ -102,9 +102,8 @@ Correspondingly there are two methods to deletion as well. The first way is to s
 deleted, we get two subtrees $T_L$ and $T_R$. If we find the largest element in $T_L$, then this element is rotated to the root of $T_L$, and 
 $T_L$ will now have a root with no right child. We can finish the deletion by making $T_R$ the right child.
 
-The second way is to do BST deletion first, and then splay the parent of the deletion point to the root. I find this way is less efficient than 
-method 1 because of extra space used by either using
-a pointer pointing to the parent node or using a stack to keep track of accessing path.
+The second way is to do BST deletion first, and then splay the parent of the deletion point to the root. It is quite similar to BST deletion and see
+the implementation [here](https://github.com/xxks-kkk/algo/blob/master/trees/splay/splay.c).
 
 ## Properties
 
