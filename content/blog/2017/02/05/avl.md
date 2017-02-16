@@ -21,6 +21,11 @@ that for every node in the tree, the height of the left and right subtrees can d
 
 <img src="/images/AVL.PNG" alt="AVL-tree-concept" style="width: 700px;"/>
 
+For simplicity, we really omit the actual data part of the node. The following picture demonstrate
+what AVL tree should really look like:
+
+<img src="/images/AVL-real.PNG" alt="AVL-tree-real" style="height: 300px; width: 700px;"/>
+
 ## Insertion
 
 AVL tree insertion is based upon BST insertion with two addition treatments:
