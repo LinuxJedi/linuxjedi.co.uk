@@ -1,6 +1,6 @@
 Title: MAW Chapter 4: Tree writing questions
 Date: 2017-01-26 17:41
-Category: Data Struct and Algo Analysis in C
+Category: Data Struct and Algo Analysis
 Tags: trees, proof, math
 
 There are a lot of writing questions in Chapter 4. Some questions offer

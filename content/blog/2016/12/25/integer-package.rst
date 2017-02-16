@@ -3,7 +3,7 @@ Reflection on integer arithmetic package problem
 #################################################
 
 :date: 2016-12-26 23:03
-:category: Data Struct and Algo Analysis in C
+:category: Data Struct and Algo Analysis
 :tags: software-engineering, c
 
 This weekend, I'm working on MAW 3.9. The single problem results

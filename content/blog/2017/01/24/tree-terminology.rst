@@ -3,7 +3,7 @@ Tree Terminology
 ##################
 
 :date: 2017-01-24 20:23
-:category: Data Struct and Algo Analysis in C
+:category: Data Struct and Algo Analysis
 :tags: trees
 
 *************

@@ -1,6 +1,6 @@
 Title: Splay Tree
 Date: 2017-02-13 01:12
-Category: Data Struct and Algo Analysis in C
+Category: Data Struct and Algo Analysis
 Tags: trees
 
 This is the summary of *Splay tree* part in MAW Chapter 4.

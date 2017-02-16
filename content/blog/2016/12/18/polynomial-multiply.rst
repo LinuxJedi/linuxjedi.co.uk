@@ -5,7 +5,7 @@ Polynomial Multiplication
 ##########################
 
 :date: 2016-12-18 18:53
-:category: Data Struct and Algo Analysis in C
+:category: Data Struct and Algo Analysis
 :tags: singly-linked-list
 
 I finally got time to continue working through MAW. The problem 3.7 relates to polynomial multiplication.

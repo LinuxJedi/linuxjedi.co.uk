@@ -3,7 +3,7 @@ Print singly linked list in reverse order
 ##########################################
 
 :date: 2016-12-23 00:05
-:category: Data Struct and Algo Analysis in C
+:category: Data Struct and Algo Analysis
 :tags: singly-linked-list, recursion
 
 Today, during the lunch break, I take a look at the following problem:
