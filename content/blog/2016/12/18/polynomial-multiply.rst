@@ -5,8 +5,8 @@ Polynomial Multiplication
 ##########################
 
 :date: 2016-12-18 18:53
-:category: Data Struct and Algo Analysis
-:tags: singly-linked-list
+:category: Data Struct & Algo
+:tags: singly-linked-list, maw
 
 I finally got time to continue working through MAW. The problem 3.7 relates to polynomial multiplication.
 

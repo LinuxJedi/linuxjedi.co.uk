@@ -4,7 +4,7 @@
 <h1>Archives for {{ SITENAME }}</h1>
 
 <h2>Search</h2>
-<script>
+<!--<script>
   (function() {
   var cx = '016374522709017827858:csiwduyrdss';
   var gcse = document.createElement('script');
@@ -15,7 +15,15 @@
   s.parentNode.insertBefore(gcse, s);
   })();
 </script>
-<gcse:searchbox-only></gcse:searchbox-only>
+<gcse:searchbox-only></gcse:searchbox-only>-->
+<form method='get' action='http://google.com/search'>
+<span class="bold">Search this site:</span>
+<input type='text' name='q' maxlength='255' />
+<input type='submit' value='Search' style="background-color:#C74350; color: #000" />
+<input type='hidden' name='domains' value='zhu45.org' />
+<input style='visibility:hidden' type='radio' name='sitesearch' value='zhu45.org' checked='checked' />
+</form>
+<div>powered by <a href="http://www.google.com">Google</a></div>
 
 <p>
 <h2>Feeds</h2>

@@ -3,8 +3,8 @@ Tree Terminology
 ##################
 
 :date: 2017-01-24 20:23
-:category: Data Struct and Algo Analysis
-:tags: trees
+:category: Data Struct & Algo
+:tags: trees, maw
 
 *************
 Terminology

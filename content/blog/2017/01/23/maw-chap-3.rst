@@ -4,7 +4,7 @@ MAW: Chapter 3 Reflection
 
 :date: 2017-01-23 10:45
 :category: misc
-:tags: meta
+:tags: meta, maw
 
 I finally finish Chapter 3: List, Stacks, and Queues with almost all the problems
 solved. It's time to do some summary and reflection.

@@ -3,7 +3,7 @@ A peek in code optimization
 ############################
 
 :date: 2016-12-28 13:21
-:category: Data Struct and Algo Analysis
+:category: Data Struct & Algo
 :tags: singly-linked-list, software-engineering
 
 Quite often, when I take a look at a programming
