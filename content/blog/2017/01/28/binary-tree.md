@@ -1,7 +1,7 @@
 Title: Binary Tree & Binary Search Tree
 Date: 2017-01-29 13:20
-Category: Data Struct and Algo Analysis
-Tags: trees
+Category: Data Struct & Algo
+Tags: trees, maw
 
 This is the summary of *binary tree* and *binary search tree* part in MAW Chapter 4.
 

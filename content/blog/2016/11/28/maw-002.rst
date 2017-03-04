@@ -5,8 +5,8 @@ PrintLots
 #########
 
 :date: 2016-11-28 18:20
-:category: Data Struct and Algo Analysis
-:tags: c, singly-linked-list
+:category: Data Struct & Algo
+:tags: c, singly-linked-list, maw
 
 *******
 Problem
