@@ -20,7 +20,7 @@ updated as I work through the chapter.
 
 ## Solutions
 
-including: MAW 4.4, 4.5, 4.6, 4.7, 4.14, 4.15, 4.16, 4.17, 4.23, 4.24, 4.25, 4.26.a, 
+including: MAW 4.4, 4.5, 4.6, 4.7, 4.14, 4.15, 4.16, 4.17, 4.23, 4.24, 4.25, 4.26.a, 4.43
 
 ### MAW 4.4
 
@@ -461,3 +461,23 @@ $N+1$ node is the right child of any node between the left most node and the roo
 then by BST, $N+1$ node's value is smaller than root's value and bigger than left most node's value.
 This violates the induction hypothesis because we are no longer access a splay tree in sequential order.
 Now we simply swap the right child of the root with root and we get a chain of left children. 
+
+### MAW 4.43
+
+> a. Show that via AVL single rotations, any binary search tree $T_1$ can be transformed into another
+> search tree $T_2$ (with the same keys).
+> b. Give an algorithm to perform this transformation using $O(N\log N)$ rotations on average.
+> c. Show that this transformation can be done with $O(N)$ rotations, worst-case.
+
+Let's first work through an example shown in the picture below. We transform the tree in the top-left 
+of the picture to the tree in the top-right of the picture through several steps linked by single arrows.
+
+<img src="/images/maw-4-43.jpg" alt="maw-4-43" style="width: 700px;"/>
+
+As you can see, the strategy here is that we do preorder processing. We compare the root $T_1$ with the root
+$T_2$. If they are equal, then we move on to the left and right subtrees of $T_1$ and do the processing 
+recursively. However, if they are not equal, we find the $T_2$'s root value $x$ in $T_1$ and rotate it to the
+root of $T_1$. Then, we do the recursive processing for the left and right subtrees of $T_1$. This algorithm
+takes $O(N\log N)$ on average because find $x$ takes $O(\log N)$ time and AVL rotations also take $O(\log N)$ time. 
+Since we could do $N$ rotations, then the result follows. However, a BST can be degenerated and in that case, we have 
+$O(N)$ worst-case. 
