@@ -87,6 +87,16 @@ count starts with '0' and incremented by one at each level (step).
 
 .. image:: /images/tree-level.PNG
 
+**predecessor / successor**
+
+If :math:`X` has two children, its predecessor is the maximum value in its left subtree
+and its successor the minimum value in its right subtree. It makes sense if we do in-order
+traversal of the tree.
+
+.. raw::
+
+    <img src="/images/pred-succ.PNG" alt="predecessor-successor" style="width: 700px;"/>
+
 ****************
 Some properties
 ****************
