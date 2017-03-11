@@ -107,7 +107,7 @@ What makes B-trees so disk friendly?
 
   - All find wants only one data item. So only bring one leaf of data items into memory.
   - Data-item size doesn't affect what $M$ is. We determine $M$ only by how many keys can be packed into a disk block (node).
-    Thus, the key size and the block size are the only factors here.
+    Thus, the key size, the children pointer size, and the block size are the only factors here.
 
 
 ## Reference
