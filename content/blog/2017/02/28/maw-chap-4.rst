@@ -2,7 +2,7 @@
 MAW: Chapter 4 Reflection
 ##########################
 
-:date: 2017-03-11 10:45
+:date: 2017-03-12 10:45
 :category: misc
 :tags: meta, maw
 
@@ -25,15 +25,15 @@ Implementing dictionary ADT with tree structure brings following advantages:
 - Trees provide an efficient insertion and searching
 - Trees are very flexible data, allowing to move subtrees around with minumum effort
 
-Many different tree structures get presented in this chapter. They are:
+Many different tree structures get presented in this chapter. Most fundamental ones are:
 
 - `Binary Search Tree <{filename}/blog/2017/01/28/binary-tree.md>`_
 - `AVL tree <{filename}/blog/2017/02/05/avl.md>`_
 - `Splay tree <{filename}/blog/2017/02/11/splay.md>`_
 - `B-tree <{filename}/blog/2017/02/19/b-tree.md>`_
-- Order Statistic Tree (MAW 4.44)
-- Threaded Tree (MAW 4.45)
-- k-d Tree (MAW 4.46)
+
+Some variations to the above structures are Order Statistic Tree (MAW 4.44), Threaded Tree (MAW 4.45),
+k-d Tree (MAW 4.46), and B*-tree (MAW 4.38).
 
 **********
 Left Out
