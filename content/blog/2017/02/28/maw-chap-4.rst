@@ -16,6 +16,8 @@ represented by a set of (key, value) pairs that support insert, find, delete ope
 The core idea for this ADT, as you can imagine, is to store information according to 
 some key and be able to retrieve it efficiently.
 
+.. image:: /images/maw-chap4.PNG
+
 Implementing dictionary ADT with tree structure brings following advantages:
 
 - Trees reflect structural relationships in the data
