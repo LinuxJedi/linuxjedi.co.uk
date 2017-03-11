@@ -1,7 +1,7 @@
-Title: B Tree
+Title: B-Tree
 Date: 2017-03-11 21:32
-Category: Data Struct and Algo Analysis
-Tags: trees
+Category: Data Struct & Algo
+Tags: trees, maw
 
 This is the summary of *B tree* part in MAW Chapter 4.
 
@@ -25,8 +25,8 @@ A B-tree of order $M$ is a tree with the following structural properties:
 
 - The leaves contain all the actual data, which are either the key temselves or pointers to records containing the keys.
 - The root is either a leaf (when tree has $\le L$ items) or has between $2$ and $M$ children.
-- All nonleaf nodes (except the root) have between \left \lceil{M/2}\right \rceil and $M$ children (at least half full).
-- All leaves are the same depth and have between \left \lceil{L/2}\right and $L$ sorted data items, for some L (at least half full).
+- All nonleaf nodes (except the root) have between $\lceil{M/2}\rceil$ and $M$ children (at least half full).
+- All leaves are the same depth and have between $\lceil{L/2}\rceil$ and $L$ sorted data items, for some L (at least half full).
 - The nonleaf nodes have room for up to $M-1$ keys to guide the searching; key $i$ represents the smallest key in subtree $i+1$.
 
 <img src="/images/b-tree-order-property.PNG" alt="b-tree-order-property"/>
@@ -78,14 +78,14 @@ We first show that height $H$ is logarithmic in number of data items $N$. Let $M
 only 2 children) and all leaves are at the same level, the minimum number od data items $N$ for a height $H$ tree is 
 
 $$
-N \ge \underbrace{2 (\left \lceil{M/2}\right \rceil)^{H-1}\left}_\textrm{min number of leaves}\underbrace{\lceil{L/2}\right \rceil}_\textrm{min data per leaf}
+N \ge \underbrace{2(\lceil{M/2}\rceil)^{H-1}}_\textrm{min number of leaves}\times\underbrace{\lceil{L/2}\rceil}_\textrm{min data per leaf}
 $$
 
 Then for a B-tree of order $M$
 
 - Each internal node has up to $M-1$ keys to search
-- Each internal node has between \left \lceil{M/2}\right \rceil and $M$ children
-- Depth of B-tree storing $N$ items is $O(\log_{\left \lceil{M/2}\right \rceil}N)
+- Each internal node has between $\lceil{M/2}\rceil$ and $M$ children
+- Depth of B-tree storing $N$ items is $O(\log_{\lceil{M/2}\rceil}N)$
 
 Find then takes $O(\log M)$ to do binary search on each node to determine which branch to take. Then the total time is 
 O(depth $\times \log M$) = $O(\log N)$ because $M$ is small compared to $N$.
@@ -99,19 +99,20 @@ What makes B-trees so disk friendly?
 
 - Many keys stored in one node 
 
-  - All brought into memory in one disk access
-  - Pick $M$ wisely. See MAW's Java version (3rd edition) p.149 for an example.
-  - Makes the binary searhc over $M-1$ keys totally worth it.
+    - All brought into memory in one disk access
+    - Pick $M$ wisely. See MAW's Java version (3rd edition) p.149 for an example.
+    - Makes the binary searhc over $M-1$ keys totally worth it.
 
 - Internal nodes contain only keys
 
-  - All find wants only one data item. So only bring one leaf of data items into memory.
-  - Data-item size doesn't affect what $M$ is. We determine $M$ only by how many keys can be packed into a disk block (node).
-    Thus, the key size, the children pointer size, and the block size are the only factors here.
+    - All find wants only one data item. So only bring one leaf of data items into memory.
+    - Data-item size doesn't affect what $M$ is. We determine $M$ only by how many keys can be packed into a disk block (node).
+      Thus, the key size, the children pointer size, and the block size are the only factors here.
 
 
 ## Reference
 
+- MAW Chapter 4
 - https://courses.cs.washington.edu/courses/cse373/06sp/handouts/lecture15.pdf
 - https://courses.cs.washington.edu/courses/cse332/10sp/lectures/lecture8.pdf
 - https://courses.cs.washington.edu/courses/cse332/10sp/lectures/lecture9.pdf

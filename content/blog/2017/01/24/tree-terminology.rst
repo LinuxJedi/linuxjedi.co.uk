@@ -93,7 +93,7 @@ If :math:`X` has two children, its predecessor is the maximum value in its left 
 and its successor the minimum value in its right subtree. It makes sense if we do in-order
 traversal of the tree.
 
-.. raw::
+.. raw:: html
 
     <img src="/images/pred-succ.PNG" alt="predecessor-successor" style="width: 700px;"/>
 
