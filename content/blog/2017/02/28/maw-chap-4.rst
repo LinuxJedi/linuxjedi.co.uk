@@ -14,9 +14,11 @@ In Chapter 4, we learn about the tree data structure. If we take a look from ADT
 perspective, the ADT we learn about is called Dictionary (a.k.a Map) ADT, which 
 represented by a set of (key, value) pairs that support insert, find, delete operations.
 The core idea for this ADT, as you can imagine, is to store information according to 
-some key and be able to retrieve it efficiently.
+some key and be able to retrieve it efficiently. Now our big picture becomes:
 
-.. image:: /images/maw-chap4.PNG
+.. raw:: html
+
+    <img src="/images/maw-chap4.PNG" alt="predecessor-successor" style="width: 700px;"/>
 
 Implementing dictionary ADT with tree structure brings following advantages:
 
