@@ -5,7 +5,7 @@ Tags: hashing, proof, math, maw
 
 ## Solutions
 
-including: MAW 5.4
+including: MAW 5.4, 5.5
 
 ### MAW 5.4
 
@@ -27,3 +27,27 @@ either 100 insertions or 100 deletions until a new rehash is required.
 If we know that insertions are more frequent than deletions, then we might choose $p$
 to be somewhat larger. All in all, we play around the relation between $2N-2Np$ and 
 $pN$ depends on which operation we favorite.
+
+### MAW 5.5
+
+> An alternative collision resolution strategy is to define a sequence, $F(i) = r_i$,
+> where $r_0 = 0$ and $r_1, r_2, \dots, r_N$ is a random permutation of the first $N$
+> integers (each integer appears exactly once).
+
+> a. Prove that under this strategy, if the table is not full, then the collision can 
+> always be resolved.
+
+Since the sequence $F(i)$ is defined as a random permutation of the first $N$ integers,
+then each cells of the table will be probed eventually. If the table is not full, then the 
+collision can always be resolved.
+
+> b. Would this strategy be expected to eliminate clustering?
+
+This seems to eliminate primary clustering but not secondary clustering because
+all elements that hash to some location will try the same collision resolution sequence.
+
+> c. If the load factor of the table is $\lambda$, what is the expected time to perform
+> an insert and for a successful search?
+
+The running time is probably similar to quadratic probing. The advantage here is that 
+the insertion can't fail unless the table is full.
