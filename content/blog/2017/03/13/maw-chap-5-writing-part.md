@@ -1,11 +1,11 @@
 Title: MAW Chapter 5: Hashing writing questions
-Date: 2017-03-13 17:41
+Date: 2017-03-16 17:41
 Category: Data Struct & Algo
 Tags: hashing, proof, math, maw
 
 ## Solutions
 
-including: MAW 5.4, 5.5
+including: MAW 5.4, 5.5, 5.10, 5.11
 
 ### MAW 5.4
 
@@ -51,3 +51,55 @@ all elements that hash to some location will try the same collision resolution s
 
 The running time is probably similar to quadratic probing. The advantage here is that 
 the insertion can't fail unless the table is full.
+
+### MAW 5.10
+
+> Describe a procedure that avoids initializing a hash table (at the expense of memory).
+
+To each hash table slot, we can add an extra field that we'll call `WhereOnStack`, and 
+we can keep an extra stack. When an insertion is first performed into a slot, we push
+the address (or number) of the slot onto the stack and set the `WhereOnStack` field to point
+to the top of the stack. When we access a hash table slot, we check that `WhereOnStack`
+points to a valid part of the stack and that the entry in the (middle of the) stack that is 
+pointed to by the `WhereOnStack` field has that hash table slot as an address.
+
+
+### MAW 5.11
+
+> Suppose we want to find the first occurrence of a string $P_1P_2\dots P_k$ in a long 
+> input string $A_1A_2\dotsA_N$. We can solve this problem by hashing the pattern string,
+> Obtaining a hash value $H_p$, and comparing this value with the hash value formed from 
+> $A_1A_2\dotsA_k$, $A_2A_3\dotsA_{k+1}$, $A_3A_4\dotsA_{k+2}$, and so on until 
+> $A_{N-k+1}A_{N-k+2}\dotsA_N$. If we have a match of hash values, we compare the string character
+> by character to verify the match. We return the position (in A) if the strings actually 
+> do match, and we continue in the unlikely event that the match is false.
+
+> a. Show that if the hash value of $A_iA_{i+1}\dotsA_{i+k-1}$ is known, then the hash 
+> value of $A_{i+1}A_{i+2}\dotsA_{i+k}$ can be computed in constant time.
+
+As suggested by MAW p.151, we use $\sum_{i=0}^{KeySize-1} Key[KeySize-i-1]\cdot 32^i$
+as the function to compute the hash value of a given string. Then, by this definition,
+$A_iA_{i+1}\dotsA_{i+k-1}$ can be computed as 
+
+$$
+H_1 = (32^0A_i + 32^1A_{i+1} + \dots + 32^{k-1}A_{i+k-1}) % N
+$$
+
+similarly, $A_{i+1}A_{i+2}\dotsA_{i+k}$ can be computed as 
+
+$$
+H_2 = (32^1A_{i+1} + \dots + 32^kA_{i+k}) % N
+$$
+
+If we take a look at the relationship between these two equations, we can see 
+$H_2 = H_1 - 32^0A_i % N + 32^kA_{i+k} % N$. This can be computed in constant time
+if $H_1$ is known.
+
+> b. Show that the running time is $O(k+N)$ plus the time spent refuting false matches.
+
+The pattern's hash value $H_p$ computed in $O(K)$ time. Then, $A_1A_2\dotsA_k$
+is computed in $O(K)$ time. Then starting with $A_2A_3\dotsA_{k+1}$ and until
+$A_{N-k+1}A_{N-k+2}\dotsA_N$, each hash value is computed in $O(1)$ by a) above.
+Since, there are $N-k+1-2+1$ terms of $O(1)$, then the total running time is
+$O(K) + O(K) + O(N-K) = O(N+K)$. Of course, there is also time we spend on refuting false
+matches.
