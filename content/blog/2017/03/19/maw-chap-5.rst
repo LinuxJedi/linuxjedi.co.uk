@@ -2,7 +2,7 @@
 MAW: Chapter 5 Reflection
 ##########################
 
-:date: 2017-03-17 13:45
+:date: 2017-03-17 15:56
 :category: misc
 :tags: meta, maw, hashing
 
@@ -25,7 +25,7 @@ operations. The only downside compared hash tables with tree structure is the il
 
 .. raw:: html
 
-    <img src="/images/maw-chap5.PNG" alt="predecessor-successor" style="width: 700px;"/>
+    <img src="/images/maw-chap5.PNG" alt="chapter5 ADT picture" style="width: 700px;"/>
 
 =============
 General Idea
@@ -69,11 +69,6 @@ Here we use 256 because `char` data is 1 byte. Other hash function may be adding
 in the string. However, this doesn't work well because if string keys are short, it will not hash evenly to all of the 
 hash table (see MAW p.151) and different character combinations hash to same value (i.e. "abc", "bca" all add up to the 
 same value).
-
-because char value is between 0 and 127. If all the keys 
-are 8 or less characters long, then the keys can only hash to positions 0 through :math:`8\cdots127 = 1016` and the keys
-are not distribute over the entire table if the table size is picked large.
-
 
 The slides listed in the reference section offer some examples on hash function pick if 
 we know the keys beforehand (i.e. if keys :math:`s` are the real numbers uniformly 

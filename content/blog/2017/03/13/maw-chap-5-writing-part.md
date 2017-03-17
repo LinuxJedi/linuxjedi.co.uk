@@ -5,7 +5,7 @@ Tags: hashing, proof, math, maw
 
 ## Solutions
 
-including: MAW 5.4, 5.5, 5.10, 5.11
+including: MAW 5.4, 5.5, 5.6, 5.10, 5.11
 
 ### MAW 5.4
 
@@ -52,6 +52,26 @@ all elements that hash to some location will try the same collision resolution s
 The running time is probably similar to quadratic probing. The advantage here is that 
 the insertion can't fail unless the table is full.
 
+### MAW 5.6
+
+> What are the advantages and disadvantages of the various collision resolution strategies?
+
+Separate chaining hashing requires the use of pointers, which costs some memory, and the 
+standard method of implementing calls on memory allocation routines, which typically are
+expensive. 
+
+Linear probing is easily implemented, but performance degrades severly as the load 
+factor increases because of primary clustering. 
+
+Quadratic probing is only slightly more 
+difficult to implement and gives good performance in practice. An insertion can fail 
+if the table is half empty, but this is not likely. Even if it were, such an insertion 
+would be so expensive that it wouldn't matter and would almost certainly point up a 
+weakness in the hash function. 
+
+Double hashing eliminates primary and secondary clustering but the computation of a second
+hash function can be costly. 
+
 ### MAW 5.10
 
 > Describe a procedure that avoids initializing a hash table (at the expense of memory).
@@ -92,8 +112,12 @@ H_2 = (32^1A_{i+1} + \dots + 32^kA_{i+k}) \% N
 $$
 
 If we take a look at the relationship between these two equations, we can see 
-$$H_2 = H_1 - 32^0A_i \% N + 32^kA_{i+k} % N$$. This can be computed in constant time
-if $H_1$ is known.
+
+$$
+H_2 = H_1 - 32^0A_i \% N + 32^kA_{i+k} % N
+$$
+
+This can be computed in constant time if $H_1$ is known.
 
 > b. Show that the running time is $O(k+N)$ plus the time spent refuting false matches.
 
