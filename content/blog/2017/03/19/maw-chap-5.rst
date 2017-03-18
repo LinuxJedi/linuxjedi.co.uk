@@ -129,7 +129,7 @@ Three types of resolution function are discussed in the book:
 
 1) Linear probing: :math:`F(i) = i`
 2) Quadratic probing: :math:`F(i) = i^2`
-3) Double probing: :math:`F(i) = i * Hash_2(x)`
+3) Double hashing: :math:`F(i) = i * Hash_2(x)`
 
 Generally, the load factor should be below :math:`\lambda = 0.5` for open addressing hashing.
 
@@ -157,7 +157,7 @@ of linear probing. But it has its own restriction or problem:
 Double hashing
 --------------
 
-Double probing :math:`F` says that we apply a second hash function to x and probe
+Double hashing :math:`F` says that we apply a second hash function to x and probe
 at a distance :math:`hash_2(x), 2hash_2(x), \dots`, and so on. 
 
 When :math:`\lambda` exceeds certain value, we need to build a bigger hash table of
