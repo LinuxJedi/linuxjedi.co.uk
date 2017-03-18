@@ -121,7 +121,7 @@ resolve collision is to try other empty cells. This is called open addressing. I
 open addressing means resolving collisions by trying a sequence of other positions in the table.
 Trying the next spot is called *probing*. More formally, cells :math:`h_0(X), h_1(x), h_2(x), \dots`
 are tried in succession until either x is found or we find an empty location (x not present).
-:math:`h_i(x) = (Hash(x) + F(i)) mod TableSize`, with :math:`F(0) = 0`. The function :math:`F`
+:math:`h_i(x) = (Hash(x) + F(i)) \% TableSize`, with :math:`F(0) = 0`. The function :math:`F`
 is the collision resolution strategy. 
 
 Various flavors of open addressing differ in which probe sequence they use. This is reflected in :math:`F`.
