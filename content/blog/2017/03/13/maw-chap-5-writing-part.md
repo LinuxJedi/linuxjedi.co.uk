@@ -102,19 +102,19 @@ as the function to compute the hash value of a given string. Then, by this defin
 $A_iA_{i+1}\dots A_{i+k-1}$ can be computed as 
 
 $$
-H_1 = (32^0A_i + 32^1A_{i+1} + \dots + 32^{k-1}A_{i+k-1}) \% N
+H_1 = (32^0A_i + 32^1A_{i+1} + \dots + 32^{k-1}A_{i+k-1}) \bmod N
 $$
 
 similarly, $A_{i+1}A_{i+2}\dots A_{i+k}$ can be computed as 
 
 $$
-H_2 = (32^1A_{i+1} + \dots + 32^kA_{i+k}) \% N
+H_2 = (32^1A_{i+1} + \dots + 32^kA_{i+k}) \bmod N
 $$
 
 If we take a look at the relationship between these two equations, we can see 
 
 $$
-H_2 = H_1 - 32^0A_i \% N + 32^kA_{i+k} % N
+H_2 = H_1 - 32^0A_i \bmod N + 32^kA_{i+k} \bmod N
 $$
 
 This can be computed in constant time if $H_1$ is known.
