@@ -62,7 +62,7 @@ are probably less likely than "multiples of 60". In addition, quadratic hashing 
 collision strategy to use (compared with linear hashing, double hashing) and it requires the table size 
 to be the prime.
 
-- When we deal with string keys, we may use :math:`\big(\sum_{i=0}^{k-1} s_i \cdot 256^i \big) \% TableSize`
+- When we deal with string keys, we may use :math:`\big(\sum_{i=0}^{k-1} s_i \cdot 256^i \big) \bmod TableSize`
   as our function.
 
 Here we use 256 because `char` data is 1 byte. Other hash function may be adding up the ASCII values ofthe characters
@@ -121,7 +121,7 @@ resolve collision is to try other empty cells. This is called open addressing. I
 open addressing means resolving collisions by trying a sequence of other positions in the table.
 Trying the next spot is called *probing*. More formally, cells :math:`h_0(X), h_1(x), h_2(x), \dots`
 are tried in succession until either x is found or we find an empty location (x not present).
-:math:`h_i(x) = (Hash(x) + F(i)) \% TableSize`, with :math:`F(0) = 0`. The function :math:`F`
+:math:`h_i(x) = (Hash(x) + F(i)) \bmod TableSize`, with :math:`F(0) = 0`. The function :math:`F`
 is the collision resolution strategy. 
 
 Various flavors of open addressing differ in which probe sequence they use. This is reflected in :math:`F`.
@@ -129,7 +129,7 @@ Three types of resolution function are discussed in the book:
 
 1) Linear probing: :math:`F(i) = i`
 2) Quadratic probing: :math:`F(i) = i^2`
-3) Double hashing: :math:`F(i) = i * Hash_2(x)`
+3) Double hashing: :math:`F(i) = i \cdot Hash_2(x)`
 
 Generally, the load factor should be below :math:`\lambda = 0.5` for open addressing hashing.
 
