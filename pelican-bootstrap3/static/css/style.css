@@ -239,3 +239,21 @@ figure.floatcenter, .align-center {
 .gap-left {
   margin-left: 10px;
 }
+
+hr.style-eight{
+    padding: 0;
+    border: none;
+    border-top: medium double #ccc;
+    color: #ccc;
+    text-align: center;
+}
+
+hr.style-eight:after{
+    content: "~~~";
+    display: inline-block;
+    position: relative;
+    top: -0.7em;
+    font-size: 1.5em;
+    padding: 0 0.25em;
+    background: white;
+}

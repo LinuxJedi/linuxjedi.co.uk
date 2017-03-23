@@ -71,6 +71,7 @@ HIDE_SIDEBAR = True
 DISPLAY_CATEGORIES_ON_MENU = False # disable display categories in the navbar
 DISPLAY_PAGES_ON_MENU = False
 PYGMENTS_STYLE = 'emacs'
+BOOTSTRAP_THEME = 'lumen'
 
 ###################################
 # End bootstrap theme configuration

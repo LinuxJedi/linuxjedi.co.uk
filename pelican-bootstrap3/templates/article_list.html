@@ -9,12 +9,17 @@
                         {% include "includes/article_info.html" %}
                     </div>
                 {% endif %}
+                {% if loop.index == 1 %}
+                    {{ article.content }}
+                {% else %}
+                {% include 'article_infos.html' %}
                 <div class="summary">{{ article.summary }}
                     {% include 'includes/comment_count.html' %}
                     <a class="btn btn-default btn-xs" href="{{ SITEURL }}/{{ article.url }}">{{ _('more') }} ...</a>
                 </div>
+                {% endif %}
             </article>
-            <hr/>
+            <hr class="style-eight"></hr>
         {% endfor %}
     {% endif %}
 

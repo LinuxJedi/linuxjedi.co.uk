@@ -1,5 +1,5 @@
 .highlight pre .hll { background-color: #ffffcc }
-.highlight pre  { background: #f8f8f8; }
+.highlight pre  { background: #f8f8f8;  border: 1px solid #ccc;}
 .highlight pre .c { color: #008800; font-style: italic } /* Comment */
 .highlight pre .err { border: 1px solid #FF0000 } /* Error */
 .highlight pre .k { color: #AA22FF; font-weight: bold } /* Keyword */
