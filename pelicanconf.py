@@ -3,7 +3,7 @@
 from __future__ import unicode_literals
 
 #AUTHOR = 'Zeyuan Hu'
-SITENAME = "Tech Stuff"
+SITENAME = "Zeyuan Hu's website"
 SITESUBTITLE = "A tmp place to rest"
 SITEURL = 'http://zhu45.org'
 
@@ -39,7 +39,12 @@ DEFAULT_PAGINATION = 10
 # Uncomment following line if you want document-relative URLs when developing
 RELATIVE_URLS = True
 
-THEME='notmyidea-lxj'
+#THEME='notmyidea-lxj'
+THEME='bootstrap'
+JINJA_EXTENSIONS = ['jinja2.ext.i18n']
+
+
+
 DEFAULT_DATE_FORMAT = '%a %d %b %Y, %H:%M'
 HIDE_SIDEBAR = False
 
@@ -55,7 +60,7 @@ ARTICLE_SAVE_AS = 'posts/{date:%Y}/{date:%b}/{date:%d}/{slug}/index.html'
 DISPLAY_TAGS_INLINE = True
 
 PLUGIN_PATHS = ['plugins']
-PLUGINS = ['tag_cloud', 'render_math']
+PLUGINS = ['tag_cloud', 'render_math', 'i18n_subsites']
 LOCAL_CONTENT_CACHE = False
 
 # disable category
