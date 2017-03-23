@@ -33,6 +33,10 @@ This is the summary of *binary tree* and *binary search tree* part in MAW Chapte
 
 ![perfect-binary-tree]({filename}/images/perfect-binary-tree.png)
 
+- A *balance* binary tree: a binary tree structure in which the left and right 
+  subtrees of every node differ in height by no more than 1. Yes, [AVL tree]({filename}/blog/2017/02/05/avl.md)
+  definition.
+
 ## Properties
 
 - The average depth of binary tree is $O(\sqrt{n})$
