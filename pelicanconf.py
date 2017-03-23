@@ -62,7 +62,7 @@ DISPLAY_TAGS_INLINE = True
 #
 #################################
 
-THEME='bootstrap'
+THEME='pelican-bootstrap3'
 JINJA_EXTENSIONS = ['jinja2.ext.i18n']
 PLUGIN_PATHS = ['plugins']
 PLUGINS = ['tag_cloud', 'render_math', 'i18n_subsites']
@@ -70,7 +70,7 @@ LOCAL_CONTENT_CACHE = False
 HIDE_SIDEBAR = True
 DISPLAY_CATEGORIES_ON_MENU = False # disable display categories in the navbar
 DISPLAY_PAGES_ON_MENU = False
-PYGMENTS_STYLE = 'default'
+PYGMENTS_STYLE = 'emacs'
 
 ###################################
 # End bootstrap theme configuration

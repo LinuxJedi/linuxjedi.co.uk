@@ -201,4 +201,5 @@ and things will go better later."
 begin here."
 **-- Captain John Parker**
 
-`Back To Top <{filename}/pages/quotes.rst>`_
+..
+   `Back To Top <{filename}/pages/quotes.rst>`_
