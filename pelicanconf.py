@@ -2,8 +2,8 @@
 # -*- coding: utf-8 -*- #
 from __future__ import unicode_literals
 
-#AUTHOR = 'Zeyuan Hu'
-SITENAME = "Tech Stuff"
+AUTHOR = 'Zeyuan Hu'
+SITENAME = "Zeyuan Hu's website"
 SITESUBTITLE = "A tmp place to rest"
 SITEURL = 'http://zhu45.org'
 
@@ -39,7 +39,9 @@ DEFAULT_PAGINATION = 10
 # Uncomment following line if you want document-relative URLs when developing
 RELATIVE_URLS = True
 
-THEME='notmyidea-lxj'
+
+#THEME='notmyidea-lxj'
+
 DEFAULT_DATE_FORMAT = '%a %d %b %Y, %H:%M'
 HIDE_SIDEBAR = False
 
@@ -54,13 +56,30 @@ ARTICLE_SAVE_AS = 'posts/{date:%Y}/{date:%b}/{date:%d}/{slug}/index.html'
 
 DISPLAY_TAGS_INLINE = True
 
+#################################
+#
+# Pelican bootstrap3 customization
+#
+#################################
+
+THEME='pelican-bootstrap3'
+JINJA_EXTENSIONS = ['jinja2.ext.i18n']
 PLUGIN_PATHS = ['plugins']
-PLUGINS = ['tag_cloud', 'render_math']
+PLUGINS = ['tag_cloud', 'render_math', 'i18n_subsites']
 LOCAL_CONTENT_CACHE = False
+HIDE_SIDEBAR = True
+DISPLAY_CATEGORIES_ON_MENU = False # disable display categories in the navbar
+DISPLAY_PAGES_ON_MENU = False
+PYGMENTS_STYLE = 'emacs'
+BOOTSTRAP_THEME = 'lumen'
+
+###################################
+# End bootstrap theme configuration
+###################################
 
 # disable category
 # DIRECT_TEMPLATES = ['index', 'tags', 'archives']
-USE_FOLDER_AS_CATEGORY = False
+#USE_FOLDER_AS_CATEGORY = False
 
 # Archives page related setting
 ARCHIVES_URL = 'archives/index.html'
@@ -68,9 +87,6 @@ ARCHIVES_SAVE_AS = 'archives/index.html'
 
 # Ensure the pages appear in the menu 
 # Usually, pages will go to the menu by default. I use this as a safeguard.
-'''MENUITEMS = [('About Zeyuan', '/about-zeyuan.html'),
-             ('Projects', '/projects.html')
-            ]'''
 
 # year archive
 YEAR_ARCHIVE_SAVE_AS = 'archives/{date:%Y}/period_archives.html'
