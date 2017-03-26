@@ -19,7 +19,7 @@ one when taking a right child. Then, we have the following calculation:
 $2(2(2(2(2(2(2i+1)+1)))))+1 = 225$. The picture below shows the path from the root 
 to the node in the last position:
 
-<img src="/images/maw-6-6.PNG" alt="MAW 6.6" style="width: 700px;"/>
+<img src="/images/maw-6-6.PNG" alt="MAW 6.6"/>
 
 ### MAW 6.7
 
@@ -35,7 +35,7 @@ follow binary heap property, namely each node has to have either zero or two chi
 For this question, it takes seven comparisons to construct the binomial queue (with a solo binomial tree)
 and we get the following:
 
-<img src="/images/maw-6-7-b.PNG" alt="MAW 6.7.b" style="width: 700px;"/>
+<img src="/images/maw-6-7-b.PNG" alt="MAW 6.7.b"/>
 
 Then we need to restore the binary heap property because "a" node has three children.
 This can be done by the eighth compariosn between "b" and "c". If "c" is less than "b",
@@ -87,7 +87,7 @@ times the number of nodes before $i$ on level $l$, plus $d-1$.
 
 $$
 \begin{eqnarray*}
-\frac{d^l-1}{d-1} + X + d^l - X + (X-1)d + d - 1 \\
+&=& \frac{d^l-1}{d-1} + X + d^l - X + (X-1)d + d - 1 \\
 &=& \frac{d^l-1}{d-1} + d^l-1 + dX \\
 &=& \frac{d(d^l-1)}{d-1} + dX \\
 &=& d(\frac{d^l-1}{d-1} + X) \\
@@ -103,20 +103,20 @@ So what you want here is a function that will map each of these to $i$, but will
 map any other value to $i$. Let $j$ be any of these values. Clearly,
 
 $$
-\lceil{\frac{j + (d-2)}{d}}\rceil = i
+\lfloor{\frac{j + (d-2)}{d}}\rfloor = i
 $$
 
 But if $j$ is greater than $id+1$ or less than $id - (d-2)$ then
 
 $$
-\lceil{\frac{j + (d-2)}{d}} \ne i
+\lfloor{\frac{j + (d-2)}{d}}\rfloor \ne i
 $$
 
 Thus we have our function which can now be used to work out the position of the
 parent of $i$.
 
 $$
-\lceil{\frac{i + (d-2)}{d}}\rceil
+\lfloor{\frac{i + (d-2)}{d}}\rfloor
 $$
 
 ## MAW 6.14
@@ -125,15 +125,15 @@ $$
 > that initially has $N$ elements.
 > a. What is the total running time of all operations in terms of $M$, $N$, and $d$?
 
-A `percolateUp` operation on a d-heap with $N$ elements takes $O(\log_d N) steps.
+A `percolateUp` operation on a d-heap with $N$ elements takes $O(\log_d N)$ steps.
 The key is that each time we bubble the hole up, we only do comparison once: 
 compare the insertion value with the parent of the hole (Figure 6.6, 6.7 helps understanding).
 
-A `deleteMin` operation on a d-heap with $N$ elements takes $\O(d \log_d N)$ steps.
+A `deleteMin` operation on a d-heap with $N$ elements takes $O(d \log_d N)$ steps.
 Here, we need to feel the empty hole with the minimum value of its children. This can
 take $d$ comparison to find the minimum (see p.184). 
 
-Thus in total this will take $\O(M\log_d N + Nd\log_d N)$ steps.
+Thus in total this will take $O(M\log_d N + Nd\log_d N)$ steps.
 
 > d. If $d = 2$, what is the running time of all heap operations?
 
