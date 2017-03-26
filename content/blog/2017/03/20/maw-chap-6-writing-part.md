@@ -73,7 +73,7 @@ $$
 i = \sum_{j=0}^{l-1}d^j+X
 $$
 
-$\sum_{j=0}^{l-1}d^j is a geometric series whose first term equals $1$, whose
+$\sum_{j=0}^{l-1}d^j$ is a geometric series whose first term equals $1$, whose
 common ratio is $d$, and that contains $l$ terms in total. Thus, the result is
 $\frac{d^l-1}{d-1}$ and thus, we have 
 
@@ -147,3 +147,9 @@ Substituting $cN$ into the formula calculated in part a) gives:
 $$ 
 M\log_{cN} N + NcN \log_{cN}N = O(M + N^2)
 $$
+
+> d. What choice of $d$ minimizes the total running time?
+
+$d = max(2, M/N)$ (See the related discussion at the end of Section 11.4)
+
+<!--http://mail.csis.ul.ie/~cs4115/resources/sol10.pdf-->
