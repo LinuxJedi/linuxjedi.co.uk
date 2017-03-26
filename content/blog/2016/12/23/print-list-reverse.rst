@@ -5,6 +5,7 @@ Print singly linked list in reverse order
 :date: 2016-12-23 00:05
 :category: Data Struct & Algo
 :tags: singly-linked-list, recursion
+:summary: See above
 
 Today, during the lunch break, I take a look at the following problem:
 

@@ -7,6 +7,7 @@ Pelican Hack Day
 :date: 2016-12-17 22:44
 :category: tools
 :tags: pelican, Jinja
+:summary: Design log for Pelican website
 
 I have been using Sphinx since 2012 and I spend quite a amount of time to customize
 my old Sphinx-based websites 

@@ -17,7 +17,7 @@ I am contactable via. my personal email address ferrishu3886@gmail.com and am on
 
 "Discipline is the bridge between goals and accomplishment." --Jim Rohn
 
-`More quotes ... <{filename}quotes.rst>`_
+.. `More quotes ... <{filename}quotes.rst>`_
 
 ..
    .. note::

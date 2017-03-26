@@ -2,6 +2,7 @@ Title: Josephus Problem
 Date: 2016-12-31 20:24
 Category: Data Struct & Algo
 Tags: recursion, dynamic-programming, math, maw
+Summary: See above
 
 ## Preface
 

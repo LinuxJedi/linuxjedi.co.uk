@@ -2,6 +2,7 @@ Title: MAW Chapter 6: Priority Queues (Heaps) writing questions
 Date: 2017-03-26 12:01
 Category: Data Struct & Algo
 Tags: heaps, proof, math, maw
+Summary: My solutions to selected problems in MAW Chapter 6
 
 ## Solutions
 

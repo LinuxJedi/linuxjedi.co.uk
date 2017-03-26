@@ -2,6 +2,7 @@ Title: MAW Chapter 5: Hashing writing questions
 Date: 2017-03-16 17:41
 Category: Data Struct & Algo
 Tags: hashing, proof, math, maw
+Summary: My solutions to selected problems in MAW Chapter 5
 
 ## Solutions
 

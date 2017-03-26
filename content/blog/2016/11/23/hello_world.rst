@@ -7,6 +7,7 @@ Hello World
 :date: 2016-11-23 23:00
 :category: misc
 :tags: meta
+:summary: Hello
 
 
 This blog will focus entirely on posts that involve either source code or

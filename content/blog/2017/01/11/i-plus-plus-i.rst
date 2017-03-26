@@ -5,6 +5,7 @@ Difference between ``i++`` and ``++i``
 :date: 2017-01-11 22:39
 :category: programming languages
 :tags: c
+:summary: Understanding easily confused part of C
 
 I'm starting to read through `Hacking: The Art of Exploitation <https://www.amazon.com/Hacking-Art-Exploitation-Jon-Erickson/dp/1593271441>`_ on
 my four hours daily commute to work in order to get myself more comfortable working with C. I resolve a puzzle I have about C, as shown in the title.

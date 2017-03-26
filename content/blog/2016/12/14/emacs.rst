@@ -8,6 +8,7 @@ Minimal Emacs Tutorial
 :modified: 2017-01-03 21:45
 :category: tools
 :tags: emacs
+:summary: Emacs quick reference
 
 *******************
 Learn about Emacs

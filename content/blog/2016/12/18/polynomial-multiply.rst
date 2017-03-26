@@ -7,6 +7,7 @@ Polynomial Multiplication
 :date: 2016-12-18 18:53
 :category: Data Struct & Algo
 :tags: singly-linked-list, maw
+:summary: Origin from MAW 3.7
 
 I finally got time to continue working through MAW. The problem 3.7 relates to polynomial multiplication.
 

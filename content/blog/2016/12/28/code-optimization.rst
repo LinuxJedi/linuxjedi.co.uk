@@ -5,6 +5,7 @@ A peek in code optimization
 :date: 2016-12-28 13:21
 :category: Data Struct & Algo
 :tags: singly-linked-list, software-engineering
+:summary: MAW 3.9 solution optimization
 
 Quite often, when I take a look at a programming
 question solution, I'm amazed by how succint the provided

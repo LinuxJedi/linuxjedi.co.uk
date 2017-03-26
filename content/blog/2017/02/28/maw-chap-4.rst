@@ -5,6 +5,7 @@ MAW: Chapter 4 Reflection
 :date: 2017-03-12 10:45
 :category: misc
 :tags: meta, maw
+:summary: An overview summary of MAW Chapter 4
 
 ***********
 Reflection

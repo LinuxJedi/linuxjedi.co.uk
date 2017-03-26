@@ -8,6 +8,7 @@ Generate a Linked List from a given array
 :date: 2016-11-27 19:38
 :category: Data Struct & Algo
 :tags: c, singly-linked-list, maw
+:summary: Where MAW starts
 
 *******
 Perface

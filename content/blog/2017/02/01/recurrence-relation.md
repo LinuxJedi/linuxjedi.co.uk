@@ -2,6 +2,7 @@ Title: Solving recurrence relations in a nutshell
 Date: 2017-02-02 01:05
 Category: Mathematics
 Tags: recursion, combinatorics, math
+Summary: MATH475 methods to solve recurrence relation
 
 Able to solve recurrence relation is a very important skill when we study data structures
 and algorithm. This is a ability that I used to be familar with when I took combinatorics

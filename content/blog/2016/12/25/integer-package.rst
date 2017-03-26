@@ -5,6 +5,7 @@ Reflection on integer arithmetic package problem
 :date: 2016-12-26 23:03
 :category: Data Struct & Algo
 :tags: software-engineering, c
+:summary: Origin from MAW 3.9
 
 This weekend, I'm working on MAW 3.9. The single problem results
 in almost 500 lines of code. This is quite unexpected. The problem

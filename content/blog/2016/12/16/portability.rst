@@ -7,6 +7,7 @@ Lesson Learned: Portability
 :date: 2016-12-16 23:20
 :category: misc
 :tags: software-engineering, shell, AIX
+:summary: Shell is not portable!
 
 Portability is a kind of issue that people always talk about in software engineering field.
 I never have been through such problem on my own probably because I don't have to port my

@@ -5,6 +5,7 @@ A small C trick I learned today
 :date: 2016-12-24 23:11
 :category: programming languages
 :tags: c
+:summary: A C one-liner
 
 Today I learned a C trick. Here is my original ``printList``:
 

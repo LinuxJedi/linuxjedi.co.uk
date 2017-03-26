@@ -7,6 +7,7 @@ Automatically publish Tinkerer bld output to GitHub with Travis CI
 :date: 2016-11-27 22:00
 :category: tools
 :tags: github, travis-ci
+:summary: A taste of DevOps
 
 *******
 Perface

@@ -7,6 +7,7 @@ Reverse Singly Linked List
 :date: 2016-12-03 20:34
 :category: Data Struct & Algo
 :tags: singly-linked-list, recursion, maw
+:summary: MAW 3.12 question
 
 *******
 Problem

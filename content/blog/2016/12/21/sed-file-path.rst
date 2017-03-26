@@ -5,6 +5,7 @@ Environment variable substitution using ``Sed``
 :date: 2016-12-21 12:07
 :category: tools
 :tags: sed, shell
+:summary: A ``sed`` example
 
 Suppose we have a text file ``config.ini`` looks something like this::
 

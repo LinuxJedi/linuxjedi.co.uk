@@ -2,6 +2,7 @@ Title: AVL Tree
 Date: 2017-02-05 10:43
 Category: Data Struct & Algo
 Tags: trees, maw
+Summary: AVL tree summary
 
 This is the summary of *AVL tree* part in MAW Chapter 4.
 

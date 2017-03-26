@@ -5,6 +5,7 @@ What's the difference between sourcing a script and executing a script?
 :date: 2016-12-20 21:49
 :category: tools
 :tags: shell
+:summary: Amusing question in shell
 
 I run across the question in the title when I take a break from the work
 today. Then I did a little bit googling, and the explanation is not quite satisfying

@@ -6,6 +6,7 @@ Modify array inside function in C
 :category: programming languages
 :tags: c
 :Status: Published
+:summary: Commonly seen C usage
 
 In this post, I want to write down the lesson learned
 about modifying array inside a function in C with an example

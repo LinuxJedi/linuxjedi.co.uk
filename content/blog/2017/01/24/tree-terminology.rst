@@ -5,6 +5,7 @@ Tree Terminology
 :date: 2017-01-24 20:23
 :category: Data Struct & Algo
 :tags: trees, maw
+:summary: Commonly seen tree terminology
 
 *************
 Terminology

@@ -2,6 +2,7 @@ Title: B-Tree
 Date: 2017-03-11 21:32
 Category: Data Struct & Algo
 Tags: trees, maw
+Summary: B-tree summary
 
 This is the summary of *B tree* part in MAW Chapter 4.
 

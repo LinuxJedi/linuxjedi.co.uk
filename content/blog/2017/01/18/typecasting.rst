@@ -5,6 +5,7 @@ Typecasting in C
 :date: 2017-01-19 00:53
 :category: programming languages
 :tags: c, pointer
+:summary: A study of typecasting in C
 
 This post covers the typecasting in C with the aim to get a clear understanding
 of the most commonly-seen C manipulation. This writeup is adapted from

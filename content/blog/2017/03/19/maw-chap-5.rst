@@ -5,6 +5,7 @@ MAW: Chapter 5 Reflection
 :date: 2017-03-17 15:56
 :category: misc
 :tags: meta, maw, hashing
+:summary: Summary of hash table for MAW Chapter 5
 
 This is the summary part of hash table and at the same time, it serves as the Chapter 5
 reflection.

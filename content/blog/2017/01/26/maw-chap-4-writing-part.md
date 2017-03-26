@@ -2,6 +2,7 @@ Title: MAW Chapter 4: Tree writing questions
 Date: 2017-01-26 17:41
 Category: Data Struct & Algo
 Tags: trees, proof, math, maw
+Summary: My solutions to selected problems in MAW Chapter 4
 
 There are a lot of writing questions in Chapter 4. Some questions offer
 great insights on the general techniques in solving algorithmatic proving questions.
