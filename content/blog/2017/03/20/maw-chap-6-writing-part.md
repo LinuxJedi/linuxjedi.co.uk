@@ -1,11 +1,11 @@
 Title: MAW Chapter 6: Priority Queues (Heaps) writing questions
-Date: 2017-03-24 19:45
+Date: 2017-03-26 12:01
 Category: Data Struct & Algo
 Tags: heaps, proof, math, maw
 
 ## Solutions
 
-including: MAW 6.6, 6.7, 6.9
+including: MAW 6.6, 6.7, 6.9, 6.13, 6.14
 
 ### MAW 6.6
 
@@ -16,7 +16,10 @@ the underneath implemenation structure. Since the binary heap is actually implem
 in terms of array, we start with $i = 1$ and position at the root. We follow the path
 toward the last node, doubling $i$ when taking a left child, and doubling $i$ and adding
 one when taking a right child. Then, we have the following calculation:
-$2(2(2(2(2(2(2i+1)+1)))))+1 = 225$.
+$2(2(2(2(2(2(2i+1)+1)))))+1 = 225$. The picture below shows the path from the root 
+to the node in the last position:
+
+<img src="/images/maw-6-6.PNG" alt="MAW 6.6" style="width: 700px;"/>
 
 ### MAW 6.7
 
@@ -57,3 +60,90 @@ the procedure has to call each node of the heap.
 >    this chapter?
 
 Yes. It works for leftist heap, skew heap, and d-heaps.
+
+### MAW 6.13
+
+> If a d-heap is stored as an array, for an entry located in position $i$,
+> where are the parents and children?
+
+Let's begin with children. Assume that position $i$ corresponds to the $X$th node
+of level $l$. Therefore
+
+$$
+i = \sum_{j=0}^{l-1}d^j+X
+$$
+
+$\sum_{j=0}^{l-1}d^j is a geometric series whose first term equals $1$, whose
+common ratio is $d$, and that contains $l$ terms in total. Thus, the result is
+$\frac{d^l-1}{d-1}$ and thus, we have 
+
+$$
+i = \frac{d^l-1}{d-1} + X
+$$
+
+We now calculate the position of $i$'s second last child in terms of $d$, $l$, and
+$X$. This equals $i$, plus the number of nodes after $i$ on level $l$, plus $d$
+times the number of nodes before $i$ on level $l$, plus $d-1$.
+
+$$
+\begin{eqnarray*}
+\frac{d^l-1}{d-1} + X + d^l - X + (X-1)d + d - 1 \\
+&=& \frac{d^l-1}{d-1} + d^l-1 + dX \\
+&=& \frac{d(d^l-1)}{d-1} + dX \\
+&=& d(\frac{d^l-1}{d-1} + X) \\
+&=& di
+\end{eqnarray*}
+$$
+
+Therefore the second last child of $i$ is in position $id$. It follows that the children
+of $i$ are in positions $id-(d-2), \dots, id+1$.
+
+A node is a child of $i$ if and only if it is in one of the positions $id-(d-2), \dots, id+1$.
+So what you want here is a function that will map each of these to $i$, but will not
+map any other value to $i$. Let $j$ be any of these values. Clearly,
+
+$$
+\lceil{\frac{j + (d-2)}{d}}\rceil = i
+$$
+
+But if $j$ is greater than $id+1$ or less than $id - (d-2)$ then
+
+$$
+\lceil{\frac{j + (d-2)}{d}} \ne i
+$$
+
+Thus we have our function which can now be used to work out the position of the
+parent of $i$.
+
+$$
+\lceil{\frac{i + (d-2)}{d}}\rceil
+$$
+
+## MAW 6.14
+
+> Suppose we need to perform $M$ `PercolateUp` and $N$ `DeleteMiin` on a d-heap
+> that initially has $N$ elements.
+> a. What is the total running time of all operations in terms of $M$, $N$, and $d$?
+
+A `percolateUp` operation on a d-heap with $N$ elements takes $O(\log_d N) steps.
+The key is that each time we bubble the hole up, we only do comparison once: 
+compare the insertion value with the parent of the hole (Figure 6.6, 6.7 helps understanding).
+
+A `deleteMin` operation on a d-heap with $N$ elements takes $\O(d \log_d N)$ steps.
+Here, we need to feel the empty hole with the minimum value of its children. This can
+take $d$ comparison to find the minimum (see p.184). 
+
+Thus in total this will take $\O(M\log_d N + Nd\log_d N)$ steps.
+
+> d. If $d = 2$, what is the running time of all heap operations?
+
+Substitute 2 into the formula calculated in part a) gives $O((M+N)\log_2 N)$.
+
+> c. If $d = \theta (N)$, what is the total running time?
+
+If $d = \theta (N)$ then $d = cN$, where $c$ is a constant value independent of $N$.
+Substituting $cN$ into the formula calculated in part a) gives:
+
+$$ 
+M\log_{cN} N + NcN \log_{cN}N = O(M + N^2)
+$$
