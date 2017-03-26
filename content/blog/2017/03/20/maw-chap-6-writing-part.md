@@ -124,6 +124,7 @@ $$
 
 > Suppose we need to perform $M$ `PercolateUp` and $N$ `DeleteMiin` on a d-heap
 > that initially has $N$ elements.
+
 > a. What is the total running time of all operations in terms of $M$, $N$, and $d$?
 
 A `percolateUp` operation on a d-heap with $N$ elements takes $O(\log_d N)$ steps.
@@ -136,7 +137,7 @@ take $d$ comparison to find the minimum (see p.184).
 
 Thus in total this will take $O(M\log_d N + Nd\log_d N)$ steps.
 
-> d. If $d = 2$, what is the running time of all heap operations?
+> b. If $d = 2$, what is the running time of all heap operations?
 
 Substitute 2 into the formula calculated in part a) gives $O((M+N)\log_2 N)$.
 
