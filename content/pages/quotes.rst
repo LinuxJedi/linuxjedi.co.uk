@@ -16,6 +16,9 @@ To him he is always doing both."
 
 .. stop-show-quotes
 
+"It’s not that I’m so smart, it’s just that I stay with problems longer."
+**--Albert Einstein**
+
 "Most people want to avoid pain, and discipline is usually painful."
 **--John C. Maxwell**
 
