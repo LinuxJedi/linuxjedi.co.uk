@@ -47,7 +47,7 @@ Here are some examples:
 
 ## Remarks on implementation
 
-1. We use array as the actual implementation for the binary heap above. 
+We use array as the actual implementation for the binary heap above. 
 For any element in array position $i$, the left child is in position $2i$, the
 right child is in the cell after the left child $(2i+1)$, and the parent is in position
 $\lfloor i/2 \rfloor$. Position 0 is used as a sentinel.
@@ -71,7 +71,7 @@ the correct place for it in the tree. This is called *percolate up*.
 - If parent larger, copy parent down and go up one level
 - Done if parent $\le$ item or reached top node $A[1]$
 
-<img src="/images/binary-heap-percolate-up-done.PNG" alt="binary heap percolate up done" style="width: 700px;"/>
+<img src="/images/binary-heap-percolate-up-done.PNG" alt="binary heap percolate up done"/>
 
 \* ---- Note ---- *
 
@@ -117,7 +117,7 @@ $O(\log N)$ time.
 
 #### `Delete(P,H)`
 
-removes the node at position $P$ from the heap. We can use `DecreaseKey`(P, $\infinity$, H)
+removes the node at position $P$ from the heap. We can use `DecreaseKey`(P, $\infty$, H)
 followed by `DeleteMin`. The running time is $O(\log N)$.
 
 #### `Buildheap(H)`
