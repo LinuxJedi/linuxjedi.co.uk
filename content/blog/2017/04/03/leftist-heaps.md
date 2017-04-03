@@ -48,6 +48,9 @@ $2^r-1$ nodes.
 > fundamental operation `merge` will perform all the work on the right path,
 > then we can have a $O(\log N)$ `merge` operation.
 
+- A perfectly balanced tree forms if keys 1 to $2^k-1$ are inserted in order into an
+initially empty leftist heap.
+
 ## Operations
 
 ### `merge(H1, H2)`
@@ -69,7 +72,7 @@ picture shows a good example of `merge` steps. Note that the $Npl$ of the node i
 picture is 1 larger than our's definition. The blue curve represents the final
 swap step.
 
-<img src="/images/leftist-tree-merge.PNG" alt="leftist heap merge example" style="width: 700px;"/>
+<img src="/images/leftist-heap-merge.PNG" alt="leftist heap merge example" style="width: 700px;"/>
 
 Another example can be seen from MAW 6.16 in 
 [my chapter 6 writing question post]({filename}/blog/2017/03/20/maw-chap-6-writing-part.md).
@@ -96,6 +99,7 @@ The actual implementation is on maw p.200.
 
 ## Reference
 
+- MAW Chapter 6
 - http://www.cs.cmu.edu/~ckingsf/bioinfo-lectures/heaps.pdf
 - https://www.cs.usfca.edu/~galles/visualization/LeftistHeap.html (good tool to visualize the operations)
 - http://courses.cs.washington.edu/courses/cse326/08sp/lectures/05-leftist-heaps.pdf
