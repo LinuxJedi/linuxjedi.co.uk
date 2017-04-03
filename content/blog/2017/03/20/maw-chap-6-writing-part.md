@@ -6,7 +6,7 @@ Summary: My solutions to selected problems in MAW Chapter 6
 
 ## Solutions
 
-including: MAW 6.6, 6.7, 6.9, 6.13, 6.14, 6.16
+including: MAW 6.6, 6.7, 6.9, 6.13, 6.14, 6.16, 6.17, 
 
 ### MAW 6.6
 
@@ -175,3 +175,10 @@ the heap with the smaller root.
 The following shows the steps to get the final answer for this problem:
 
 <img src="/images/maw-6-16-solution.jpg" alt="MAW 6.16 solution" style="width:700px;height:400px"/>
+
+## MAW 6.17
+
+> Show the result of inserting keys 1 to 15 in order into an initially empty leftist heap.
+
+Use this wonderful site: https://www.cs.usfca.edu/~galles/visualization/LeftistHeap.html
+to see the whole process of insertion.
