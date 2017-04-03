@@ -155,3 +155,23 @@ $$
 $d = max(2, M/N)$ (See the related discussion at the end of Section 11.4)
 
 <!--http://mail.csis.ul.ie/~cs4115/resources/sol10.pdf-->
+
+## MAW 6.16
+
+> Merge the two leftist heaps in Figure 6.58
+
+<img src="/images/maw-6-16-problem.PNG" alt="MAW 6.16"/>
+
+The book doesn't do a well job on displaying the detailed steps in merging the 
+leftist heap. So, I decide to use this problem as an illustration. By algorithm
+description on p. 194 and the actual algorithm implementation on p.189., there are
+two key points in the algorithm:
+
+1. recursively merge the heap with the larger root with the right subheap of
+the heap with the smaller root.
+
+2. We do the swap at the root.
+
+The following shows the steps to get the final answer for this problem:
+
+<img src="/images/maw-6-16-solution.jpg" alt="MAW 6.16 solution"/>
