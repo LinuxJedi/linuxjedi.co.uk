@@ -6,7 +6,7 @@ Summary: My solutions to selected problems in MAW Chapter 6
 
 ## Solutions
 
-including: MAW 6.6, 6.7, 6.9, 6.13, 6.14
+including: MAW 6.6, 6.7, 6.9, 6.13, 6.14, 6.16
 
 ### MAW 6.6
 
@@ -174,4 +174,4 @@ the heap with the smaller root.
 
 The following shows the steps to get the final answer for this problem:
 
-<img src="/images/maw-6-16-solution.jpg" alt="MAW 6.16 solution"/>
+<img src="/images/maw-6-16-solution.jpg" alt="MAW 6.16 solution" style="width:700px;height:400px"/>
