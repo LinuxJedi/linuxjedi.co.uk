@@ -1,4 +1,4 @@
-Title: Leftist heaps
+Title: Leftist heap
 Date: 2017-04-04 10:30
 Category: Data Struct & Algo
 Tags: heaps, maw
@@ -55,7 +55,7 @@ initially empty leftist heap.
 
 ### `merge(H1, H2)`
 
-As with [splay]({filename}/blog/2017/02/11/splay.md}) in splay trees, `merge` is
+As with [splay]({filename}/blog/2017/02/11/splay.md) in splay trees, `merge` is
 the fundamental operation that is used to implement other operations in leftist 
 heap(i.e., `insert`, `deleteMin`). 
 
@@ -67,8 +67,7 @@ with the smaller root.
 - We update $Npl$ of the merged root and swap left and right subtrees just below
 root, if needed, to keep leftist property of merged result.
 
-Detailed algorithm implemented in C can be checked from maw p.198. The following
-picture shows a good example of `merge` steps. Note that the $Npl$ of the node in
+The following picture shows a good example of `merge` steps. Note that the $Npl$ of the node in
 picture is 1 larger than our's definition. The blue curve represents the final
 swap step.
 
@@ -77,6 +76,31 @@ swap step.
 Another example can be seen from MAW 6.16 in 
 [my chapter 6 writing question post]({filename}/blog/2017/03/20/maw-chap-6-writing-part.md).
 
+The actual implementation in C is below, which is copied from maw p.198:
+
+```{c}
+PriorityQueue
+Merge(PriorityQueue H1, PriorityQueue H2)
+{
+  if (H1 == NULL) return H2;
+  if (H2 == NULL) return H1;
+  if (H1->Element < H2->Element) return Merge1(H1, H2);
+  if (H1->Element > H2->Element) return Merge2(H2, H1);
+}
+
+static PriorityQueue
+Merge1(PriorityQueue H1, PriorityQueue H2)
+{
+  if (H1->Left == NULL) H1->Left = H2; // Single node; H1->Right is already NULL
+  else
+  {
+    H1->Right = Merge(H1->Right, H2);
+    if(H1->Left->Npl < H1->Right->Npl) swapChildren(H1);
+    H1->Npl = H1->Right->Npl + 1;    
+  }    
+  return H1;
+}
+```
 
 ### insert
 
@@ -84,14 +108,47 @@ We can carry out insertion by making the item to be inserted a one-node heap
 and perform a merge. 
 
 Reference section offers a link to visualize the whole insertion process. The
-actual implementation is on maw p.199.
+actual implementation is on maw p.199 and copied below:
+
+```{c}
+PriorityQueue
+Insert1(ElementType X, PriorityQueue H)
+{
+  PriorityQueue SingleNode;
+
+  SingleNode = malloc(sizeof(struct TreeNode));
+  assert(SingleNode);
+
+  SingleNode->Element = X; SingleNode->Npl = 0;
+  SingleNode->Left = SingleNode->Right = NULL;
+  H = merge(SingleNode, H);
+  return H;    
+}
+```
 
 ### deleteMin
 
 deleteMin can be done by remove the root and merge the left and subtree tree into
 a new leftist heap.
 
-The actual implementation is on maw p.200.
+The actual implementation is on maw p.200 and copied below:
+
+```{c}
+PriorityQueue
+DeleteMin(PriorityQueue H)
+{
+  PriorityQueue LeftHeap, RightHeap;
+  if(IsEmpty(H))
+  {
+    Error("Priority queue is empty");
+    return H;    
+  }    
+  LeftHeap = H->Left;
+  RightHeap = H->Right;
+  free(H);
+  return Merge(LeftHeap, RightHeap);
+}
+```
 
 ## Runtime analysis
 
