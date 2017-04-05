@@ -34,6 +34,23 @@ left and right children satisfy the leftist heap order property and swap them
 if they do not. However, for skew heaps, the swap is unconditional. In other words,
 we **always** swap the left & right subtrees at each step of merge. 
 
+In the below example, we want to merge two skew heaps $H_1$ and $H_2$:
+
+<img src="/images/skew-heap-01.PNG" alt="skew heap 01" style="width: 700px;"/>
+
+Then, we get the following result of merging $H_2$ with $H_1$'s right subheap:
+
+<img src="/images/skew-heap-02.PNG" alt="skew heap 02" style="width: 700px;"/>
+
+and this is the final merge result:
+
+<img src="/images/skew-heap-03.PNG" alt="skew heap 03" style="width: 700px;"/>
+
+\* ---- Note ---- *
+
+> The end result is actually leftist heap but there is no guaranteed that this is
+> always the case. If you take a look, $H_1$ is not lefist heap.
+
 ## Runtime analysis
 
 - `merge`, `deleteMin`, and `insert` are all running in $O(\log N)$ amortized time.

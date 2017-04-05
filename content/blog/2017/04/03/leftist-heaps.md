@@ -2,7 +2,7 @@ Title: Leftist heap
 Date: 2017-04-04 10:30
 Category: Data Struct & Algo
 Tags: heaps, maw
-Summary: Summary for leftist heaps
+Summary: Summary for leftist heap
 
 This is the summary of *leftist heaps* part in MAW Chapter 6.
 
