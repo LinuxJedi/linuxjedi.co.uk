@@ -150,6 +150,15 @@ DeleteMin(PriorityQueue H)
 }
 ```
 
+### BuildHeap
+
+As described in MAW 6.22, we can perform `BuildHeap` in linear time for leftist 
+heaps by considering each element as a one-node leftist heap, placing all these
+heaps on a queue, and performing the following step: Until only one heap is on 
+the queue, dequeue two heaps, merge them, and enqueue the result.
+
+This algorithm is $O(N)$ in the worst time.
+
 ## Runtime analysis
 
 - `merge`, `deleteMin`, and `insert` are all running in $O(\log N)$.
