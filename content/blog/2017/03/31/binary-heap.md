@@ -144,6 +144,13 @@ by copy $H2$ at the end of $H1$ and use `BuildHeap`. This requires $O(N)$ time.
 
 - Space: $O(N)$ (an array of size $N+1$)
 - Insert: $O(\log N)$
+
+\* ---- Note ---- *
+
+> As shown on MAW p.183, empirical study shows that on average, percolation terminates
+> early: average *insert* moves an element up 1.607 levels. This means that 
+> binary heap support insertion in *constant average* time per operation.
+
 - DeleteMin: $O(\log N)$
 
 # d-heaps

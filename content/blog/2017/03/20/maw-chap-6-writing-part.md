@@ -6,7 +6,7 @@ Summary: My solutions to selected problems in MAW Chapter 6
 
 ## Solutions
 
-including: MAW 6.6, 6.7, 6.9, 6.13, 6.14, 6.16, 6.17, 
+including: MAW 6.6, 6.7, 6.9, 6.13, 6.14, 6.16, 6.17, 6.27, 6.28,
 
 ### MAW 6.6
 
@@ -180,5 +180,42 @@ The following shows the steps to get the final answer for this problem:
 
 > Show the result of inserting keys 1 to 15 in order into an initially empty leftist heap.
 
-Use this wonderful site: https://www.cs.usfca.edu/~galles/visualization/LeftistHeap.html
+Use this wonderful site: ![](https://www.cs.usfca.edu/~galles/visualization/LeftistHeap.html)
 to see the whole process of insertion.
+
+## MAW 6.27
+
+> Prove that a binomial tree $B_k$ has binomial trees $B_0, B_1, \dots, B_{k-1}$
+> as children of the root.
+
+I'll try to use two ways to prove this. Both ways are by induction but one of them
+is more mathematical formula involved.
+
+*Method 1*
+
+Clearly the claim is true for $k = 1$. Suppose it is true for all values $i = 1, 2, \dots, k-1$.
+Since for $B_k$, we have $2^k$ nodes. Then, by the induction hypothesis, we have
+$2^{k-1} = 1 + 2^0 + \dots + 2^{k-2}$. Now, multiplying both sides of the equation
+by 2, we have $2^k = 2 + 2 + \dots + 2^{k-1}$, which is the same as
+$2^k = 1 + 2^0 + \dots + 2^{k-1}$. This completes the proof.
+
+*Method 2*
+
+Again the claim is true for $k = 1$. Suppose it is true for all values $i = 1, 2, \dots, k-1$.
+A $B_k$ tree is fromed by attaching a $B_{k-1}$ tree to the root of a $B_{k-1}$ tree.
+Thus, by induction, it contains a $B_0$ through $B_{k-2}$ tree, as well as the
+newly attached $B_{k-1}$ tree, proving the claim.
+
+## MAW 6.28
+
+> Prove that a binomial tree of height $k$ has ${k \choose d}$ nodes at depth $d$.
+
+Proof is by induction. Clearly the claim is true for $k=1$. Assume true for 
+all values $i=1,2,\dots,k$. A $B_{k+1}$ tree is formed by attaching a $B_k$ tree
+to the original $B_k$ tree. The original tree has ${k \choose d}$ nodes at depth
+$d$ by induction hypothesis. The attached tree had $\binom{k}{d-1}$ nodes at depth
+$d-1$, which are now at depth $d$. Adding these two terms we have
+
+$$
+\binom{k+1}{d} = \binom{k}{d} + \binom{k}{d-1}
+$$
