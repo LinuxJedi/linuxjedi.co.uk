@@ -31,17 +31,17 @@ the most commonly-seen one. Insert can be done in :math:`O(\log N)` in the worst
 case and constant on average. DeleteMin can be done in :math:`O(\log N)`. However,
 it has natural drawback in supporting merge operation, which is needed when we 
 want to merge two heaps into one. This leads to the 
-`leftist heap <{filename}/blog/2017/04/03/leftist-heaps.md>`_, 
-`skew heap <{filename}/blog/2017/04/04/skew-heap.md>`_, and 
-`binomial-queue <{filename}/blog/2017/04/08/binomial-queue.md>`_. Leftist heap
+`leftist heap <{filename}/blog/2017/04/03/leftist-heaps.md>`_. Leftist heap
 supports all three operations (insert, DeleteMin, merge) efficiently but we
 needs to maintain extra information in the node and we need to do extra test 
-when working with leftist heap in order to maintain the leftist heap property. 
-To better solve these two little disadvantages, we propose skew heap, which has 
-no restriction on the tree structure at all while maintain the efficiency of operations
-in amortized time. However, we are still unsatisfy with the structure because
+during merge in order to maintain the leftist heap property. 
+To better solve these two little disadvantages, we propose 
+`skew heap <{filename}/blog/2017/04/04/skew-heap.md>`_, which has 
+no restriction on the tree structure at all while still enjoying the efficiency of operations
+in amortized time. However, there is still room for improvement because
 both leftist heap and skew heap cannot support constant on average insertion like
-binary heap does. This is why we propose a new structure called binomial heap.
+binary heap does. This is why we propose a new structure called 
+`binomial queue <{filename}/blog/2017/04/08/binomial-queue.md>`_.
 
 There are many applications of priority queues:
 
