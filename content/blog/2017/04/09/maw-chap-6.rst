@@ -30,7 +30,7 @@ implmentations. `Binary heap <{filename}/blog/2017/03/31/binary-heap.md>`_ is
 the most commonly-seen one. Insert can be done in :math:`O(\log N)` in the worst
 case and constant on average. DeleteMin can be done in :math:`O(\log N)`. However,
 it has natural drawback in supporting merge operation, which is needed when we 
-want to merge two heaps into one. This needs to the 
+want to merge two heaps into one. This leads to the 
 `leftist heap <{filename}/blog/2017/04/03/leftist-heaps.md>`_, 
 `skew heap <{filename}/blog/2017/04/04/skew-heap.md>`_, and 
 `binomial-queue <{filename}/blog/2017/04/08/binomial-queue.md>`_. Leftist heap
