@@ -180,7 +180,7 @@ The following shows the steps to get the final answer for this problem:
 
 > Show the result of inserting keys 1 to 15 in order into an initially empty leftist heap.
 
-Use this wonderful site: ![](https://www.cs.usfca.edu/~galles/visualization/LeftistHeap.html)
+Use [this wonderful site](https://www.cs.usfca.edu/~galles/visualization/LeftistHeap.html)
 to see the whole process of insertion.
 
 ## MAW 6.27
