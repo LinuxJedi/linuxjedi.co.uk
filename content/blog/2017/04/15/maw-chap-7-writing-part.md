@@ -1,19 +1,19 @@
 Title: MAW Chapter 7: Sorting writing questions
-Date: 2017-03-26 12:01
+Date: 2017-04-15 23:54
 Category: Data Struct & Algo
 Tags: sorting, proof, math, maw
 Summary: My solutions to selected problems in MAW Chapter 7
 
 ## Solutions
 
-including: MAW 7.1, 7.2
+including: MAW 7.1, 7.2, 
 
 ### MAW 7.1
 
 > Sort the sequence 3,1,4,1,5,9,2,6,5 using insertion sort.
 
+```
 | index    | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 |
-|----------|---|---|---|---|---|---|---|---|---|
 | original | 3 | 1 | 4 | 1 | 5 | 9 | 2 | 6 | 5 |
 |----------|---|---|---|---|---|---|---|---|---|
 | pass 1   | 1 | 3 | 4 | 1 | 5 | 9 | 2 | 6 | 5 |
@@ -24,6 +24,7 @@ including: MAW 7.1, 7.2
 | pass 6   | 1 | 1 | 2 | 3 | 4 | 5 | 9 | 6 | 5 |
 | pass 7   | 1 | 1 | 2 | 3 | 4 | 5 | 6 | 9 | 5 |
 | pass 8   | 1 | 1 | 2 | 3 | 4 | 5 | 5 | 6 | 9 |
+```
 
 ### MAW 7.2
 
