@@ -6,7 +6,7 @@ Summary: My solutions to selected problems in MAW Chapter 7
 
 ## Solutions
 
-including: MAW 7.1, 7.2, 7.3, 7.4
+including: MAW 7.1, 7.2, 7.3, 7.4, 7.5.a, 7.9, 
 
 ### MAW 7.1
 
@@ -64,3 +64,32 @@ and {4,3}). Thus, a maximum of $2(k-1)+1 = 2k-1$.
 | after 3-sort | 2 | 1 | 4 | 3 | 5 | 7 | 6 | 9 | 8 |
 | after 1-sort | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 |
 ```
+
+### MAW 7.5.a
+
+> What is the running time of Shellsort using the two-increment sequence {1,2}?
+
+The answer is $\theta(N^2)$. Let's first show the lower bound. By the conclusion
+of 7.3, we know that The 2-sort removes at most only three (i.e. $k=2$) inversions
+at a time. In addition, a pass with increment $h_k$ consists of $h_k$ insertion sorts
+of about $N/h_k$ elements. Then, by theorem 7.2, we know that the algorithm 
+is $\omega(N^2)$. By the same argument, the 2-sort is two insertion sorts of size $N/2$,
+so the cost of that pass is $O(N^2)$. The 1-sort is also $O(N^2)$, so the upper bound
+for the algorithm is $O(N^2)$. 
+
+### MAW 7.9
+
+> Determine the running time of Shellsort for 
+> a. sorted input
+
+$O(N \log N)$. No exachanges acutally done in each each pass but we will still
+need to go through the second for loop, which indicates that each pass takes 
+$O(N)$. There are total $O(\log N)$ passes and the answer follows.
+
+> b. reverse-ordered input
+
+NOTE: this one is a temp answer. It is subject to revision.
+
+$O(N \log N)$. It is easy to show that after an $h_k$ sort, no element is farther
+than $h_k$ from its rightful position. Thus, if the increments satisfy $h_{k+1} \le ch_k$
+for a constant $c$, which implies $O(\log N)$ increments, then the bound follows.
