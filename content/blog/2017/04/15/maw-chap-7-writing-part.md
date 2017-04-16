@@ -80,6 +80,7 @@ for the algorithm is $O(N^2)$.
 ### MAW 7.9
 
 > Determine the running time of Shellsort for 
+
 > a. sorted input
 
 $O(N \log N)$. No exachanges acutally done in each each pass but we will still
