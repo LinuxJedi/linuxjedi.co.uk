@@ -104,7 +104,7 @@ for a constant $c$, which implies $O(\log N)$ increments, then the bound follows
 
 The key improvement in terms of the worst case running time lies in the increment
 sequence. As suggested on p.224,225, we improve the worst time running time from
-$\O(N^2)$ to $O(N^{3/2})$ by changing the increment sequence into the sequence that
+$O(N^2)$ to $O(N^{3/2})$ by changing the increment sequence into the sequence that
 consecutive increments have no common factors. 
 
 If we follow the modification indicated by this question, it is still possible
