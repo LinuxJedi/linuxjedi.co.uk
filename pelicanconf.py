@@ -20,6 +20,8 @@ CATEGORY_FEED_ATOM = None
 TRANSLATION_FEED_ATOM = None
 FEED_DOMAIN = SITEURL
 
+STATIC_PATHS = ['assets', 'images']
+
 # Blogroll
 # LINKS = (('Brian Aker', 'http://krow.net/'),
 #          ('Eric Gustafson', 'https://egustafson.github.io/oscon-2014-p1.html'),
