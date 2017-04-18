@@ -8,7 +8,7 @@ which shipped with [DB2](http://www.ibm.com/analytics/us/en/technology/db2/), [d
 [BigSQL](https://www-01.ibm.com/software/data/infosphere/hadoop/big-sql.html), and many other IBM data warehouse solutions. 
 
 In my spare time I like to learn more about [programming]({filename}projects.rst). You can also find more about me in my [LinkedIn page](http://cn.linkedin.com/in/zhu45)or my
-[resume](https://www.dropbox.com/s/ch6re9umxliimm1/zeyuan-hu-cv.pdf?dl=0). 
+[resume]({attach}/assets/zeyuan-hu-cv.pdf). 
 This site contains fully about technical study and reflection. If you're interested in my life thoughts,
 book review, and any non-technical stuff, please see my [Wordpress blog](https://zeyuanhu.wordpress.com/).
 
