@@ -2,7 +2,8 @@ title: Hello ...
 url:
 save_as: index.html
 
-My name is Ze-Yuan Hu (or Zeyuan Hu). People usually call me "Z". My day job is as a Software Engineer at IBM working on [Federation Server](http://www-03.ibm.com/software/products/en/ibminfofedeserv), 
+My name is Ze-Yuan Hu (胡泽远 in Chinese). People usually call me "Z". 
+My day job is as a Software Engineer at IBM working on [Federation Server](http://www-03.ibm.com/software/products/en/ibminfofedeserv), 
 which shipped with [DB2](http://www.ibm.com/analytics/us/en/technology/db2/), [dashDB](http://www.ibm.com/analytics/us/en/technology/cloud-data-services/dashdb/), 
 [BigSQL](https://www-01.ibm.com/software/data/infosphere/hadoop/big-sql.html), and many other IBM data warehouse solutions. 
 
