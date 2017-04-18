@@ -25,12 +25,12 @@ ground concepts first.
 > - We can compare any two keys using $<, >, =$
 
 - Sorting algorithm using comparison operators (i.e $<, >, =$) is known as
-*comparison-based sorting*. Another major type is called *counting sort* (i.e. Radix sort).
+**comparison-based sorting**. Another major type is called **counting sort** (i.e. Radix sort).
 
-- If the entire sort can be done in main memory (i.e number of elements is relatively small, usually less than a million), we call it *internal sorting*. By the contrast,
-if the data is on the disk, we call it *external sorting*.
+- If the entire sort can be done in main memory (i.e number of elements is relatively small, usually less than a million), we call it **internal sorting**. By the contrast,
+if the data is on the disk, we call it **external sorting**.
 
-- An algorithm requires $O(1)$ extra space is known as an *in place* sorting algorithm.
+- An algorithm requires $O(1)$ extra space is known as an **in place** sorting algorithm.
 
 \* ---- Note ---- *
 
@@ -38,7 +38,7 @@ if the data is on the disk, we call it *external sorting*.
 > memory to sort the collection of items? Do we need to copy and temporarily store some 
 > subset of the keys/data records?
 
-- A sorting algorithm is *stable* if elements with equal keys are left in the same
+- A sorting algorithm is **stable** if elements with equal keys are left in the same
 order as they occur in the input. In other words, we can ask ourself the question:
 Does it rearrange the order of input data records which have the same key value
 (duplicates)? If the answer is No, then the sorting algorithm is *stable*.
@@ -51,12 +51,12 @@ Does it rearrange the order of input data records which have the same key value
 
 - There will be three kinds of running time mentioned in the sorting analysis:
 
-  - *average case time*: given an arbitrary input, what do we expect the running time
-  to be.
-  - *worst case time*: for a particular degenerate case, how bad will the algorithm
-  perform.
-  - *best case time*: for a particularly benevolent input case, what is the best case 
-  performance.
+    - *average case time*: given an arbitrary input, what do we expect the running time
+    to be.
+    - *worst case time*: for a particular degenerate case, how bad will the algorithm
+    perform.
+    - *best case time*: for a particularly benevolent input case, what is the best case 
+    performance.
 
 ## Reference
 

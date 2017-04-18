@@ -104,8 +104,8 @@ sort requires time $O(m^2)$ to sort a reverse-sorted array of length $m$. Here, 
 will be ($N/I$) for each subarray. Thus one subarray will cost $(N/I)^2$ to sort. 
 There are $I$ subarrays, so the total cost will be $I * (N/I)^2 = N^2/I$. But that 
 is the cost just for a single increment. The total time for all of the iterations must be
-$N^2/(N/2) + N^2/(N/4) + N^2/(N/8) + \dots + N^2/2 + N^2/1 = 2N + 4N + \dots + N^2/2 + N^2/1$.
-If we factor out an $N$, we get $N(2+4+\dots+N/2+N)$. In parenthesis is the sum of powers of 
+$N^2/(N/2) + N^2/(N/4) + N^2/(N/8) + \dots + N^2/2 + N^2/1 = 2N + 4N + \dots + N^2/2 + N^2/1$ .
+If we factor out an $N$, we get $N(2+4+\dots+N/2+N)$ . In parenthesis is the sum of powers of 
 2 from 2 to $N$, which is approximately equalt to $2N$. Therefore, the total cost
 is $N(2N) = 2N^2 = O(N^2)$.
 
