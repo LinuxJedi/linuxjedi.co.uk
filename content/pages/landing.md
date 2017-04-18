@@ -14,6 +14,6 @@ book review, and any non-technical stuff, please see my [Wordpress blog](https:/
 
 I am contactable via. my personal email address ferrishu3886@gmail.com and am on twitter as [@zeyuanhu](https://twitter.com/zeyuanhu)
 
-<img src="/images/me.jpg" alt="me" style="height: 225.1px; width: 400px"/>
+<img src="/images/me2.jpg" alt="me" style="height: 225.1px; width: 400px"/>
 
 "Discipline is the bridge between goals and accomplishment." --Jim Rohn
