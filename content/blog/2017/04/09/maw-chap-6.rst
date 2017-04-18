@@ -4,7 +4,7 @@ MAW: Chapter 6 Reflection
 
 :date: 2017-04-09 10:45
 :category: misc
-:tags: meta, maw
+:tags: meta, maw, heaps
 :summary: An overview summary of MAW Chapter 6
 
 ***********
