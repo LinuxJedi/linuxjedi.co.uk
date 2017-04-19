@@ -42,12 +42,15 @@ if the data is on the disk, we call it **external sorting**.
 order as they occur in the input. In other words, we can ask ourself the question:
 Does it rearrange the order of input data records which have the same key value
 (duplicates)? If the answer is No, then the sorting algorithm is *stable*.
+One example is that Phone book is sorted by name. 
+Now let's sort the book by country - is the list still sorted by name within each country?
+As you can tell, it is an extremely important property for databases.
 
 \* ---- Note ---- *
 
-> One example is that Phone book is sorted by name. Now let's sort the book by country -
-> is the list still sorted by name within each country? As you can tell, it is 
-> an extremely important property for databases.
+> When we evaluate the performance of a sorting algorithm, we usually evaluate it
+> from three perspectives: *running time*, *memory requirements (aka space)*, 
+> and *stability*.
 
 - There will be three kinds of running time mentioned in the sorting analysis:
 
@@ -63,3 +66,4 @@ Does it rearrange the order of input data records which have the same key value
 - MAW Chapter 7
 - https://www.cs.duke.edu/courses/fall01/cps100/notes/sorting_cheat.txt
 - https://courses.cs.washington.edu/courses/cse373/01sp/Lect15.pdf
+- http://web.mit.edu/1.124/LectureNotes/sorting.html
