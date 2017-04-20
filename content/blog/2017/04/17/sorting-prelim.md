@@ -21,6 +21,7 @@ ground concepts first.
 > Here, for the input, we are given an array $A$ of data records, each with
 > a key (which can be an integer, character, string, etc) as long as the following
 > condition can be met:
+>
 > - There is an ordering on the set of possible keys
 > - We can compare any two keys using $<, >, =$
 
