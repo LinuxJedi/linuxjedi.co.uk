@@ -42,8 +42,15 @@
 <p>
 <h2>Archives by tag</h2>
 
-{% for tag, articles in tags %}
+{% for tag, articles in tags|sort %}
   <li><a href="{{ SITEURL }}/tag/{{ tag }}.html">{{ tag }} ({{ articles|count }})</a></li>
+{% endfor %}
+</p>
+
+<p>
+<h2>Archives by category</h2>
+{% for category,articles in categories|sort %}
+  <li><a href="{{ SITEURL }}/category/{{ category }}.html">{{ category }} ({{ articles|count }})</a></li>
 {% endfor %}
 </p>
 <!--{# based on http://stackoverflow.com/questions/12764291/jinja2-group-by-month-year #}

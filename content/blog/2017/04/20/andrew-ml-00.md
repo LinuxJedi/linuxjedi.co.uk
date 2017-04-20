@@ -34,8 +34,8 @@ but I found the subject can become quite boring very soon if you don't have spec
 problems or needs want to address. Hopefully, Andrew Ng's course will help me to
 find some motivation to study linear algebra well.
 
-- Start to make resume ML-ish
+- Start to make résumé ML-ish
 
-I'm working in DB field but I always want to do ML by nature judged by my good performance
+I'm working in DB field but I always want to do ML by nature judged by my performance
 in the ML-related courses. Taking ML course on coursera and having a nice badge on
 my LinkedIn may greatly help me to market my ML expertise in the future?
