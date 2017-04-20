@@ -10,7 +10,9 @@ This is the summary of *skew heap* part in MAW Chapter 6.
 
 Like the relation between splay trees and AVL trees, we want to have 
 $O(\log N)$ amortized cost per operation. In addition, we don't want
-to have any auxiliary information stored at the nodes. In this case,
+to have any auxiliary information stored at the nodes. In other words,
+we want to trade strict $O(\log N)$ operation for less space we need 
+to use for the data structure. In this case,
 like splay trees to AVL trees, we have Skew heaps to leftist heaps.
 
 ## Concept
