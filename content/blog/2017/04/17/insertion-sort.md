@@ -1,5 +1,5 @@
 Title: Simple sorting alogorithms
-Date: 2017-04-20 23:33
+Date: 2017-04-24 21:33
 Category: Data Struct & Algo
 Tags: sorting, maw
 Summary: Summary for simple sorting alogrithms: bubble sort, selection sort, and 
