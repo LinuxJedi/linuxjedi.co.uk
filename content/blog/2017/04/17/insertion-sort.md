@@ -2,11 +2,10 @@ Title: Simple sorting alogorithms
 Date: 2017-04-24 21:33
 Category: Data Struct & Algo
 Tags: sorting, maw
-Summary: Summary for simple sorting alogrithms: bubble sort, selection sort, and 
-insertion sort
+Summary: bubble sort, selection sort, and insertion sort
 
 This post summarizes three typical simple sorting algorithms: *bubble sort*, 
-*selection sort*, and *insertion sort*. In chapter 6, MAW mainly talks about 
+*selection sort*, and *insertion sort*. In chapter 7, MAW mainly talks about 
 *insertion sort* but for the sake of completeness, I will include the other two as
 well.
 
@@ -38,7 +37,7 @@ unsorted part. The following gives an example of the algorithm in action:
 | index    | 0  | 1  | 2  | 3  | 4  | 5  |
 | original | 34 | 8  | 64 | 51 | 32 | 21 |
 |----------|----|----|----|----|----|----|
-| pass 0   | 8  | 34 | 57 | 32 | 21 | 64 |
+| pass 0   | 8  | 34 | 51 | 32 | 21 | 64 |
 | pass 1   | 8  | 34 | 32 | 21 | 51 | 64 |
 | pass 2   | 8  | 32 | 21 | 34 | 51 | 64 |
 | pass 3   | 8  | 21 | 32 | 34 | 51 | 64 |

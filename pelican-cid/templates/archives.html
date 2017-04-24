@@ -47,12 +47,12 @@
 {% endfor %}
 </p>
 
-<p>
+<!--<p>
 <h2>Archives by category</h2>
 {% for category,articles in categories|sort %}
   <li><a href="{{ SITEURL }}/category/{{ category }}.html">{{ category }} ({{ articles|count }})</a></li>
 {% endfor %}
-</p>
+</p>-->
 <!--{# based on http://stackoverflow.com/questions/12764291/jinja2-group-by-month-year #}
 
 {% for year, year_group in dates|groupby('date.year')|reverse %}
