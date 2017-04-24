@@ -43,7 +43,7 @@
 <h2>Archives by tag</h2>
 
 {% for tag, articles in tags|sort %}
-  <li><a href="{{ SITEURL }}/tag/{{ tag }}.html">{{ tag }} ({{ articles|count }})</a></li>
+  <li><a href="{{ SITEURL }}/tag/{{ tag|lower }}.html">{{ tag }} ({{ articles|count }})</a></li>
 {% endfor %}
 </p>
 

@@ -131,7 +131,8 @@ ARTICLE_EXCLUDES = [ '/drafts' ]
 #
 # Custom Jinja Filters
 #   see: http://jinja.pocoo.org/docs/templates/#filters
-#
+#  
+#   format: http://strftime.org
 #################################
 
 
@@ -157,7 +158,7 @@ def month_name(month_number):
 
 
 def archive_date_format(date):
-    return custom_strftime('%b.%d.%y', date)
+    return custom_strftime('%m.%d.%Y', date)
 
 
 def sidebar_date_format(date):
