@@ -95,7 +95,7 @@ for a constant $c$, which implies $O(\log N)$ increments, then the bound follows
 
 However, one cannot talk about shellsort without specifying the increment sequence.
 If we assume the shell sequence (i.e. $N/2, N/4, \dots, 2, 1$), then the running time
-is $O(N)$ as suggested by [this answer](https://www.cs.rochester.edu/~brown/172/exams/2ndmidterm_ans_13.pdf),
+is $O(N^2)$ as suggested by [this answer](https://www.cs.rochester.edu/~brown/172/exams/2ndmidterm_ans_13.pdf),
 which I'll copy below for future reference.
 
 Shellsort is just a bunch of insertion sorts. For a given increment $I$, there will

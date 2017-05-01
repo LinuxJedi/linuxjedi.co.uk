@@ -1,4 +1,4 @@
-Title: Simple sorting alogorithms
+Title: Simple sorting algorithms
 Date: 2017-04-24 21:33
 Category: Data Struct & Algo
 Tags: sorting, maw
