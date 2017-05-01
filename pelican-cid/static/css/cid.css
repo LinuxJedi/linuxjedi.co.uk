@@ -268,17 +268,31 @@
 
 /* Literal.Number.Integer.Long */
 * {
-  background-color: #fefefe;
+  background-color: #fdf6e3;
   color: #030303; }
 
 code, kbd, pre, samp {
-  font-family: "Menlo", "Monaco", "Consolas", "Courier New", monospace; }
+  font-family: "Menlo", "Monaco", "Consolas", "Courier New", monospace;
+  border: 1px solid #ccc;
+  padding: 20px 5px 20px 20px; }
+
+p {
+  line-height: 1.5em; }
+
+.blog-header a {
+  text-decoration: none; }
+
+a:hover {
+  background-color: #C74350;
+  color: white;
+  text-decoration: none; }
 
 body {
-  font-family: "Merriweather", "Georgia", serif;
+  font-family: "Droid Sans", "Merriweather", "Georgia", serif;
   font-weight: 300; }
   body a {
-    font-weight: 400; }
+    font-weight: 400;
+    text-decoration-style: dotted; }
   body h1, body h2, body h3, body h4, body h5, body h6 {
     font-family: "Gentium Book Basic", "Georgia", serif; }
     body h1 a, body h2 a, body h3 a, body h4 a, body h5 a, body h6 a {
@@ -310,7 +324,7 @@ body {
 .landing-container {
   width: 65%;
   margin: 2em auto 0;
-  font-family: "Merriweather", "Georgia", serif; }
+  font-family: "Droid Sans", "Merriweather", "Georgia", serif; }
   .landing-container li {
     font-family: "Gentium Book Basic", "Georgia", serif; }
   @media screen and (max-width: 640px) {
@@ -379,7 +393,7 @@ body {
       .container .post-list .post-overview time {
         position: relative; } }
   .container .post {
-    font-size: 1.18em; }
+    font-size: 16px; }
     @media screen and (max-width: 640px) {
       .container .post {
         font-size: 1em; } }
@@ -392,7 +406,7 @@ body {
     .container .post h4 {
       font-size: 1.2em; }
     .container .post h5, .container .post h6 {
-      font-size: 1.18em; }
+      font-size: 16px; }
     .container .post a {
       font-weight: 400; }
     .container .post img {
