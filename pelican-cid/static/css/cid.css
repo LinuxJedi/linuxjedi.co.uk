@@ -268,7 +268,7 @@
 
 /* Literal.Number.Integer.Long */
 * {
-  background-color: #fdf6e3;
+  background-color: #fefefe; /*#fdf6e3*/  
   color: #030303; }
 
 code, kbd, pre, samp {
