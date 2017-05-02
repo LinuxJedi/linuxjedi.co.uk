@@ -4,7 +4,7 @@
 Quotes
 ######
 
-Last Update: April 12, 2017
+Last Update: May 02, 2017
 
 "The Master in the art of living makes little distinction between his work 
 and his play, his labor and his leisure, his mind and his body, his 
@@ -15,6 +15,9 @@ To him he is always doing both."
 **-- Zen Philosophy** 
 
 .. stop-show-quotes
+
+"My sword I leave to him who can wear it." **-- The Pilgrim's Progress** (found in 
+`Charlie Munger's USC law commencement speech <https://genius.com/Charlie-munger-usc-law-commencement-speech-annotated>`_)
 
 "Keep away from people who try to belittle your ambitions. Small people do that,
 but the really great make you feel that you too, can be great."
@@ -213,5 +216,4 @@ and things will go better later."
 begin here."
 **-- Captain John Parker**
 
-..
-   `Back To Top <{filename}/pages/quotes.rst>`_
+`Back To Top <{filename}/pages/quotes.rst>`_
