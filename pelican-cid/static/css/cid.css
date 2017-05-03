@@ -268,7 +268,7 @@
 
 /* Literal.Number.Integer.Long */
 * {
-  background-color: #fefefe; /*#fdf6e3*/  
+  background-color: #fefefe;
   color: #030303; }
 
 code, kbd, pre, samp {
@@ -280,19 +280,22 @@ p {
   line-height: 1.5em; }
 
 .blog-header a {
-  text-decoration: none; }
+  text-decoration: none;
+  border-bottom: none; }
 
 a:hover {
   background-color: #C74350;
   color: white;
-  text-decoration: none; }
+  text-decoration: none;
+  border-bottom: none; }
 
 body {
   font-family: "Droid Sans", "Merriweather", "Georgia", serif;
   font-weight: 300; }
   body a {
     font-weight: 400;
-    text-decoration-style: dotted; }
+    text-decoration: none;
+    border-bottom: 1px dotted #000; }
   body h1, body h2, body h3, body h4, body h5, body h6 {
     font-family: "Gentium Book Basic", "Georgia", serif; }
     body h1 a, body h2 a, body h3 a, body h4 a, body h5 a, body h6 a {
