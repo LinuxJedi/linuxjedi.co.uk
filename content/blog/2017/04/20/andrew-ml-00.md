@@ -39,3 +39,7 @@ find some motivation to study linear algebra well.
 I'm working in DB field but I always want to do ML by nature judged by my performance
 in the ML-related courses. Taking ML course on coursera and having a nice badge on
 my LinkedIn may greatly help me to market my ML expertise in the future?
+
+My current plan is to finish the coursera version first, and then move on to 
+[CS229](http://cs229.stanford.edu/materials.html) version if time permits. 
+I want to take an agile approach to this material by doing iteratively build-up.
