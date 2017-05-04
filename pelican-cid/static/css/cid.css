@@ -289,6 +289,9 @@ a:hover {
   text-decoration: none;
   border-bottom: none; }
 
+li {
+  margin: 4px; }
+
 body {
   font-family: "Droid Sans", "Merriweather", "Georgia", serif;
   font-weight: 300; }

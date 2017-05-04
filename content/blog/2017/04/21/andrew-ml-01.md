@@ -45,8 +45,8 @@ without being explicitly programmed. (older, informal definition)
 to some class of tasks $T$ and performance measure $P$, if its performance at tasks in $T$,
 as measured by $P$, improves with experience $E$.
 
-Take playing checkers as an example. $E$ = the experience of playing many games of checkers;
-$T$ = the task of playing checkers; $P$ = the probability that the program will win the next game.
+Take playing checkers as an example. $E = \text{the experience of playing many games of checkers}$;
+$T = \text{the task of playing checkers}$; $P = \text{the probability that the program will win the next game}$.
 
 ### Types of ML problems
 
@@ -78,7 +78,30 @@ derive structure from data where we don't necessarily know the effect of the var
 
 ## Linear regression
 
-For linear regression, we have hypothesis:
+### In theory
+
+A few notation used throughout the course:
+
+- $n = \text{number of features}$
+- $m = \text{number of training examples}$
+- $x^{(i)} = \text{input (features) of }i\text{th training example}$
+- $x_j^{(i)} = \text{value of feature }j \text{ in }i\text{th training example}$
+
+For linear regression, our hypothesis is 
+
+$$
+h_\theta(x) = \theta_0 x_0 + \theta_1 x_1 + \dots + \theta_n x_n = \theta^T x 
+$$
+
+where $\theta$ is a $n+1$ vector and $x$ is a $n+1$ vector as well.
+
+$$
+\left[
+\begin{matrix} a_{11} & a_{12} & \cdots & a_{1n} \\ a_{21} & a_{22} & \cdots & a_{2n} \\ \vdots & \vdots & \ddots & \vdots \\ a_{n1} & a_{n2} & \cdots & a_{nn} \end{matrix}
+\right]$$
+
+
+### In practice
 
 
 ## Logistic regression
