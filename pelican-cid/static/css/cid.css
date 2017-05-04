@@ -1,0 +1,459 @@
+.highlight
+.hll {
+  background-color: #ffffcc; }
+
+.c {
+  color: #0099FF;
+  font-style: italic; }
+
+/* Comment */
+.err {
+  color: #AA0000;
+  background-color: #FFAAAA; }
+
+/* Error */
+.k {
+  color: #006699;
+  font-weight: bold; }
+
+/* Keyword */
+.o {
+  color: #555555; }
+
+/* Operator */
+.cm {
+  color: #0099FF;
+  font-style: italic; }
+
+/* Comment.Multiline */
+.cp {
+  color: #009999; }
+
+/* Comment.Preproc */
+.c1 {
+  color: #0099FF;
+  font-style: italic; }
+
+/* Comment.Single */
+.cs {
+  color: #0099FF;
+  font-weight: bold;
+  font-style: italic; }
+
+/* Comment.Special */
+.gd {
+  background-color: #FFCCCC;
+  border: 1px solid #CC0000; }
+
+/* Generic.Deleted */
+.ge {
+  font-style: italic; }
+
+/* Generic.Emph */
+.gr {
+  color: #FF0000; }
+
+/* Generic.Error */
+.gh {
+  color: #003300;
+  font-weight: bold; }
+
+/* Generic.Heading */
+.gi {
+  background-color: #CCFFCC;
+  border: 1px solid #00CC00; }
+
+/* Generic.Inserted */
+.go {
+  color: #AAAAAA; }
+
+/* Generic.Output */
+.gp {
+  color: #000099;
+  font-weight: bold; }
+
+/* Generic.Prompt */
+.gs {
+  font-weight: bold; }
+
+/* Generic.Strong */
+.gu {
+  color: #003300;
+  font-weight: bold; }
+
+/* Generic.Subheading */
+.gt {
+  color: #99CC66; }
+
+/* Generic.Traceback */
+.kc {
+  color: #006699;
+  font-weight: bold; }
+
+/* Keyword.Constant */
+.kd {
+  color: #006699;
+  font-weight: bold; }
+
+/* Keyword.Declaration */
+.kn {
+  color: #006699;
+  font-weight: bold; }
+
+/* Keyword.Namespace */
+.kp {
+  color: #006699; }
+
+/* Keyword.Pseudo */
+.kr {
+  color: #006699;
+  font-weight: bold; }
+
+/* Keyword.Reserved */
+.kt {
+  color: #007788;
+  font-weight: bold; }
+
+/* Keyword.Type */
+.m {
+  color: #FF6600; }
+
+/* Literal.Number */
+.s {
+  color: #CC3300; }
+
+/* Literal.String */
+.na {
+  color: #330099; }
+
+/* Name.Attribute */
+.nb {
+  color: #336666; }
+
+/* Name.Builtin */
+.nc {
+  color: #00AA88;
+  font-weight: bold; }
+
+/* Name.Class */
+.no {
+  color: #336600; }
+
+/* Name.Constant */
+.nd {
+  color: #9999FF; }
+
+/* Name.Decorator */
+.ni {
+  color: #999999;
+  font-weight: bold; }
+
+/* Name.Entity */
+.ne {
+  color: #CC0000;
+  font-weight: bold; }
+
+/* Name.Exception */
+.nf {
+  color: #CC00FF; }
+
+/* Name.Function */
+.nl {
+  color: #9999FF; }
+
+/* Name.Label */
+.nn {
+  color: #00CCFF;
+  font-weight: bold; }
+
+/* Name.Namespace */
+.nt {
+  color: #330099;
+  font-weight: bold; }
+
+/* Name.Tag */
+.nv {
+  color: #003333; }
+
+/* Name.Variable */
+.ow {
+  color: #000000;
+  font-weight: bold; }
+
+/* Operator.Word */
+.w {
+  color: #bbbbbb; }
+
+/* Text.Whitespace */
+.mf {
+  color: #FF6600; }
+
+/* Literal.Number.Float */
+.mh {
+  color: #FF6600; }
+
+/* Literal.Number.Hex */
+.mi {
+  color: #FF6600; }
+
+/* Literal.Number.Integer */
+.mo {
+  color: #FF6600; }
+
+/* Literal.Number.Oct */
+.sb {
+  color: #CC3300; }
+
+/* Literal.String.Backtick */
+.sc {
+  color: #CC3300; }
+
+/* Literal.String.Char */
+.sd {
+  color: #CC3300;
+  font-style: italic; }
+
+/* Literal.String.Doc */
+.s2 {
+  color: #CC3300; }
+
+/* Literal.String.Double */
+.se {
+  color: #CC3300;
+  font-weight: bold; }
+
+/* Literal.String.Escape */
+.sh {
+  color: #CC3300; }
+
+/* Literal.String.Heredoc */
+.si {
+  color: #AA0000; }
+
+/* Literal.String.Interpol */
+.sx {
+  color: #CC3300; }
+
+/* Literal.String.Other */
+.sr {
+  color: #33AAAA; }
+
+/* Literal.String.Regex */
+.s1 {
+  color: #CC3300; }
+
+/* Literal.String.Single */
+.ss {
+  color: #FFCC33; }
+
+/* Literal.String.Symbol */
+.bp {
+  color: #336666; }
+
+/* Name.Builtin.Pseudo */
+.vc {
+  color: #003333; }
+
+/* Name.Variable.Class */
+.vg {
+  color: #003333; }
+
+/* Name.Variable.Global */
+.vi {
+  color: #003333; }
+
+/* Name.Variable.Instance */
+.il {
+  color: #FF6600; }
+
+/* Literal.Number.Integer.Long */
+* {
+  background-color: #fefefe;
+  color: #030303; }
+
+code, kbd, pre, samp {
+  font-family: "Menlo", "Monaco", "Consolas", "Courier New", monospace;
+  border: 1px solid #ccc;
+  padding: 20px 5px 20px 20px; }
+
+p {
+  line-height: 1.5em; }
+
+.blog-header a {
+  text-decoration: none;
+  border-bottom: none; }
+
+a:hover {
+  background-color: #C74350;
+  color: white;
+  text-decoration: none;
+  border-bottom: none; }
+
+li {
+  margin: 4px; }
+
+body {
+  font-family: "Droid Sans", "Merriweather", "Georgia", serif;
+  font-weight: 300; }
+  body a {
+    font-weight: 400;
+    text-decoration: none;
+    border-bottom: 1px dotted #000; }
+  body h1, body h2, body h3, body h4, body h5, body h6 {
+    font-family: "Gentium Book Basic", "Georgia", serif; }
+    body h1 a, body h2 a, body h3 a, body h4 a, body h5 a, body h6 a {
+      font-weight: bold; }
+  body iframe {
+    max-width: 100%;
+    margin: 2em auto;
+    display: block; }
+
+.disclaimer {
+  text-align: center;
+  font-size: 0.8em; }
+
+.nav {
+  list-style: none;
+  padding-left: 0; }
+  .nav li {
+    display: inline-block;
+    margin-right: 0.56em; }
+    @media screen and (max-width: 640px) {
+      .nav li {
+        display: block;
+        margin-right: 0; } }
+
+.header-link {
+  font-size: 70%;
+  float: right; }
+
+.landing-container {
+  width: 65%;
+  margin: 2em auto 0;
+  font-family: "Droid Sans", "Merriweather", "Georgia", serif; }
+  .landing-container li {
+    font-family: "Gentium Book Basic", "Georgia", serif; }
+  @media screen and (max-width: 640px) {
+    .landing-container {
+      width: 100%;
+      margin: 1em 0; } }
+  .landing-container header {
+    font-size: 1.2em; }
+    .landing-container header h1 {
+      font-size: 4em;
+      margin: 0.4em 0; }
+  .landing-container ul {
+    margin-top: 5em;
+    margin-bottom: 3em;
+    text-align: center; }
+    .landing-container ul li {
+      font-size: 2em; }
+
+.container {
+  max-width: 56em;
+  margin: 1em auto; }
+  @media screen and (max-width: 640px) {
+    .container {
+      margin: 0.8em; } }
+  .container .paginator {
+    text-align: center;
+    margin: 3.2em 0; }
+  .container .blog-header {
+    margin-bottom: 3em;
+    position: relative; }
+    .container .blog-header h1 {
+      margin-bottom: 0; }
+    .container .blog-header p {
+      margin-top: 0.2em; }
+    .container .blog-header nav {
+      position: absolute;
+      top: 0;
+      right: 0;
+      margin: 0 2px;
+      font-family: "Gentium Book Basic", "Georgia", serif; }
+      @media screen and (max-width: 640px) {
+        .container .blog-header nav {
+          position: relative;
+          text-align: center; } }
+    @media screen and (max-width: 640px) {
+      .container .blog-header {
+        text-align: center; } }
+  .container .nav {
+    font-size: 1.2em; }
+  .container .blog-footer {
+    margin-top: 2em;
+    text-align: center; }
+  .container .post-list .post-overview {
+    margin: 1em;
+    position: relative;
+    padding-left: 7em; }
+    .container .post-list .post-overview time {
+      position: absolute;
+      left: 0em;
+      top: 0.2em; }
+  @media screen and (max-width: 640px) {
+    .container .post-list .post-overview {
+      margin: 0;
+      top: 0em;
+      padding-left: 0; }
+      .container .post-list .post-overview time {
+        position: relative; } }
+  .container .post {
+    font-size: 16px; }
+    @media screen and (max-width: 640px) {
+      .container .post {
+        font-size: 1em; } }
+    .container .post h1 {
+      font-size: 1.5em; }
+    .container .post h2 {
+      font-size: 1.44em; }
+    .container .post h3 {
+      font-size: 1.3em; }
+    .container .post h4 {
+      font-size: 1.2em; }
+    .container .post h5, .container .post h6 {
+      font-size: 16px; }
+    .container .post a {
+      font-weight: 400; }
+    .container .post img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 1.5em auto; }
+    .container .post code {
+      padding: 2px 4px;
+      font-size: 90%;
+      color: #c7254e;
+      background-color: #f9f2f4;
+      border-radius: 4px; }
+    .container .post .highlight {
+      font-size: 0.9em;
+      overflow-x: auto; }
+    .container .post blockquote {
+      font-style: italic;
+      font-weight: 300;
+      border: 1px solid #ccc;
+      padding: 2px 20px 2px 20px;
+      margin: 3px; }
+    .container .post header {
+      margin: 2.2em 0; }
+      .container .post header h1 {
+        font-size: 2.45em; }
+      .container .post header p.date {
+        margin-top: -1.3em; }
+    .container .post article {
+      line-height: 1.73333em; }
+    .container .post footer {
+      margin: 2em 0 3em;
+      text-align: right; }
+
+.topic {
+  border: 1px solid #c6c9cb;
+  padding: 10px 20px;
+  margin: 20px; }
+
+.highlight pre {
+  border: 1px solid #ccc;
+  padding: 20px; }
+
+/*# sourceMappingURL=cid.css.map */

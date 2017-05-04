@@ -16,9 +16,11 @@
 /* Body */
 body {
     background: #F8FAFB;
+    background: rgba(255,255,200,0.5) top left;
     color: #000305;
     font-size: 87.5%; /* Base font size: 14px */
-    font-family: 'Trebuchet MS', Trebuchet, 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    /* font-family: 'Trebuchet MS', Trebuchet, 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; */
+    font-family: Roboto,Verdana,Geneva,sans-serif;
     line-height: 1.429;
     margin: auto;
     padding: 0;
@@ -26,8 +28,6 @@ body {
     max-width: 1440px;
     min-width: 1000px;
 }
-
-
 
 /* Headings */
 h1 {font-size: 2em }
@@ -41,6 +41,7 @@ h1, h2, h3, h4, h5, h6 {
 	font-weight: 400;
 	line-height: 1.1;
 	margin-bottom: .8em;
+	margin-top: 0.8em;
     font-family: 'Yanone Kaffeesatz', arial, serif;
 }
 
@@ -79,7 +80,7 @@ em, i {font-style: italic;}
 /* Lists */
 ul {
 	list-style: outside disc;
-	margin: 1em 0 1.5em 1.5em;
+	margin: 0.5em 0 0.5em 1.5em;
 }
 
 ol {
@@ -88,11 +89,12 @@ ol {
 }
 
 .post-info {
-    color: #93A4AD;
+    /* color: #93A4AD; */
     font-size: 80%;
-    background-color: #F8FAFB;
+    background-color: rgba(200,225,255,0.5) top left;
     padding: 2px;
     border-radius: 2px;
+    margin: 20px;
 }
 
 .post-info p{
@@ -234,13 +236,12 @@ img.left, figure.left {float: right; margin: 0 0 2em 2em;}
 	Featured
 *****************/
 #content {
-	background: #fff;
 	border-radius: 10px;
 	-moz-border-radius: 10px;
 	-webkit-border-radius: 10px;
     float: left;
     margin: 1em 10px 2em 7%;
-	background: #fff;
+    background: rgba(200,225,255,0.5) top left;
 	overflow: hidden;
 	padding: 20px 20px;
 	min-width: 600px;
@@ -253,7 +254,7 @@ img.left, figure.left {float: right; margin: 0 0 2em 2em;}
 #sidebar {
     float: right; 
     margin: 1em 7% 2em 10px;
-	background: #fff;
+	background: rgba(200,225,255,0.5) top left;
 	overflow: hidden;
 	padding: 20px 20px;
 	width: 17%;
@@ -468,4 +469,24 @@ li:last-child .hentry, #content > .hentry {border: 0; margin: 0;}
     display:inline-block;
     padding-right:5px;
     padding-left:5px
+}
+
+div.topic {
+    border: 1px solid #c6c9cb;
+    padding: 10px 20px;
+/*    border-right-style: none;
+    border-left-style: none;*/
+    margin: 20px;
+}
+
+p.topic-title{
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+.toc {
+    border: 1px solid #c6c9cb;
+    padding: 10px 20px;
+    /*    border-right-style: none;     border-left-style: none;*/
+    margin: 20px;
 }

@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+{% block content %}
+<section id="content" class="body">
+<h1>Archives for {{ SITENAME }}</h1>
+
+<h2>Search</h2>
+<!--<script>
+  (function() {
+  var cx = '016374522709017827858:csiwduyrdss';
+  var gcse = document.createElement('script');
+  gcse.type = 'text/javascript';
+  gcse.async = true;
+  gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+  var s = document.getElementsByTagName('script')[0];
+  s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+<gcse:searchbox-only></gcse:searchbox-only>-->
+<form method='get' action='http://google.com/search'>
+<span class="bold">Search this site:</span>
+<input type='text' name='q' maxlength='255' />
+<input type='submit' value='Search' style="background-color:#C74350; color: #000" />
+<input type='hidden' name='domains' value='zhu45.org' />
+<input style='visibility:hidden' type='radio' name='sitesearch' value='zhu45.org' checked='checked' />
+</form>
+<div>powered by <a href="http://www.google.com">Google</a></div>
+
+<p>
+<h2>Feeds</h2>
+<li><a href="{{ SITEURL }}/{{ FEED_ALL_ATOM }}" rel="alternate"><i class="fa fa-rss-square fa-lg"></i> Atom feed</a></li>
+<li><a href="{{ SITEURL }}/{{ FEED_ALL_RSS }}" rel="alternate"><i class="fa fa-rss-square fa-lg"></i> RSS feed</a></li>
+</p>
+
+<p>
+<h2>Archives by year</h2>
+
+{% for year, numposts in articles|groupby('date.year') %}
+ <li><a href="{{ SITEURL }}/archives/{{ year }}/period_archives.html">{{ year }} ({{ numposts|count }})</a></li>
+{% endfor %}
+</p>
+
+<p>
+<h2>Archives by tag</h2>
+
+{% for tag, articles in tags|sort %}
+  <li><a href="{{ SITEURL }}/tag/{{ tag|lower }}.html">{{ tag }} ({{ articles|count }})</a></li>
+{% endfor %}
+</p>
+
+<!--<p>
+<h2>Archives by category</h2>
+{% for category,articles in categories|sort %}
+  <li><a href="{{ SITEURL }}/category/{{ category }}.html">{{ category }} ({{ articles|count }})</a></li>
+{% endfor %}
+</p>-->
+<!--{# based on http://stackoverflow.com/questions/12764291/jinja2-group-by-month-year #}
+
+{% for year, year_group in dates|groupby('date.year')|reverse %}
+  {% for month, month_group in year_group|groupby('date.month')|reverse %}
+    <h4 class="date">{{ (month_group|first).date|strftime('%b %Y') }}</h4>
+    <div class="post archives">
+       <ul>
+          {% for article in month_group %}
+            <li><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></li>
+          {% endfor %}
+       </ul>
+    </div>
+  {% endfor %}
+{% endfor %}-->
+</section>
+{% endblock %}
